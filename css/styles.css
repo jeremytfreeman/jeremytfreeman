@@ -7,7 +7,7 @@ body {
 }
 
 p {
-    color: #729EA1;
+    color: #8C9BBA;
     line-height: 28px;
 }
 
@@ -52,6 +52,13 @@ ul {
     min-width: 375px;
 }
 
+
+#header-box {
+    border-bottom: #4D5D80 1px solid;
+    max-width: 420px;
+    margin: auto;
+    padding-bottom: 20px;
+}
 
 #text-box {
     text-align: left;
