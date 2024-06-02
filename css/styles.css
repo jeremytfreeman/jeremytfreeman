@@ -1,0 +1,60 @@
+body {
+    background-color: #181D28;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+
+p {
+    color: #729EA1;
+    line-height: 28px;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 300;
+    font-style: normal;
+}
+
+h2 {
+    font-size: 1.4em;
+    font-style: bold;
+}
+
+
+a {
+    color: #D2F898;
+    text-decoration: none;
+}
+
+a:hover {
+    color: pink;
+    text-decoration: underline;
+}
+
+ul {
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 32px;
+}
+
+
+.container {
+    height: 600px;
+    padding-top: 100px;
+    width: 80%;
+    margin: auto;
+    /*border: 2px dashed #4b2869; */
+    min-width: 375px;
+}
+
+
+#text-box {
+    text-align: left;
+    max-width: 420px;
+    margin: auto;
+    padding: 16px;
+}
