@@ -39,7 +39,7 @@ a:hover {
 
 
 ul {
-    font-family: monospace;
+    font-family:  "fira-code", monospace;
     margin: 0;
     padding: 0;
     list-style: none;
