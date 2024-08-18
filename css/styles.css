@@ -287,7 +287,7 @@ nav {
 
 
 nav ul {
-  font-family: "fira-code", monospace;
+  /* font-family: "fira-code", monospace;  */
   list-style: none;
   line-height: 48px;
   padding: 0;
@@ -357,9 +357,9 @@ nav ul li a:hover {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: top;
+    justify-content: center;
     /*aligns center vertically */
-    padding-top: 24px;
+    padding-top: 0px;
     align-items: center;
     /*transition: all 0.7s; */
   }
