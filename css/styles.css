@@ -1,3 +1,12 @@
+:root {
+
+  --primaryColor: #181D28;
+  --secondaryColor: #BEA25A;
+
+}
+
+
+
 html {
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -12,10 +21,9 @@ body {
 
 body {
   background-color: #ffffff;
-  color: #181D28;
+  color: var(--primaryColor);
   text-align: left;
   font-size: 1.6rem;
-
   font-family: Helvetica, Arial, sans-serif;
   font-weight: normal;
   margin: 0px;
@@ -26,7 +34,6 @@ body {
 }
 
 p {
-  color: #181D28;
   line-height: 180%;
 }
 
@@ -86,7 +93,7 @@ a {
 
 a:hover {
   /* transition: 500ms; */
-  color: #BEA25A;
+  color: var(--secondaryColor);
 }
 
 
@@ -118,7 +125,7 @@ figcaption {
 
 /* Resume button */
 .primary-btn {
-  background-color: #181D28;
+  background-color: var(--primaryColor);
   /* font-family: "fira code", monospace;  */
   color: #ffffff;
   border: none;
@@ -132,7 +139,7 @@ figcaption {
 }
 
 .primary-btn:hover {
-  background-color: #BEA25A ;
+  background-color: var(--secondaryColor);
   transition: 500ms;
   cursor: pointer;
 }
@@ -194,22 +201,27 @@ header {
 }
 
 .send-icon path {
-  fill: #181D28;
+  fill: var(--primaryColor);
   transition: 300ms;
 
 }
 
 .send-icon path:hover {
-  fill: #BEA25A !important;
+  fill: var(--secondaryColor) !important;
 }
 
-.send-icon {
-  fill: #EC9C28;
-  fill: #EC9C28 !important;
-}
 
 /* Buzz */
-
+@-webkit-keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
 @keyframes hvr-buzz {
   50% {
     -webkit-transform: translateX(3px) rotate(2deg);
@@ -344,19 +356,19 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #BEA25A;
+  color: var(--secondaryColor);
   text-decoration: none;
 }
 
 .current a {
-  color: #BEA25A;
+  color: var(--secondaryColor);
   text-decoration: none;
 }
 
 
 .checkbtn {
   font-size: 24px;
-  color: #181D28;
+  color: var(--primaryColor);
   cursor: pointer;
   display: none;
 }
@@ -386,7 +398,7 @@ nav ul li a:hover {
     position: fixed;
     top: 40px;
     right: -100%;
-    background-color: #181D28;
+    background-color: var(--primaryColor);
     width: 100%;
     height: 100vh;
     display: flex;
@@ -420,7 +432,7 @@ nav ul li a:hover {
   }
 
   nav ul li a:hover {
-    color: #BEA25A;
+    color: var(--secondaryColor);
     text-decoration: none;
   }
 
@@ -429,7 +441,7 @@ nav ul li a:hover {
   }
 
   .checkbtn:hover {
-    color: #BEA25A !important;
+    color: var(--secondaryColor) !important;
     transition: 300ms;
   }
 }
@@ -672,7 +684,7 @@ nav ul li a:hover {
 #topBtn:hover {
   /*background-color: #E4B4DC; */
   opacity: 100%;
-  background-color: #EC9C28;
+  background-color: var(--secondaryColor);
   transition: 500ms;
 }
 
@@ -796,7 +808,7 @@ nav ul li a:hover {
 }
 
 .next-work-label a:hover {
-  color: #EC9C28;
+  color: var(--secondaryColor);
   text-decoration: none;
 }
 
