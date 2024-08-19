@@ -1,7 +1,11 @@
 :root {
 
+  /* define color variables */
   --primaryColor: #181D28;
   --secondaryColor: #BEA25A;
+  --tertiaryColor: #6679A3;
+  --actionColor: #6679A3;
+  --lightBackground: #F2F4F7;
 
 }
 
@@ -86,7 +90,7 @@ h6 {
 }
 
 a {
-  color: #6679A3; 
+  color: var(--actionColor);
   text-decoration: none;
   transition: 500ms;
 }
@@ -118,7 +122,7 @@ figure {
 figcaption {
   font-size: 1.2rem;
   font-style: italic;
-  color: #6679A3;
+  color: var(--secondaryColor);
   margin-top: 4px;
   text-align: right;
 }
@@ -346,11 +350,10 @@ nav ul li {
   font-size: 1.6rem;
   line-height: 4rem;
   font-weight: 400;
-  color: #4D5D80;
 }
 
 nav ul li a {
-  color: #4D5D80;
+  color: var(--actionColor);
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -478,7 +481,7 @@ nav ul li a:hover {
   padding: 60px;
   margin-bottom: 64px;
   border-radius: 12px;
-  background-color: #F2F4F7;
+  background-color: var(--lightBackground);
   /* CSS animation to change hero box color below
   animation-name: backgroundColorPalette;
   animation-duration: 60s;
@@ -678,15 +681,14 @@ nav ul li a:hover {
   padding: 15px;
   border-radius: 4px;
   opacity: 15%;
-
-}
-
-#topBtn:hover {
-  /*background-color: #E4B4DC; */
-  opacity: 100%;
-  background-color: var(--secondaryColor);
   transition: 500ms;
 }
+
+ #topBtn:hover {
+  background-color: #f3f5f9;
+  opacity: 100%;
+  transition: 500ms;
+}  
 
 #topBtn:active {
   /*background-color: #E4B4DC; */
@@ -694,6 +696,53 @@ nav ul li a:hover {
   background-color: #B983AE;
   transition: 0ms;
 }
+
+
+/* Sweep To Top */
+.hvr-sweep-to-top {
+  display: inline-block;
+  border-radius: 4px;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  /* box-shadow: 0 0 1px rgba(0, 0, 0, 0);  */
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-sweep-to-top:before {
+  content: "";
+  position: absolute;
+  border-radius: 4px;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--secondaryColor);
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-sweep-to-top:hover, .hvr-sweep-to-top:focus, .hvr-sweep-to-top:active {
+  color: var(--secondaryColor);
+}
+
+.hvr-sweep-to-top:hover:before, .hvr-sweep-to-top:focus:before, .hvr-sweep-to-top:active:before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+
+}
+
 
 
 /* WORK PAGES STYLES ------------------------*/
@@ -705,8 +754,8 @@ nav ul li a:hover {
 .img-box-gray {
   width: 100%;
   box-sizing: border-box;
-  border: #F2F4F7 solid 20px;
-  background-color: #F2F4F7;
+  border: var(--lightBackground) solid 20px;
+  background-color: var(--lightBackground);
   padding: 0px;
   margin-top: 20px;
 }
