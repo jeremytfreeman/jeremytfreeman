@@ -13,7 +13,7 @@ function scrollFunction() {
 
   //scroll page back to top
   function topFunction() {
-    //document.body.scrollTop = 0;
+    document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   }
 
@@ -22,3 +22,4 @@ function scrollFunction() {
 let mybutton = document.getElementById("topBtn");
 // When the user scrolls down 20px from the top of the document, show the back to top button
 window.onscroll = function () { scrollFunction() };
+mybutton.addEventListener("click", topFunction);
