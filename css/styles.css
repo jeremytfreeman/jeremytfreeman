@@ -197,16 +197,15 @@ header {
   padding-top: 90px;
 }
 
+
 #send-icon {
   margin-top: 24px;
   margin-right: 24px;
-
 }
 
 .send-icon path {
   fill: var(--primaryColor);
   transition: 300ms;
-
 }
 
 .send-icon path:hover {
@@ -889,6 +888,7 @@ nav ul li a:hover {
 
 .exp-cols {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   gap: 20px;
 }
