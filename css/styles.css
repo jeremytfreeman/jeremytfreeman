@@ -211,6 +211,7 @@ header {
   margin-right: 24px;
 }
 
+
 .send-icon path {
   fill: var(--primaryColor);
   transition: 300ms;
@@ -259,9 +260,6 @@ header {
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
-
-
-
 
 
 send-tooltip {
