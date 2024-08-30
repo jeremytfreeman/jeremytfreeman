@@ -891,13 +891,14 @@ nav ul li a:hover {
   flex-direction: row;
   justify-content: space-between;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .exp-cols-item {
-  width: 50%;
+  flex-grow: 1;
 }
 
-
+/*
 @media screen and (max-width:520px) {
 
   .exp-cols {
@@ -910,7 +911,7 @@ nav ul li a:hover {
   }
 }
 
-
+*/
 
 
 /* FOOTER ------------------------*/
