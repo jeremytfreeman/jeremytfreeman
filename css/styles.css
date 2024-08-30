@@ -141,6 +141,14 @@ figcaption {
   letter-spacing: .12em;
 }
 
+.resumeButton {
+ transition: transform 0.3s;
+}
+
+.resumeButton:hover {
+  transform: scale(1.1);
+}
+
 .primary-btn:hover {
   background-color: var(--secondaryColor);
   transition: 500ms;
