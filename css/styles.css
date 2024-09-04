@@ -142,12 +142,14 @@ figcaption {
 }
 
 .resumeButton {
- transition: transform 0.3s;
+ transition: all 0.3s;
  width: 100%;
 }
 
 .resumeButton:hover {
   transform: scale(1.125);
+  font-size: 18px;
+  transition: all .3s;
 }
 
 .primary-btn:hover {
