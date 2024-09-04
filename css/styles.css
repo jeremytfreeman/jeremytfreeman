@@ -150,6 +150,7 @@ figcaption {
   transform: scale(1.125);
   font-size: 18px;
   transition: all .3s;
+  letter-spacing: normal;
 }
 
 .primary-btn:hover {
