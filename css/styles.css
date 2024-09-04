@@ -179,12 +179,12 @@ figcaption {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 2.8fr;
+  grid-template-columns: 1fr 8fr;
   /*grid-template-columns: 232px 1fr;  */
   grid-template-areas:
     "hd hd"
     "lft rgt";
-  justify-content: left;
+
 }
 
 
@@ -329,12 +329,12 @@ send-tooltip {
 /* Nav styles ------------------------*/
 
 nav {
-  grid-column: lft;
-  align-items: center;
+  grid-area: lft;
+  justify-self: start;
   position: sticky;
   top: 0;
   margin-top: 60px;
-  margin-right: 100px;
+  margin-right: 0px;
   z-index: 99;
   /* border: #84f2f8 dashed 1px; */
   text-align: right;
@@ -415,7 +415,7 @@ nav ul li a:hover {
   }
 
   nav {
-    grid-column: hd;
+    grid-area: hd;
     margin-top: -40px;
     position: static;
     text-align: left;
@@ -478,7 +478,8 @@ nav ul li a:hover {
 /* PAGE STRUCTURE STYLES ------------------------*/
 
 .content-wrapper {
-  grid-template-areas: rgt;
+  grid-area: rgt;
+  justify-self: center;
   max-width: 900px;
   padding-top: 0px;
   text-align: left;
@@ -495,7 +496,6 @@ nav ul li a:hover {
     margin-left: 16px;
     margin-right: 16px;
   }
-
 }
 
 /* HOMEPAGE HERO AREA ------------------------*/
