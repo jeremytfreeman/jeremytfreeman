@@ -143,10 +143,11 @@ figcaption {
 
 .resumeButton {
  transition: transform 0.3s;
+ width: 100%;
 }
 
 .resumeButton:hover {
-  transform: scale(1.1);
+  transform: scale(1.125);
 }
 
 .primary-btn:hover {
@@ -178,7 +179,8 @@ figcaption {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 232px 1fr;
+  grid-template-columns: 1fr 2.8fr;
+  /*grid-template-columns: 232px 1fr;  */
   grid-template-areas:
     "hd hd"
     "lft rgt";
