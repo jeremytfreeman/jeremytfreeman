@@ -41,3 +41,15 @@ function toggleScroll() {
   pageBody.classList.toggle("stopScroll");
   pageBody.classList.toggle("bodyFixed");
 }
+
+//Close menu when clicking work link in main nav 
+//get work nav element:
+const workNavElement = document.getElementById("work-nav");
+
+//Listener for clicking of "Work" link:
+workNavElement.addEventListener("click", closeMenu);
+
+function closeMenu() {
+  menuCheckButton.checked = false;
+  toggleScroll();
+}
