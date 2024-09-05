@@ -192,22 +192,25 @@ figcaption {
 
 
 
-
 /* Header Styles ------------------------*/
 header {
-  grid-column: hd;
+  grid-area: hd;
   display: flex;
   justify-content: space-between;
   padding-right: 24px;
   padding-top: 24px;
-  padding-bottom: 20px;
-  /*border: pink dashed 1px;*/
+  /*border: pink dashed 1px; */
 }
 
 .jtf-logo {
   margin-left: 100px;
   width: 24px;
   padding-top: 90px;
+}
+
+#jtf-logo-scroll {
+  margin-top: 40px;
+  margin-right: 20px;
 }
 
 
@@ -302,30 +305,43 @@ send-tooltip {
     grid-template-areas:
       "hd"
       "rgt";
-    justify-content: left;
+    justify-content: start;
+    align-items: start;
   }
 
   header {
-    grid-column: hd;
+    grid-area: hd;
     display: flex;
+    height: 40px;
     justify-content: space-between;
-    padding-bottom: 8px;
-    padding-top: 8px;
-    padding-right: 8px;
+    padding-top: 0px;
+    padding-right: 0px;
+    margin-bottom: 0px;
+    /*border: solid 1px pink; */
+  }
+
+  #send-icon {
+    margin-top: 0px;
+    margin-right: 8px;
+  }
+
+  nav {
+    grid-area: hd;
   }
 
   .jtf-logo {
-    margin-left: 16px;
+    margin-left: 44px;
     width: 24px;
     padding-top: 8px;
   }
 
-  #send-icon {
+  .send-tooltip {
     margin-top: 8px;
     margin-right: 8px;
   }
 
 }
+
 
 
 
@@ -419,16 +435,16 @@ nav ul li a:hover {
 
   nav {
     grid-area: hd;
-    margin-top: -40px;
+    margin-top: 8px;
     position: static;
     text-align: left;
-    margin-left: 60px;
+    margin-left: 12px;
     /*border: #EC9C28 dashed 1px; */
   }
 
   nav ul {
     position: fixed;
-    top: 40px;
+    top: 20px;
     right: -100%;
     background-color: var(--primaryColor);
     width: 100%;
@@ -495,7 +511,7 @@ nav ul li a:hover {
 @media screen and (max-width: 860px) {
   .content-wrapper {
     padding-top: 0px;
-    margin-top: 16px;
+    margin-top: 8px;
     margin-left: 16px;
     margin-right: 16px;
   }
@@ -550,7 +566,6 @@ nav ul li a:hover {
 }
 
 
-
 @media screen and (max-width: 860px) {
   h1 {
     font-size: 2.8rem;
@@ -565,7 +580,6 @@ nav ul li a:hover {
   }
 }
 
-
 #text-box {
   text-align: left;
 }
@@ -574,8 +588,6 @@ nav ul li a:hover {
   margin: auto;
   padding: 16px;
 }
-
-
 
 #section-2 {
   padding-top: 20px;
