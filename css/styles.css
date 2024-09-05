@@ -31,7 +31,6 @@ html,
 body {
   height: 100%;
   max-height: none;
-  overflow-y: auto;
 }
 
 body {
@@ -361,16 +360,16 @@ send-tooltip {
 /* Nav styles ------------------------*/
 
 nav {
-  grid-area: lft;
-  justify-self: start;
   position: sticky;
-  top: 0;
+  top: 24px;
+  grid-area: lft;
+  align-self:self-start;
   margin-top: 60px;
   margin-right: 0px;
   z-index: 99;
   /* border: #84f2f8 dashed 1px; */
   text-align: right;
-  height: fit-content;
+  height: auto;
 }
 
 
@@ -435,7 +434,6 @@ nav ul li a:hover {
 
 body, html {
   max-height: none;
-  overflow-y: auto;
 }
 
 /*toggle body scroll when menu is open */
@@ -530,6 +528,7 @@ body, html {
 .content-wrapper {
   grid-area: rgt;
   justify-self: center;
+  align-self: start;
   max-width: 900px;
   padding-top: 0px;
   text-align: left;
