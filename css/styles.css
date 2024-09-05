@@ -9,6 +9,11 @@
 
 }
 
+/* stops scroll for mobile menu */
+.stopScroll {
+  max-height: 100%;
+  overflow-y: hidden;
+}
 
 html {
   scroll-behavior: smooth;
@@ -437,11 +442,6 @@ body, html {
 #check:not(:checked)~html {
   max-height: none;
   overflow-y: scroll;
-}
-
-.stopScroll {
-  max-height: 100%;
-  overflow-y: hidden;
 }
 
 
