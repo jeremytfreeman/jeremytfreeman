@@ -14,7 +14,7 @@
   max-height: 100%;
   overflow-y: hidden;
 }
-
+/* stops body from scrolling on mobile devices */
 .bodyFixed {
   position: fixed;
 }
