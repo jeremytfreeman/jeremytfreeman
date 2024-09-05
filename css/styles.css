@@ -13,7 +13,13 @@
 .stopScroll {
   max-height: 100%;
   overflow-y: hidden;
+  position: relative;
 }
+
+.stopScroll, body {
+  
+}
+
 
 html {
   scroll-behavior: smooth;
