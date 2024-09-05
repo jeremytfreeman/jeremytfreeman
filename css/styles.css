@@ -285,6 +285,7 @@ send-tooltip {
   position: relative;
   display: inline-block;
   width: 24px;
+  z-index: 99;
 }
 
 .send-tooltip .send-tooltiptext {
@@ -366,7 +367,7 @@ nav {
   align-self:self-start;
   margin-top: 60px;
   margin-right: 0px;
-  z-index: 99;
+  z-index: 98;
   /* border: #84f2f8 dashed 1px; */
   text-align: right;
   height: auto;
@@ -463,12 +464,13 @@ body, html {
   }
 
   nav {
-    grid-area: hd;
+    grid-area: hd; 
     margin-top: 8px;
     position: static;
     text-align: left;
     margin-left: 12px;
-    /*border: #EC9C28 dashed 1px; */
+    width: 24px;
+    /* border: #EC9C28 dashed 1px; */
   }
 
   nav ul {
