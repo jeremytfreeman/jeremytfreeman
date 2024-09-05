@@ -341,8 +341,9 @@ send-tooltip {
     grid-area: hd;
   }
 
+
   .jtf-logo {
-    margin-left: 44px;
+    margin-left: 48px;
     width: 24px;
     padding-top: 8px;
   }
