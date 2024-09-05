@@ -24,3 +24,20 @@ let mybutton = document.getElementById("topBtn");
 window.onscroll = function () { scrollFunction() };
 //Event listener to scroll page to top on click
 mybutton.addEventListener("click", topFunction);
+
+
+//Toggle page scollable when mobile navigation menu is open:
+//get the check button and html elements
+const menuCheckButton = document.getElementById("check");
+const pageBody = document.querySelector("body");
+const pageHTML = document.querySelector("html");
+
+//Listen for change event
+menuCheckButton.addEventListener("change", toggleScroll); 
+
+//Function to toggle scroll
+function toggleScroll() {
+  //toggle class to stop scrolling  on the body and html elements
+  pageBody.classList.toggle("stopScroll");
+  pageHTML.classList.toggle("stopScroll");
+}

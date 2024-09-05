@@ -20,6 +20,8 @@ html {
 html,
 body {
   height: 100%;
+  max-height: none;
+  overflow-y: auto;
 }
 
 body {
@@ -419,6 +421,29 @@ nav ul li a:hover {
 #check:checked~ul {
   right: 0;
 }
+
+body, html {
+  max-height: none;
+  overflow-y: auto;
+}
+
+/*toggle body scroll when menu is open */
+
+#check:checked:has(> body) {
+  max-height: 100%;
+  overflow-y: hidden;
+}
+
+#check:not(:checked)~html {
+  max-height: none;
+  overflow-y: scroll;
+}
+
+.stopScroll {
+  max-height: 100%;
+  overflow-y: hidden;
+}
+
 
 .checkbtn:hover {
   color: var(--secondaryColor) !important;
