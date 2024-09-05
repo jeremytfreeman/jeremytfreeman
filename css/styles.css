@@ -13,11 +13,10 @@
 .stopScroll {
   max-height: 100%;
   overflow-y: hidden;
-  position: relative;
 }
 
-.stopScroll, body {
-  
+.bodyFixed {
+  position: fixed;
 }
 
 

@@ -39,4 +39,5 @@ function toggleScroll() {
   //toggle class to stop scrolling  on the body and html elements
   pageHTML.classList.toggle("stopScroll");
   pageBody.classList.toggle("stopScroll");
+  pageBody.classList.toggle("bodyFixed");
 }
