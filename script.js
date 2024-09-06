@@ -73,8 +73,6 @@ function updateWindowSize() {
   } else {}
 }
 
-
-
 window.addEventListener('resize', updateWindowSize);
 
 
