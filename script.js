@@ -58,8 +58,11 @@ workNavElement.addEventListener("click", closeMenu);
 //Close mobile nav menu when window is > 860px
 function updateWindowSize() {
   const width = window.innerWidth;
-  if (width > 860) {
+  if (width > 860 && menuCheckButton.checked == true) {
+    console.log(menuCheckButton.checked)
     menuCheckButton.checked = false;
+    toggleScroll();
+
   }
 }
 
