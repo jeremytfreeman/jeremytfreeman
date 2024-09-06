@@ -91,9 +91,6 @@ h1 {
     color: var(--tertiaryColor);
     transform: scale(1.08);
 	}
-  50% {
-    color: var(--secondaryColor);
-	}
 	100% {
 		color: var(--primaryColor);
     transform: scale(1);
@@ -123,8 +120,6 @@ h2 {
 	}
 }
 
-
-
 h3 {
   font-size: 2.8rem;
   font-weight: lighter;
@@ -134,7 +129,7 @@ h3 {
   animation-duration: 1s;
   animation-fill-mode: backwards;
   animation-timing-function: cubic-bezier();
-  transform-origin: right;
+  transform-origin: left;
 }
 
 
@@ -142,9 +137,6 @@ h3 {
 	0% {
     color: var(--tertiaryColor);
     transform: scale(1.08);
-	}
-  50% {
-    color: var(--secondaryColor);
 	}
 	100% {
 		color: var(--primaryColor);
@@ -156,6 +148,23 @@ h4 {
   font-size: 2.4rem;
   font-weight: lighter;
   line-height: 140%;
+  animation: h4Animation;
+  animation-delay: 0.1s;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
+  animation-timing-function: cubic-bezier();
+  transform-origin: left;
+}
+
+@keyframes h4Animation {
+	0% {
+    color: var(--tertiaryColor);
+    transform: scale(1.08);
+	}
+	100% {
+		color: var(--primaryColor);
+    transform: scale(1);
+	}
 }
 
 h5 {

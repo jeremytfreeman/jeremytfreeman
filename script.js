@@ -53,21 +53,29 @@ const workNavElement = document.getElementById("work-nav");
 
 //Function to close menu and call to toggle the stop scroll
 function closeMenu() {
-  menuCheckButton.checked = false;
-  toggleScroll();
+  if (menuCheckButton.checked == true) {
+   toggleScroll();
+    menuCheckButton.checked = false;
+  }
 }
+
 //Listener for clicking of "Work" link:
 workNavElement.addEventListener("click", closeMenu);
+
 
 //Close mobile nav menu when window is > 860px
 function updateWindowSize() {
   const width = window.innerWidth;
   if (width > 860 && menuCheckButton.checked == true) {
+    console.log(menuCheckButton);
     menuCheckButton.checked = false;
     //remove stopScroll and bodyFixed classes
     toggleScroll();
-  }
+    console.log(menuCheckButton.checked);
+  } else {}
 }
+
+
 
 window.addEventListener('resize', updateWindowSize);
 
