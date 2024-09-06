@@ -55,7 +55,7 @@ const workNavElement = document.getElementById("work-nav");
 function closeMenu() {
   if (menuCheckButton.checked == true) {
    toggleScroll();
-    menuCheckButton.checked = false;
+   menuCheckButton.checked = false;
   }
 }
 
@@ -67,11 +67,9 @@ workNavElement.addEventListener("click", closeMenu);
 function updateWindowSize() {
   const width = window.innerWidth;
   if (width > 860 && menuCheckButton.checked == true) {
-    console.log(menuCheckButton);
     menuCheckButton.checked = false;
     //remove stopScroll and bodyFixed classes
     toggleScroll();
-    console.log(menuCheckButton.checked);
   } else {}
 }
 
