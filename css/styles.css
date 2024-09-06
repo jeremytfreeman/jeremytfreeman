@@ -56,10 +56,14 @@ body {
 @keyframes fadeInPage {
 	0% {
     opacity: 0%;
+    /*transform:skew(5deg, 2deg);
+    transform-origin: right;  */
 		
 	}
 	100% {
 		opacity: 100%;
+    /*transform: scale(1);
+    transform-origin: top; */
 	}
 }
 
@@ -75,18 +79,77 @@ h1 {
   font-style: normal;
   margin-top: 0px;
   margin-bottom: 0px;
+  animation: h1Animation;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
+  animation-timing-function: cubic-bezier();
+  transform-origin: left;
 }
+
+@keyframes h1Animation {
+	0% {
+    color: var(--tertiaryColor);
+    transform: scale(1.08);
+	}
+  50% {
+    color: var(--secondaryColor);
+	}
+	100% {
+		color: var(--primaryColor);
+    transform: scale(1);
+	}
+}
+
 
 h2 {
-  font-size: 3.6rem;
+  font-size: 3.2rem;
   font-weight: lighter;
   margin-bottom: 0px;
+  animation: h2Animation;
+  animation-delay: 0s;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
+  animation-timing-function: cubic-bezier();
+  transform-origin: left;
 }
 
+@keyframes h2Animation {
+	0% {
+    color: var(--tertiaryColor);
+    transform: scale(1.08);
+	}
+	100% {
+    transform: scale(1);
+	}
+}
+
+
+
 h3 {
-  font-size: 3.1rem;
+  font-size: 2.8rem;
   font-weight: lighter;
   margin-bottom: 0px;
+  animation: h3Animation;
+  animation-delay: 0.1s;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
+  animation-timing-function: cubic-bezier();
+  transform-origin: right;
+}
+
+
+@keyframes h3Animation {
+	0% {
+    color: var(--tertiaryColor);
+    transform: scale(1.08);
+	}
+  50% {
+    color: var(--secondaryColor);
+	}
+	100% {
+		color: var(--primaryColor);
+    transform: scale(1);
+	}
 }
 
 h4 {
@@ -107,6 +170,24 @@ h6 {
   margin-bottom: 0px;
 }
 
+p {
+  animation: pAnimation;
+  animation-delay: 0.1s;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
+  animation-timing-function: cubic-bezier();
+  transform-origin: bottom;
+}
+
+
+@keyframes pAnimation {
+	0% {
+    transform: scale(1.08);
+	}
+	100% {
+    transform: scale(1);
+	}
+}
 
 .hdline-light {
   color: #8FBCBB;
