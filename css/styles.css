@@ -35,7 +35,7 @@ body {
 
 body {
   background-color: #ffffff;
-  color: var(--primaryColor);
+  color: var(--Color);
   text-align: left;
   font-size: 1.6rem;
   font-family: Helvetica, Arial, sans-serif;
@@ -46,6 +46,23 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+
+body {
+  animation: fadeInPage;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier();
+}
+
+@keyframes fadeInPage {
+	0% {
+    opacity: 0%;
+		
+	}
+	100% {
+		opacity: 100%;
+	}
+}
+
 
 p {
   line-height: 180%;
@@ -418,7 +435,7 @@ nav ul li {
 nav ul li:hover {
   border-left: solid 12px var(--secondaryColor);
   transition: border 0.3s 0.1s, transform .2s;
-  transform: scale(1.1);
+  transform: scale(1.05);
   transform-origin: left;
 }
 
@@ -426,19 +443,18 @@ nav ul li a {
   color: var(--actionColor);
   text-decoration: none;
   transition: color 0.3s;
-
-
 }
 
 nav ul li a:hover {
   color: var(--secondaryColor);
   text-decoration: none;
-  
 }
+
 
 .current a {
   color: var(--secondaryColor);
   text-decoration: none;
+  margin-left: 12px;
 }
 
 .checkbtn {
