@@ -416,8 +416,10 @@ nav ul li {
 }
 
 nav ul li:hover {
-  border-left: solid 24px var(--secondaryColor);
-  transition: border 0.3s;
+  border-left: solid 12px var(--secondaryColor);
+  transition: border 0.3s 0.1s, transform .2s;
+  transform: scale(1.1);
+  transform-origin: left;
 }
 
 nav ul li a {
