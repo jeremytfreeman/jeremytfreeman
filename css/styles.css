@@ -326,7 +326,7 @@ send-tooltip {
     display: flex;
     height: 40px;
     justify-content: space-between;
-    padding-top: 0px;
+    padding-top: 16px;
     padding-right: 0px;
     margin-bottom: 0px;
     /*border: solid 1px pink; */
@@ -465,7 +465,7 @@ body, html {
 
   nav {
     grid-area: hd; 
-    margin-top: 8px;
+    margin-top: 24px;
     position: static;
     text-align: left;
     margin-left: 12px;
@@ -475,7 +475,7 @@ body, html {
 
   nav ul {
     position: fixed;
-    top: 20px;
+    top: 36px;
     right: -100%;
     background-color: var(--primaryColor);
     width: 100%;
