@@ -220,8 +220,10 @@ header {
 }
 
 #jtf-logo-scroll {
-  margin-top: 40px;
-  margin-right: 20px;
+  margin-top: 48px;
+  margin-right: 54px;
+  display: none;
+  transition: all 0.3s;
 }
 
 
@@ -368,9 +370,9 @@ nav {
   margin-top: 60px;
   margin-right: 0px;
   z-index: 98;
-  /* border: #84f2f8 dashed 1px; */
+  /*border: #84f2f8 dashed 1px;  */
   text-align: right;
-  height: auto;
+  height: fit-content;
 }
 
 

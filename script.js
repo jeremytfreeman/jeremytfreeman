@@ -17,10 +17,14 @@ function topFunction() {
 }
 
 // Get the back to top button
-let mybutton = document.getElementById("topBtn");
+const mybutton = document.getElementById("topBtn");
+
+
 // When the user scrolls down 20px from the top of the document, show the back to top button
 window.onscroll = function () {
   scrollFunction();
+  //call show scroll logo
+  showScrollLogo();
 };
 //Event listener to scroll page to top on click
 mybutton.addEventListener("click", topFunction);
@@ -67,5 +71,16 @@ function updateWindowSize() {
 
 window.addEventListener('resize', updateWindowSize);
 
-
 // Display logo under nav when page scrolled down
+
+const scrollLogo = document.getElementById("jtf-logo-scroll");
+
+function showScrollLogo() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    scrollLogo.style.display = "block";
+  } else {
+    //else hide button
+   scrollLogo.style.display = "none";
+  }
+}
+
