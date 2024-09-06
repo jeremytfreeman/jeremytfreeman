@@ -61,8 +61,8 @@ function updateWindowSize() {
   if (width > 860 && menuCheckButton.checked == true) {
     console.log(menuCheckButton.checked)
     menuCheckButton.checked = false;
+    //remove stopScroll and bodyFixed classes
     toggleScroll();
-
   }
 }
 
