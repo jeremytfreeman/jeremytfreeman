@@ -51,7 +51,7 @@ function toggleScroll() {
 //Get work nav element:
 const workNavElement = document.getElementById("work-nav");
 
-//Function to close menu and call to toggle the stop scrolling behavior:
+//Function to close menu and call to toggle the stop scroll
 function closeMenu() {
   menuCheckButton.checked = false;
   toggleScroll();
@@ -71,16 +71,18 @@ function updateWindowSize() {
 
 window.addEventListener('resize', updateWindowSize);
 
+
 // Display logo under nav when page scrolled down
 
 const scrollLogo = document.getElementById("jtf-logo-scroll");
 
 function showScrollLogo() {
   if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-    scrollLogo.style.display = "block";
+    scrollLogo.classList.remove("logo-scroll-hide");
+    scrollLogo.classList.add("logo-scroll-show");
+
   } else {
     //else hide button
-   scrollLogo.style.display = "none";
+   scrollLogo.classList.add("logo-scroll-hide");
   }
 }
-

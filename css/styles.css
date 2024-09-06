@@ -221,17 +221,36 @@ header {
 
 #jtf-logo-scroll {
   margin-top: 48px;
-  margin-right: 54px;
-  display: none;
-  transition: all 0.3s;
+  margin-right: 60px;
 }
 
+/* show and fade in logo on scroll */
+.logo-scroll-show {
+  display: block;
+  opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: .7s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.logo-scroll-hide {
+  display: none;
+}
 
 #send-icon {
   margin-top: 24px;
   margin-right: 24px;
 }
-
 
 .send-icon path {
   fill: var(--primaryColor);
