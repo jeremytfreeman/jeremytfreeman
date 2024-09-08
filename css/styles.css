@@ -221,7 +221,14 @@ ul {
   margin-bottom: 32px;
   margin-left: 0px;
   padding-left: 24px;
+  animation: pAnimation;
+  animation-delay: 0.1s;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
+  animation-timing-function: cubic-bezier();
+  transform-origin: left;
 }
+
 
 li {
   line-height: 160%;
