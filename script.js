@@ -41,7 +41,7 @@ menuCheckButton.addEventListener("change", toggleScroll);
 
 //Function to toggle scrollability of page:
 function toggleScroll() {
-  //Toggle class to stop scrolling when menu is open
+  //Toggle css class to stop scrolling when menu is open
   pageHTML.classList.toggle("stopScroll");
   pageBody.classList.toggle("stopScroll");
   pageBody.classList.toggle("bodyFixed");
