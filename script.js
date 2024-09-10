@@ -1,4 +1,7 @@
-//----------Back to top button functions----------
+//----------Back to top button mechanisms----------/
+
+//Get the back to top button
+const mybutton = document.getElementById("topBtn");
 
 //Display button when scrolled
 function scrollFunction() {
@@ -16,19 +19,17 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-// Get the back to top button
-const mybutton = document.getElementById("topBtn");
-
 // When the user scrolls down 20px from the top of the document, show the back to top button
 window.onscroll = function () {
   scrollFunction();
   //call show scroll logo
   showScrollLogo();
 };
+
 //Event listener to scroll page to top on click
 mybutton.addEventListener("click", topFunction);
 
-//----------Nav menu enhancements ----------
+//----------Nav menu mechanisms  ----------/
 
 //Get DOM elements
 const menuCheckButton = document.getElementById("check");
@@ -38,7 +39,7 @@ const menuIconSpan = document.getElementById("menu-icon");
 const workNavElement = document.getElementById("work-nav");
 
 
-//Function to toggle scrollability of page:
+//Toggle scrollability of page:
 function toggleScroll() {
   //Toggle css class to stop scrolling when menu is open
   pageHTML.classList.toggle("stopScroll");
@@ -62,7 +63,7 @@ function openCloseMenu() {
 } 
 
 
-//Function to close menu and call to toggle the stop scroll
+//Close menu and call to toggle the stop scroll
 function closeMenu() {
   if (menuCheckButton.checked == true) {
     toggleScroll();
@@ -91,8 +92,7 @@ window.addEventListener("resize", updateWindowSize);
 workNavElement.addEventListener("click", closeMenu);
 
 
-
-// Display logo under nav when page scrolled down
+//Display logo under nav when page scrolled down
 
 const scrollLogo = document.getElementById("jtf-logo-scroll");
 
@@ -108,4 +108,3 @@ function showScrollLogo() {
     scrollLogo.classList.add("logo-scroll-hide");
   }
 }
-
