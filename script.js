@@ -55,7 +55,7 @@ function changMenuIcon() {
   }
 }
 
-//Call changeMenu and toggleScroll
+//Call changeMenuIcon and toggleScroll
 function openCloseMenu() {
   changMenuIcon();
   toggleScroll();
