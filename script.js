@@ -38,7 +38,6 @@ const pageHTML = document.querySelector("html");
 const menuIconSpan = document.getElementById("menu-icon");
 const workNavElement = document.getElementById("work-nav");
 
-
 //Toggle scrollability of page:
 function toggleScroll() {
   //Toggle css class to stop scrolling when menu is open
@@ -60,8 +59,7 @@ function changMenuIcon() {
 function openCloseMenu() {
   changMenuIcon();
   toggleScroll();
-} 
-
+}
 
 //Close menu and call to toggle the stop scroll
 function closeMenu() {
@@ -72,7 +70,6 @@ function closeMenu() {
   }
 }
 
-
 //Close mobile nav menu when window is > 860px
 function updateWindowSize() {
   const width = window.innerWidth;
@@ -81,18 +78,18 @@ function updateWindowSize() {
     menuIconSpan.innerHTML = "menu";
     //remove stopScroll and bodyFixed classes
     toggleScroll();
-  } else {
   }
 }
 
-//Listen for change events
+//Listen for menu open
 menuCheckButton.addEventListener("change", openCloseMenu);
+//Listen for window resize
 window.addEventListener("resize", updateWindowSize);
 //Listener for clicking of "Work" link:
 workNavElement.addEventListener("click", closeMenu);
 
 
-//Display logo under nav when page scrolled down
+//----------Display logo under nav when page scrolled down----------/
 
 const scrollLogo = document.getElementById("jtf-logo-scroll");
 
