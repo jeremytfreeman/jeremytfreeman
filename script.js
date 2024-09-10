@@ -28,16 +28,15 @@ window.onscroll = function () {
 //Event listener to scroll page to top on click
 mybutton.addEventListener("click", topFunction);
 
-
 //----------Nav menu enhancements ----------
 
-//Get the check button and html elements
+//Get DOM elements
 const menuCheckButton = document.getElementById("check");
 const pageBody = document.querySelector("body");
 const pageHTML = document.querySelector("html");
+const menuIconSpan = document.getElementById("menu-icon");
+const workNavElement = document.getElementById("work-nav");
 
-//Listen for change event
-menuCheckButton.addEventListener("change", toggleScroll);
 
 //Function to toggle scrollability of page:
 function toggleScroll() {
@@ -47,20 +46,30 @@ function toggleScroll() {
   pageBody.classList.toggle("bodyFixed");
 }
 
-//Close menu when clicking work link in main nav:
-//Get work nav element:
-const workNavElement = document.getElementById("work-nav");
+//Change icon when memu is opened
+function changMenuIcon() {
+  if (menuIconSpan.innerText === "menu") {
+    menuIconSpan.innerHTML = "close";
+  } else if (menuIconSpan.innerText === "close") {
+    menuIconSpan.innerHTML = "menu";
+  }
+}
+
+//Call changeMenu and toggleScroll
+function openCloseMenu() {
+  changMenuIcon();
+  toggleScroll();
+} 
+
 
 //Function to close menu and call to toggle the stop scroll
 function closeMenu() {
   if (menuCheckButton.checked == true) {
-   toggleScroll();
-   menuCheckButton.checked = false;
+    toggleScroll();
+    menuCheckButton.checked = false;
+    menuIconSpan.innerHTML = "menu";
   }
 }
-
-//Listener for clicking of "Work" link:
-workNavElement.addEventListener("click", closeMenu);
 
 
 //Close mobile nav menu when window is > 860px
@@ -68,12 +77,19 @@ function updateWindowSize() {
   const width = window.innerWidth;
   if (width > 860 && menuCheckButton.checked == true) {
     menuCheckButton.checked = false;
+    menuIconSpan.innerHTML = "menu";
     //remove stopScroll and bodyFixed classes
     toggleScroll();
-  } else {}
+  } else {
+  }
 }
 
-window.addEventListener('resize', updateWindowSize);
+//Listen for change events
+menuCheckButton.addEventListener("change", openCloseMenu);
+window.addEventListener("resize", updateWindowSize);
+//Listener for clicking of "Work" link:
+workNavElement.addEventListener("click", closeMenu);
+
 
 
 // Display logo under nav when page scrolled down
@@ -81,12 +97,15 @@ window.addEventListener('resize', updateWindowSize);
 const scrollLogo = document.getElementById("jtf-logo-scroll");
 
 function showScrollLogo() {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+  if (
+    document.body.scrollTop > 300 ||
+    document.documentElement.scrollTop > 300
+  ) {
     scrollLogo.classList.remove("logo-scroll-hide");
     scrollLogo.classList.add("logo-scroll-show");
-
   } else {
     //else hide button
-   scrollLogo.classList.add("logo-scroll-hide");
+    scrollLogo.classList.add("logo-scroll-hide");
   }
 }
+
