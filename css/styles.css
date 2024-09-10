@@ -300,6 +300,11 @@ figcaption {
   transition: 500ms;
 }
 
+.page-header {
+  padding-bottom: 12px;
+  border-bottom: solid 4px var(--primaryColor);
+}
+
 
 
 /* GRID STYLES ------------------------*/
