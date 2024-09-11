@@ -337,8 +337,9 @@ header {
 }
 
 #jtf-logo-scroll {
+  text-align: left;
   margin-top: 64px;
-  margin-right: 80px;
+  margin-left: 88px;
 }
 
 /* show and fade in logo on scroll */
