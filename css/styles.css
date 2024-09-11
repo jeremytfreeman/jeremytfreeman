@@ -19,7 +19,6 @@
   position: fixed;
 }
 
-
 html {
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -319,7 +318,6 @@ figcaption {
 }
 
 
-
 /* Header Styles ------------------------*/
 header {
   grid-area: hd;
@@ -339,7 +337,7 @@ header {
 #jtf-logo-scroll {
   text-align: left;
   margin-top: 64px;
-  margin-left: 88px;
+  padding-left: 100px;
 }
 
 /* show and fade in logo on scroll */
