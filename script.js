@@ -46,8 +46,9 @@ function toggleScroll() {
   pageBody.classList.toggle("bodyFixed");
 }
 
-//Change icon when memu is opened
+//Change google icon when memu is opened
 function changMenuIcon() {
+  //check google icon (icon is set within the span text)
   if (menuIconSpan.innerText === "menu") {
     menuIconSpan.innerHTML = "close";
   } else if (menuIconSpan.innerText === "close") {
@@ -73,8 +74,10 @@ function closeMenu() {
 //Close mobile nav menu when window is > 860px
 function updateWindowSize() {
   const width = window.innerWidth;
+  //check if window > 860px
   if (width > 860 && menuCheckButton.checked == true) {
     menuCheckButton.checked = false;
+    //set icon back to menu icon
     menuIconSpan.innerHTML = "menu";
     //remove stopScroll and bodyFixed classes
     toggleScroll();
