@@ -76,6 +76,7 @@ function updateWindowSize() {
   const width = window.innerWidth;
   //check if window > 860px
   if (width > 860 && menuCheckButton.checked == true) {
+    //close menu by unchecking input 
     menuCheckButton.checked = false;
     //set icon back to menu icon
     menuIconSpan.innerHTML = "menu";
