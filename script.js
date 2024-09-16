@@ -93,6 +93,8 @@ window.addEventListener("resize", updateWindowSize);
 workNavElement.addEventListener("click", closeMenu);
 
 
+
+/*
 //----------Display logo under nav when page scrolled down----------/
 
 const scrollLogo = document.getElementById("jtf-logo-scroll");
@@ -109,3 +111,5 @@ function showScrollLogo() {
     scrollLogo.classList.add("logo-scroll-hide");
   }
 }
+
+*/
