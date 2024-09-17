@@ -244,7 +244,7 @@ figure {
 figcaption {
   font-size: 1.2rem;
   font-style: italic;
-  color: var(--secondaryColor);
+  color: #6B654B;
   margin-top: 4px;
   text-align: right;
 }
