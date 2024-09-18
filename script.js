@@ -111,5 +111,4 @@ function showScrollLogo() {
     scrollLogo.classList.add("logo-scroll-hide");
   }
 }
-
 */
