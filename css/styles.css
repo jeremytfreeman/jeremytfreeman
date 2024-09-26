@@ -1,12 +1,10 @@
 :root {
-
   /* define color variables used throughout the site */
   --primaryColor: #181D28;
   --secondaryColor: #BEA25A;
   --tertiaryColor: #6679A3;
   --actionColor: #6679A3;
   --lightBackground: #F2F4F7;
-
 }
 
 /* stops scroll for mobile menu */
@@ -66,7 +64,6 @@ body {
 	}
 }
 
-
 p {
   line-height: 180%;
 }
@@ -95,7 +92,6 @@ h1 {
     transform: scale(1);
 	}
 }
-
 
 h2 {
   font-size: 3.2rem;
@@ -215,7 +211,6 @@ a:hover {
   color: var(--secondaryColor);
 }
 
-
 ul {
   margin-bottom: 32px;
   margin-left: 0px;
@@ -228,18 +223,15 @@ ul {
   transform-origin: left;
 }
 
-
 li {
   line-height: 160%;
   margin-bottom: 8px;
   padding-left: 8px;
 }
 
-
 figure {
   margin: 0px 0px 60px 0px;
 }
-
 
 figcaption {
   font-size: 1.2rem;
@@ -315,7 +307,6 @@ figcaption {
   grid-template-areas:
     "hd hd"
     "lft rgt";
-
 }
 
 
