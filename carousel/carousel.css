@@ -46,7 +46,8 @@
   .carousel-inner {
     overflow: hidden;
     position: relative;
-    min-height: var(--carousel-height);
+    aspect-ratio: 2386/ 1534;
+    /*min-height: var(--carousel-height); */
     border-radius: var(--carousel-radius);
   }
 
@@ -114,6 +115,7 @@
   
   .slide img {
     width: 100%;
+    height: auto;
     object-fit: cover;
     border: solid 10px lightgray;
   }

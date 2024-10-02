@@ -111,7 +111,7 @@ const JSCarousel = ({
         class: "carousel-btn carousel-btn--prev-next carousel-btn--prev",
         "aria-label": "Previous Slide",
       },
-      "\u25C0\ufe0e"
+      "\u25C0\ufe0e" //unicode character requires trailing variant selecto (after second \u) to ensure an emoji isn't displayed on some mobile browsers
     );
     carouselInner.appendChild(prevBtn);
 
