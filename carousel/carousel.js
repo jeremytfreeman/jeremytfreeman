@@ -122,7 +122,7 @@ const JSCarousel = ({
         class: "carousel-btn carousel-btn--prev-next carousel-btn--next",
         "aria-label": "Next Slide",
       },
-      "\u25B6"
+      "\u25B6\ufe0e"
     );
     carouselInner.appendChild(nextBtn);
 
