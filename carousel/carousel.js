@@ -111,7 +111,7 @@ const JSCarousel = ({
         class: "carousel-btn carousel-btn--prev-next carousel-btn--prev",
         "aria-label": "Previous Slide",
       },
-      "\u25C0"
+      "\u25C0\ufe0e"
     );
     carouselInner.appendChild(prevBtn);
 
