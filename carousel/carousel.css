@@ -1,0 +1,191 @@
+:root {
+    --carousel-height: 550px;
+    --carousel-radius: 0.0em;
+    --carousel-nav-btn-dim: 3em;
+    --carousel-page-nav-btn-dim: 0.5em;
+    --carousel-caption-padding: 1rem;
+    --carousel-caption-color: #FFF;
+    --carousel-caption-bg: linear-gradient(
+      to bottom,
+      transparent,
+      hsl(0 0 0 / 65%) 80%
+    );
+    --carousel-inner-spacing: 0.0em;
+    --carousel-prev-next-btn-bg: #00000033;
+    --carousel-prev-next-btn-color: #ffffff;
+    --carousel-pagination-margin: 1em;
+    --carousel-pagination-gap: 0.75em;
+    --carousel-pagination-btn-bg: #CCD2E0;
+    --carousel-pagination-btn-active-bg: #BEA25A;
+  }
+  
+  /* Box-sizing reset */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font: 1em/160% sans-serif;
+    text-align: center;
+  }
+  
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+  }
+
+  .site-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
+  }
+  
+  .carousel-inner {
+    overflow: hidden;
+    position: relative;
+    min-height: var(--carousel-height);
+    border-radius: var(--carousel-radius);
+  }
+
+  .carousel-inner img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .carousel-title {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+  }
+  
+  .carousel-title + .carousel-description {
+    color: #888;
+    margin-top: 0;
+  }
+  
+  .slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 0.5s cubic-bezier(0.42, 0, 0.58, 1);
+  }
+  
+  .slide-content {
+    position: relative;
+    z-index: 5000;
+    height: 100%;
+  }
+  
+  .slide-caption {
+    width: 100%;
+    position: absolute;
+    padding: var(--carousel-caption-padding);
+    left: 0;
+    bottom: 0;
+    color: var(--carousel-caption-color);
+    background-color: #000000DD; 
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    /*background-image: var(--carousel-caption-bg);   */
+  }
+
+  .slide-caption-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .slide-caption a {
+    color: currentColor;
+  }
+  
+  .slide-caption h3,
+  .slide-caption p {
+    margin: 0;
+  }
+  
+  .slide-caption p {
+    font-size: 75%;
+    opacity: 0.6;
+  }
+  
+  .slide img {
+    width: 100%;
+    object-fit: cover;
+    border: solid 10px lightgray;
+  }
+  
+  .carousel-btn {
+    width: var(--carousel-nav-btn-dim);
+    height: var(--carousel-nav-btn-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    color: var(--carousel-prev-next-btn-color);
+    background-color: var(--carousel-prev-next-btn-bg);
+    
+  }
+  
+  .carousel-btn--prev-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.1s ease-in-out;
+
+  }
+  
+  .carousel-btn--prev-next:hover {
+    transform: translateY(-50%) scale(1.2);
+    background-color: #000000AA;
+  }
+  
+  .carousel-btn--prev {
+    left: var(--carousel-inner-spacing);
+    visibility: visible;
+  }
+  
+  .carousel-btn--next {
+    right: var(--carousel-inner-spacing);
+    visibility: visible;
+  }
+  
+  .carousel-pagination {
+    margin-top: var(--carousel-pagination-margin);
+    display: flex;
+    gap: var(--carousel-pagination-gap);
+    justify-content: center;
+    position: relative;
+  }
+  
+  .carousel-pagination .carousel-btn {
+    background-color: var(--carousel-pagination-btn-bg);
+    height: var(--carousel-page-nav-btn-dim);
+    width: var(--carousel-page-nav-btn-dim);
+    border-radius: 50%;
+    color: transparent;
+    transition: transform 0.25s, background-color 0.25s ease-in-out;
+  }
+  
+  .carousel-pagination .carousel-btn--active {
+    transform: scale(1.3);
+    background-color: var(--carousel-pagination-btn-active-bg);
+  }
+  
+
+  .playBtn {
+    background-color: white;
+    border-radius: 50%;
+    border: solid 1px whitesmoke;
+    height: 40px;
+    width: 40px;
+    color: gray;
+    position: absolute;
+    left: 0px;
+    top: 8px;
+  }

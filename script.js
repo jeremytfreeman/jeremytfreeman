@@ -62,7 +62,7 @@ function openCloseMenu() {
   toggleScroll();
 }
 
-//Close menu and call to toggle the stop scroll
+//Close menu and call to toggle the scroll stop
 function closeMenu() {
   if (menuCheckButton.checked == true) {
     toggleScroll();
@@ -76,7 +76,7 @@ function updateWindowSize() {
   const width = window.innerWidth;
   //check if window > 860px
   if (width > 860 && menuCheckButton.checked == true) {
-    //close menu by unchecking input 
+    //close menu by unchecking input
     menuCheckButton.checked = false;
     //set icon back to menu icon
     menuIconSpan.innerHTML = "menu";
@@ -91,8 +91,6 @@ menuCheckButton.addEventListener("change", openCloseMenu);
 window.addEventListener("resize", updateWindowSize);
 //Listener for clicking of "Work" link:
 workNavElement.addEventListener("click", closeMenu);
-
-
 
 /*
 //----------Display logo under nav when page scrolled down----------/
