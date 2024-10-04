@@ -3,7 +3,7 @@
     --carousel-radius: 0.0em;
     --carousel-nav-btn-dim: 3em;
     --carousel-page-nav-btn-dim: 0.5em;
-    --carousel-caption-padding: 1rem;
+    --carousel-caption-padding: 0.5rem;
     --carousel-caption-color: #FFF;
     --carousel-caption-bg: linear-gradient(
       to bottom,
@@ -46,7 +46,7 @@
   .carousel-inner {
     overflow: hidden;
     position: relative;
-    aspect-ratio: 2386/ 1534;
+    aspect-ratio: 1214/ 788;
     /*min-height: var(--carousel-height); */
     border-radius: var(--carousel-radius);
   }
