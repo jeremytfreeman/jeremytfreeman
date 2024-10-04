@@ -957,7 +957,7 @@ body, html {
 .img-box-gray {
   width: 100%;
   box-sizing: border-box;
-  border: var(--lightBackground) solid 20px;
+  border: #E6E9F0 solid 40px;
   background-color: var(--lightBackground);
   padding: 0px;
   margin-top: 20px;
