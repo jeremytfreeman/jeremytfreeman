@@ -90,8 +90,8 @@ const JSCarousel = ({
 
   const playPauseBtn = addElement(
     "button",
-    { class: "playBtn", id: "playBtn" },
-    "\u23F8"
+    { class: "playBtn-hidden", id: "playBtn" },
+    "\u23F8\ufe0e"
   );
 
   const tweakStructure = () => {
@@ -250,7 +250,7 @@ const JSCarousel = ({
     console.log("attach listeners");
     carousel.addEventListener("mouseenter", handleMouseEnter);
     carousel.addEventListener("mouseleave", handleMouseLeave);
-    playPauseBtn.style.visibility = "visible";
+    //playPauseBtn.style.visibility = "visible";
   } else {
     playPauseBtn.style.visibility = "hidden";
   }
@@ -334,6 +334,7 @@ const JSCarousel = ({
       prevBtn.style.visibility = "visible";
       nextBtn.style.visibility = "visible";
       playPauseBtn.classList.remove("playBtn-hidden");
+      playPauseBtn.classList.add("playBtn");
       //loop through captionElements to show
       for (let i = 0; i < captionElements.length; i++) {
         //console.log(captionElements[i]);
@@ -349,6 +350,12 @@ const JSCarousel = ({
       for (let i = 0; i < captionElements.length; i++) {
         captionElements[i].classList.add("slide-caption-hidden");
       }
+    });
+
+    carouselArea.addEventListener("touch", () => {
+      prevBtn.style.visibility = "hidden";
+      nextBtn.style.visibility = "hidden";
+      playPauseBtn.classList.add("playBtn-hidden");
     });
   };
 
