@@ -47,6 +47,7 @@
     overflow: hidden;
     position: relative;
     aspect-ratio: 1214/ 788;
+    display: flex;
     /*min-height: var(--carousel-height); */
     border-radius: var(--carousel-radius);
   }
@@ -71,7 +72,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    transition: transform 0.5s cubic-bezier(0.42, 0, 0.58, 1);
+    transition: transform 0.8s cubic-bezier(0.42, 0, 0.58, 1);
   }
   
   .slide-content {
@@ -181,13 +182,27 @@
   
 
   .playBtn {
-    background-color: white;
+    background-color: black;
     border-radius: 50%;
-    border: solid 1px whitesmoke;
-    height: 40px;
-    width: 40px;
-    color: gray;
-    position: absolute;
-    left: 0px;
-    top: 8px;
+    height: 2em;
+    width: 2em;
+    color: white;
+    opacity: .4;
+    font-size: 5em;
+    justify-self: center;
+    margin: auto;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    border: 0;
+  }
+
+  .playBtn-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .playBtn:active {
+
+    opacity: 70%;
+    background-color: black;
+    color: white;
   }

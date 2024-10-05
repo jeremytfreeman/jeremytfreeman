@@ -87,6 +87,13 @@ const JSCarousel = ({
    * Modify the DOM structure and add required containers and controls
    * to the carousel element.
    */
+
+  const playPauseBtn = addElement(
+    "button",
+    { class: "playBtn", id: "playBtn" },
+    "\u23F8"
+  );
+
   const tweakStructure = () => {
     carousel.setAttribute("tabindex", "0");
 
@@ -169,11 +176,90 @@ const JSCarousel = ({
     //Add play/pause button - JF
     //need if statement check autoplay enabled? or add parameter to constructor to include this button
     const nav = document.getElementById("pagination-nav");
-    console.log("nav = " + nav);
-    const playPauseBtn = addElement("button", { class: "playBtn" }, "\u25B6");
-    //add a play/pause button  to right or left of pagination
-    nav.appendChild(playPauseBtn);
+
+    //add event listener to button
+    playPauseBtn.addEventListener("click", handleplayPauseBtn);
+    //add play/pause button to the DOM
+    if (enableAutoplay == true) {
+      carouselInner.appendChild(playPauseBtn);
+    }
   };
+
+  //initialize variable to store if the carousel is playing
+  let isPlaying = false;
+  let userPaused = false;
+
+  function handleplayPauseBtn() {
+    console.log("play/ pause clicked");
+    if (userPaused == false) {
+      //stop the player and and remove hover events
+      stopAutoplay();
+      userPaused = true;
+      isPlaying = false;
+      console.log("user paused");
+      //remove mouse over event listeners
+      carousel.removeEventListener("mouseenter", handleMouseEnter);
+      carousel.removeEventListener("mouseleave", handleMouseLeave);
+      playPauseBtn.innerHTML = "\u25B6";
+    } else {
+      //restart the player and add back hover events
+      startAutoplay();
+      userPaused = false;
+      isPlaying = true;
+      console.log("user restart");
+      //add back in mouse over event listeners
+      carousel.addEventListener("mouseenter", handleMouseEnter);
+      carousel.addEventListener("mouseleave", handleMouseLeave);
+      playPauseBtn.innerHTML = "\u23F8";
+    }
+  }
+
+  // Function to Start autoplaying of slides.
+  const startAutoplay = () => {
+    if (isPlaying === false) {
+      autoplayTimer = setInterval(() => {
+        moveSlide("next");
+      }, autoplayInterval);
+      isPlaying = true;
+      console.log("Start");
+      console.log("isPlaying " + isPlaying);
+    }
+  };
+
+  // Function to stop autoplaying of slides.
+  const stopAutoplay = () => {
+    clearInterval(autoplayTimer);
+    isPlaying = false;
+    console.log("stop");
+    console.log("isPlaying? " + isPlaying);
+  };
+
+  /* Event handlers to manage autoplaying intelligentally on mouse
+   * enter and leave events.
+   */
+  const handleMouseEnter = () => {
+    if (isPlaying == true) {
+      stopAutoplay();
+      isPlaying = false;
+    }
+  };
+  const handleMouseLeave = () => startAutoplay();
+
+  //Checks for autoplay
+  if (enableAutoplay && autoplayInterval !== null) {
+    console.log("attach listeners");
+    carousel.addEventListener("mouseenter", handleMouseEnter);
+    carousel.addEventListener("mouseleave", handleMouseLeave);
+    playPauseBtn.style.visibility = "visible";
+  } else {
+    playPauseBtn.style.visibility = "hidden";
+  }
+
+  //protocode for play/pause button:
+  //add play/pause functionality to button to stop autoplay
+  //if paused - remove event listener for mouseleave starting autoplay
+  //if played - add event listener for starting autoplay
+  //need logic showing/hiding this button based on autopplay config
 
   // Adjust slide positions according to the currently selected slide.
   const adjustSlidePosition = () => {
@@ -229,22 +315,6 @@ const JSCarousel = ({
   const handlePrevBtnClick = () => moveSlide("prev");
   const handleNextBtnClick = () => moveSlide("next");
 
-  // Function to Start autoplaying of slides.
-  const startAutoplay = () => {
-    autoplayTimer = setInterval(() => {
-      moveSlide("next");
-    }, autoplayInterval);
-  };
-
-  // Function to Stop autoplaying of slides.
-  const stopAutoplay = () => clearInterval(autoplayTimer);
-
-  /* Event handlers to manage autoplaying intelligentally on mouse
-   * enter and leave events.
-   */
-  const handleMouseEnter = () => stopAutoplay();
-  const handleMouseLeave = () => startAutoplay();
-
   // Function to attach event listeners to relevant elements.
   const attachEventListeners = () => {
     prevBtn.addEventListener("click", handlePrevBtnClick);
@@ -263,26 +333,23 @@ const JSCarousel = ({
     carouselArea.addEventListener("mouseenter", () => {
       prevBtn.style.visibility = "visible";
       nextBtn.style.visibility = "visible";
+      playPauseBtn.classList.remove("playBtn-hidden");
       //loop through captionElements to show
       for (let i = 0; i < captionElements.length; i++) {
         //console.log(captionElements[i]);
         captionElements[i].classList.remove("slide-caption-hidden");
       }
     });
-    // Event listener to hide prev/next buttons - JF
+    // Event listener to hide prev/next buttons and pause button - JF
     carouselArea.addEventListener("mouseleave", () => {
       prevBtn.style.visibility = "hidden";
       nextBtn.style.visibility = "hidden";
+      playPauseBtn.classList.add("playBtn-hidden");
+
       for (let i = 0; i < captionElements.length; i++) {
         captionElements[i].classList.add("slide-caption-hidden");
       }
     });
-
-    //Checks for autoplay
-    if (enableAutoplay && autoplayInterval !== null) {
-      carousel.addEventListener("mouseenter", handleMouseEnter);
-      carousel.addEventListener("mouseleave", handleMouseLeave);
-    }
   };
 
   // Function to Initialize/create the carousel.
@@ -291,6 +358,7 @@ const JSCarousel = ({
     attachEventListeners();
     if (enableAutoplay && autoplayInterval !== null) {
       startAutoplay();
+      console.log("start playing");
     }
   };
 
@@ -313,6 +381,7 @@ const JSCarousel = ({
     if (enableAutoplay && autoplayInterval !== null) {
       carousel.removeEventListener("mouseenter", handleMouseEnter);
       carousel.removeEventListener("mouseleave", handleMouseLeave);
+      console.log("destroy");
       stopAutoplay();
     }
   };
@@ -324,11 +393,12 @@ const JSCarousel = ({
 const carousel1 = JSCarousel({
   carouselSelector: "#carousel-1",
   slideSelector: ".slide",
-  enableAutoplay: false,
+  enableAutoplay: true,
 });
 
 carousel1.create();
 
-window.addEventListener("unload", () => {
+window.addEventListener("beforeunload", () => {
+  //console.log("unload");
   carousel1.destroy();
 });

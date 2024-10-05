@@ -259,7 +259,7 @@ figcaption {
 .resumeButton {
  transition: all 0.3s;
  width: 100%;
- border-radius: 8px;
+ /* border-radius: 8px; */
 }
 
 .resumeButton:hover {
@@ -516,29 +516,36 @@ nav ul {
 nav ul li {
   font-size: 1.6rem;
   line-height: 4rem;
-  font-weight: 400;
-  padding-right: 12px;
+  margin-left: 12px;
   box-sizing: border-box;
   display: block;
   width: 140px;
 }
 
 nav ul li:hover {
-  border-left: solid 12px var(--secondaryColor);
-  transition: border 0.3s 0.1s, transform .2s;
-  transform: scale(1.05);
-  transform-origin: left;
+  /* border-left: solid 12px var(--secondaryColor); */
+  transition: .2s;
+  background-color: #F2ECDE;
 }
 
 nav ul li a {
   color: var(--actionColor);
   text-decoration: none;
   transition: color 0.3s;
+  font-weight: 400;
+  padding-right: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  display: block;
 }
 
 nav ul li a:hover {
   color: var(--secondaryColor);
   text-decoration: none;
+transform: scale(1.1);
+  transform-origin: right;
+  transition: border 0.3s 0.1s, transform .2s;
 }
 
 
@@ -546,6 +553,7 @@ nav ul li a:hover {
   color: var(--secondaryColor);
   text-decoration: none;
   margin-left: 12px;
+  background-color: #F2ECDE;
 }
 
 .checkbtn {
@@ -597,7 +605,6 @@ body, html {
     grid-area: hd; 
     margin-top: 24px;
     position: static;
-    text-align: left;
     margin-left: 12px;
     width: 24px;
     /* border: #EC9C28 dashed 1px; */
@@ -613,42 +620,57 @@ body, html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /*aligns center vertically */
-    padding-top: 0px;
-    align-items: center;
+    gap: 12px;
+    align-items: center;  /*aligns center vertically */
+    padding-top: 0px; 
     /*transition: all 0.7s; */
   }
 
-  /* variable styles for Material icons */
-  .material-symbols-outlined {
-    font-size: 24px !important;
-    /* controls icon size */
-    font-variation-settings:
-      'FILL' 0,
-      'wght' 400,
-      'GRAD' 0,
-      'opsz' 24,
-  }
-
   nav ul li {
-    margin: 20px 0;
+    width: 90%;
+    margin: 0;
+    padding: 0;
     color: #ffffff;
     text-align: center;
   }
 
-  nav ul li:hover {
-    border: none;
-  }
 
   nav ul li a {
+    width: 100%;
+   /*  border: 1px solid pink; */
+    /*border-radius: 12px; */
+    padding-right: 0;
+    margin: 0;
     font-size: 20px;
     color: #ffffff;
   }
 
   nav ul li a:hover {
+    width: 100%;
+    padding-right: 0;
+    margin: 0;
     color: var(--secondaryColor);
     text-decoration: none;
+    background-color: var(--tertiaryColor);
+    transform: none;
   }
+
+  nav ul li:hover {
+    border: none;
+    transform: none;
+    background-color: var(--tertiaryColor);
+  }
+
+    /* variable styles for Material icons */
+    .material-symbols-outlined {
+      font-size: 24px !important;
+      /* controls icon size */
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24,
+    }
 
 
 }
