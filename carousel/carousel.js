@@ -351,12 +351,6 @@ const JSCarousel = ({
         captionElements[i].classList.add("slide-caption-hidden");
       }
     });
-
-    carouselArea.addEventListener("touch", () => {
-      prevBtn.style.visibility = "hidden";
-      nextBtn.style.visibility = "hidden";
-      playPauseBtn.classList.add("playBtn-hidden");
-    });
   };
 
   // Function to Initialize/create the carousel.
