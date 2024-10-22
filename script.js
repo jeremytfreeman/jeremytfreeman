@@ -23,7 +23,7 @@ function topFunction() {
 window.onscroll = function () {
   scrollFunction();
   //call show scroll logo
-  showScrollLogo();
+  //showScrollLogo();
 };
 
 //Event listener to scroll page to top on click
