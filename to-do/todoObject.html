@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskRaider</title>
+    <link id="layoutStylesheet" rel="stylesheet" href="layoutStyles.css" />
+    <link id="themeStylesheet" rel="stylesheet" href="dark.css" />
+  </head>
+  <body>
+    <h1>TaskRaider/ZeitFuchs</h1>
+    <button onclick="switchTheme()">Theme mode</button>
+    <div id="inputContainer">
+      <input type="text" id="taskInput" placeholder="Enter a new task" />
+      <button onclick="addTask()">Add</button>
+    </div>
+    <p id="errorMessage"></p>
+
+    <ul id="taskList"></ul>
+
+    <script src="todoObject.js"></script>
+  </body>
+</html>
