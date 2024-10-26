@@ -1,12 +1,13 @@
+//Get inpput field in the DOM
 const inputField = document.getElementById("taskInput");
 
-inputField.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    // Prevent default form submission behavior (if applicable)
-    event.preventDefault(); // Uncomment this if needed
-    addTask();
-  }
-});
+//Object to hold theme options values - {name: *.css}
+const themes = {
+  light: "light.css",
+  dark: "dark.css",
+  ocean: "ocean.css",
+  //add more as needed
+};
 
 // TaskItem class to create and manage list items
 class TaskItem {
@@ -15,8 +16,8 @@ class TaskItem {
     this.listItem = document.createElement("li");
     this.listItem.classList.add("task");
     this.buttonDiv = document.createElement("div");
-    this.button = document.createElement("button");
-    this.doneButton = document.createElement("button");
+    this.remove = document.createElement("i");
+    this.doneButton = document.createElement("i");
     this.done = done; // Stores state of task
   }
 
@@ -25,18 +26,22 @@ class TaskItem {
     const taskNode = document.createTextNode(this.taskText);
 
     // Set up the remove button
-    this.button.textContent = "Remove";
-    this.button.onclick = () => this.removeTask();
+    //this.remove.textContent = "Remove";
+    this.remove.classList.add("fa-solid");
+    this.remove.classList.add("fa-trash");
+    this.remove.onclick = () => this.removeTask();
 
     // Set text state for done button
-    this.doneButton.textContent = this.done ? "Undo" : "Done";
+    //this.doneButton.textContent = "check";
+    this.doneButton.classList.add("fa-solid");
+    this.doneButton.classList.add("fa-check");
     this.doneButton.onclick = () => this.toggleDoneState();
 
     // Append the task text and button to the list item
     this.listItem.appendChild(taskNode);
     this.listItem.appendChild(this.buttonDiv);
     this.buttonDiv.appendChild(this.doneButton);
-    this.buttonDiv.appendChild(this.button);
+    this.buttonDiv.appendChild(this.remove);
     this.updateTaskStyle();
 
     // Delay to fade in task items
@@ -59,7 +64,7 @@ class TaskItem {
   // Method to mark task complete
   toggleDoneState() {
     this.done = !this.done;
-    this.doneButton.textContent = this.done ? "Undo" : "Done";
+    //this.doneButton.textContent = this.done ? "Undo" : "Done";
     this.updateTaskStyle(); // Update style
     TaskManager.updateTaskInStorage(this.taskText, this.done); // Update local storage
   }
@@ -108,29 +113,53 @@ class TaskManager {
 
 // Function to add a new task
 function addTask() {
-  const taskInput = document.getElementById("taskInput");
-  if (taskInput.value === "") {
+  if (inputField.value === "") {
     const errorMessage = document.getElementById("errorMessage");
     errorMessage.innerHTML = "Enter a task above";
-    taskInput.classList.add("fieldError");
+    inputField.classList.add("fieldError");
     return;
   }
 
   // Create a new TaskItem object
-  const newTask = new TaskItem(taskInput.value);
+  const newTask = new TaskItem(inputField.value);
   const taskList = document.getElementById("taskList");
 
   // Insert the new task at the top
   taskList.insertBefore(newTask.createTask(), taskList.firstChild);
 
   // Add the task to the list and local storage
-  TaskManager.addTaskToStorage(taskInput.value); // Correctly use taskInput.value
+  TaskManager.addTaskToStorage(inputField.value); // Correctly use inputField.value
 
   // Clear the input field
-  taskInput.value = "";
+  inputField.value = "";
 }
 
-// Switches light/dark themes
+//Add task when user hits enter key
+inputField.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    // Prevent default form submission behavior (if applicable)
+    event.preventDefault(); // Uncomment this if needed
+    addTask();
+  }
+});
+
+// Clears error when user inputs text into the input field
+inputField.addEventListener("input", () => {
+  if (inputField.value !== "") {
+    inputField.classList.remove("fieldError");
+    const errorMessage = document.getElementById("errorMessage");
+    errorMessage.innerHTML = "";
+  }
+});
+
+//Clear error if inputField loses focus
+inputField.addEventListener("blur", () => {
+  inputField.classList.remove("fieldError");
+  const errorMessage = document.getElementById("errorMessage");
+  errorMessage.innerHTML = "";
+});
+
+// Switch themes
 function switchTheme() {
   const styleSheet = document.getElementById("themeStylesheet");
   const currentTheme = styleSheet.getAttribute("href");
@@ -142,7 +171,7 @@ function switchTheme() {
     styleSheet.setAttribute("href", "dark.css");
   }
 
-  // Store the theme in localStorage
+  // Store theme in localStorage
   localStorage.setItem("theme", styleSheet.getAttribute("href"));
 }
 
@@ -158,16 +187,6 @@ function loadTheme() {
       .setAttribute("href", "light.css"); // Default theme
   }
 }
-
-// Clears error when user inputs text into the input field
-const taskInput = document.getElementById("taskInput");
-taskInput.addEventListener("input", () => {
-  if (taskInput.value !== "") {
-    taskInput.classList.remove("fieldError");
-    const errorMessage = document.getElementById("errorMessage");
-    errorMessage.innerHTML = "";
-  }
-});
 
 // Load tasks and theme from local storage when the page loads
 window.onload = function () {

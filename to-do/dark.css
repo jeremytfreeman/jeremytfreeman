@@ -1,98 +1,59 @@
+:root {
+  /* define color variables  */
+  --bgColor: #181d28;
+  --textColor: white;
+  --secondaryColor: #6679a3;
+  --actionColor: aqua;
+  --errorText: pink;
+  --fieldError: red;
+  --placeholderText: rgb(78, 99, 99);
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  max-width: 900px;
-  margin: 50px auto;
-  background-color: #181d28;
-  color: white;
-  text-align: left;
+  background-color: var(--bgColor);
+  color: var(--textColor);
 }
 
-input,
-button {
-  padding: 10px;
-  font-size: 16px;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  margin: 10px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: solid 1px rgb(54, 54, 54);
-  height: 54px;
-}
-
+h1,
 li.done {
-  text-decoration: line-through;
-  color: rgb(78, 89, 100);
+  color: var(--secondaryColor);
 }
 
-li button {
-  height: 32px;
-  padding: 0;
-  margin-left: 20px;
-  background-color: lightgray;
-  color: black;
-  border: none;
-  padding-left: 8px;
-  padding-right: 8px;
-  font-size: 12px;
+li {
+  border-bottom-color: var(--secondaryColor);
 }
 
-li.done button {
-  text-decoration: none;
-  color: green;
-}
-
-#inputContainer {
-  display: flex;
-  gap: 8px;
+li i:hover,
+li.done i:hover {
+  color: var(--actionColor);
 }
 
 #taskInput {
-  width: 100%;
-  border: none;
-  background-color: rgb(0, 52, 80);
-  font-size: 24px;
-  border-radius: 8px;
-  color: white;
+  color: var(--textColor);
+  background-color: var(--bgColor);
+  border-bottom-color: var(--textColor);
 }
 
 #taskInput::placeholder {
-  color: rgb(78, 99, 99);
+  color: var(--placeholderText);
 }
 
 #taskInput:focus {
-  background-color: aqua;
-  border: none;
-  color: black;
-  outline: none;
+  border-bottom-color: var(--actionColor);
 }
 
-#errorMessage {
-  color: pink;
+#taskInput:focus::placeholder {
+  color: var(--textColor);
 }
 
 .fieldError {
-  background-color: pink !important;
-  border: solid 1px red !important;
+  border-bottom-color: var(--fieldError) !important;
 }
 
-/* Task item is invisible initially */
-.task {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+.fieldError::placeholder {
+  color: var(--errorText) !important;
 }
 
-/* Fade in effect when a task is added */
-.fade-in {
-  opacity: 1;
-}
-
-/* Fade out effect when a task is removed */
-.fade-out {
-  opacity: 0;
+#errorMessage {
+  color: var(--errorText);
 }

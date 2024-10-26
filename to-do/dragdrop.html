@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* Basic task list styling */
+      #taskList {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .task {
+        padding: 10px;
+        margin-bottom: 5px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        cursor: grab;
+      }
+
+      /* Highlight when dragging over */
+      .dragging-over {
+        border: 2px dashed #888;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="input-container">
+      <i class="fa fa-tasks"></i>
+      <input type="text" id="taskInput" placeholder="Enter a task" />
+    </div>
+    <ul id="taskList">
+      <!-- Task items will be dynamically added here -->
+    </ul>
+
+    <script>
+      class TaskItem {
+        constructor(taskText) {
+          this.taskText = taskText;
+          this.listItem = document.createElement("li");
+          this.listItem.classList.add("task");
+          this.listItem.setAttribute("draggable", true); // Enable dragging
+        }
+
+        createTask() {
+          const taskNode = document.createTextNode(this.taskText);
+          this.listItem.appendChild(taskNode);
+
+          // Add drag events
+          this.listItem.addEventListener("dragstart", this.dragStart);
+          this.listItem.addEventListener("dragover", this.dragOver);
+          this.listItem.addEventListener("drop", this.drop);
+          this.listItem.addEventListener("dragend", this.dragEnd);
+
+          return this.listItem;
+        }
+
+        dragStart(event) {
+          event.dataTransfer.setData("text/plain", event.target.dataset.index);
+          event.target.classList.add("dragging");
+        }
+
+        dragOver(event) {
+          event.preventDefault(); // Allow the drop
+          const draggingElement = document.querySelector(".dragging");
+          const target = event.target;
+
+          if (
+            target &&
+            target !== draggingElement &&
+            target.nodeName === "LI"
+          ) {
+            target.classList.add("dragging-over");
+          }
+        }
+
+        drop(event) {
+          event.preventDefault(); // Allow the drop
+          const draggingElement = document.querySelector(".dragging");
+          const taskList = document.getElementById("taskList");
+
+          // Insert before the element that is currently being dragged over
+          const target = event.target;
+          if (
+            target &&
+            target !== draggingElement &&
+            target.nodeName === "LI"
+          ) {
+            taskList.insertBefore(draggingElement, target);
+            target.classList.remove("dragging-over");
+          }
+        }
+
+        dragEnd(event) {
+          event.target.classList.remove("dragging");
+          const taskListItems = document.querySelectorAll(".task");
+          taskListItems.forEach((item) =>
+            item.classList.remove("dragging-over")
+          );
+        }
+      }
+
+      // Function to add a new task
+      function addTask() {
+        const taskInput = document.getElementById("taskInput");
+        const taskList = document.getElementById("taskList");
+
+        if (taskInput.value !== "") {
+          const newTask = new TaskItem(taskInput.value);
+          taskList.appendChild(newTask.createTask());
+
+          // Clear the input field
+          taskInput.value = "";
+        }
+      }
+
+      document
+        .getElementById("taskInput")
+        .addEventListener("keydown", (event) => {
+          if (event.key === "Enter") {
+            addTask();
+          }
+        });
+    </script>
+  </body>
+</html>
