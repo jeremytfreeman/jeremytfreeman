@@ -1,7 +1,9 @@
 //Get inpput field in the DOM
 const inputField = document.getElementById("taskInput");
+const addButton = document.getElementById("addButton");
+addButton.style.visibility = "hidden";
 
-//Object to hold theme options values - {name: *.css}
+// Object to hold theme options values - {name: *.css}
 const themes = {
   light: "light.css",
   dark: "dark.css",
@@ -28,7 +30,7 @@ class TaskItem {
     this.listItemSpan.addEventListener("click", () => this.enableEditing());
   }
 
-  //Method to enable edit mode
+  // Method to enable edit mode
   enableEditing() {
     this.listItemSpan.setAttribute("contentEditable", true);
     this.listItemSpan.focus();
@@ -54,13 +56,11 @@ class TaskItem {
     const taskNode = document.createTextNode(this.taskText);
 
     // Set up the remove button
-    //this.remove.textContent = "Remove";
     this.remove.classList.add("fa-solid");
     this.remove.classList.add("fa-trash");
     this.remove.onclick = () => this.removeTask();
 
     // Set text state for done button
-    //this.doneButton.textContent = "check";
     this.doneButton.classList.add("fa-solid");
     this.doneButton.classList.add("fa-check");
     this.doneButton.onclick = () => this.toggleDoneState();
@@ -79,8 +79,6 @@ class TaskItem {
       this.listItem.classList.add("task-made");
     }, 10); // Slight delay
 
-    // Set up edit on double-click
-    // Set up edit on double-click
     return this.listItem;
   }
 
@@ -102,6 +100,7 @@ class TaskItem {
     TaskManager.updateTaskInStorage(this.id, this.taskText, this.done); // Update local storage
   }
 
+  // Set task to done state
   updateTaskStyle() {
     if (this.done) {
       this.listItem.classList.add("done"); // Add class for "done" tasks
@@ -164,7 +163,6 @@ function addTask() {
   setTimeout(() => {
     taskList.firstChild.classList.add("task-made"), 10;
   });
-  //taskList.firstChild.classList.remove("task-make")
 
   // Add the task to the list and local storage
   TaskManager.addTaskToStorage(inputField.value); // Correctly use inputField.value
@@ -173,6 +171,7 @@ function addTask() {
   inputField.value = "";
 }
 
+// ----------Input field functionality -------------//
 //Add task when user hits enter key
 inputField.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
@@ -196,8 +195,15 @@ inputField.addEventListener("blur", () => {
   inputField.classList.remove("fieldError");
   const errorMessage = document.getElementById("errorMessage");
   errorMessage.innerHTML = "";
+  addButton.style.visibility = "hidden";
 });
 
+//show add button when input field focus
+inputField.addEventListener("focus", () => {
+  addButton.style.visibility = "visible";
+});
+
+//------------Theming----------//
 // Switch themes
 function switchTheme() {
   const styleSheet = document.getElementById("themeStylesheet");
