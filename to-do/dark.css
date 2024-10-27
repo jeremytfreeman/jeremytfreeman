@@ -2,11 +2,13 @@
   /* define color variables  */
   --bgColor: #181d28;
   --textColor: white;
-  --secondaryColor: #6679a3;
+  --secondaryColor: #222836;
+  --addColor: #424a61;
   --actionColor: aqua;
+  --doneColor: gray;
   --errorText: pink;
-  --fieldError: red;
-  --placeholderText: rgb(78, 99, 99);
+  --fieldError: rgb(55, 21, 21);
+  --placeholderText: rgb(166, 224, 224);
 }
 
 body {
@@ -14,13 +16,16 @@ body {
   color: var(--textColor);
 }
 
-h1,
+h1 {
+}
+
 li.done {
-  color: var(--secondaryColor);
+  color: var(--doneColor);
 }
 
 li {
   border-bottom-color: var(--secondaryColor);
+  background-color: var(--secondaryColor);
 }
 
 li i:hover,
@@ -30,7 +35,7 @@ li.done i:hover {
 
 #taskInput {
   color: var(--textColor);
-  background-color: var(--bgColor);
+  background-color: var(--secondaryColor);
   border-bottom-color: var(--textColor);
 }
 
@@ -39,7 +44,8 @@ li.done i:hover {
 }
 
 #taskInput:focus {
-  border-bottom-color: var(--actionColor);
+  /* border-bottom-color: var(--actionColor); */
+  background-color: var(--addColor);
 }
 
 #taskInput:focus::placeholder {
@@ -47,7 +53,7 @@ li.done i:hover {
 }
 
 .fieldError {
-  border-bottom-color: var(--fieldError) !important;
+  background-color: var(--fieldError) !important;
 }
 
 .fieldError::placeholder {
@@ -56,4 +62,20 @@ li.done i:hover {
 
 #errorMessage {
   color: var(--errorText);
+}
+
+.task-loaded {
+  opacity: 1;
+}
+
+/* Task item inital color*/
+.task-make {
+  background-color: var(--addColor);
+  opacity: 1;
+}
+
+/* Fade in effect when a task is added */
+.task-made {
+  background-color: var(--secondaryColor);
+  transition: background-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }

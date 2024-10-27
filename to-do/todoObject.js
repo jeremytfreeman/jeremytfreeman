@@ -12,12 +12,14 @@ const themes = {
 // TaskItem class to create and manage list items
 class TaskItem {
   constructor(taskText, done = false) {
-    this.taskText = taskText;
-    this.listItem = document.createElement("li");
-    this.listItem.classList.add("task");
-    this.buttonDiv = document.createElement("div");
-    this.remove = document.createElement("i");
-    this.doneButton = document.createElement("i");
+    this.taskText = taskText; //task text
+    this.listItem = document.createElement("li"); //creates <li>
+    this.listItem.classList.add("task"); //adds class
+    this.listItemSpan = document.createElement("span"); //span to hold task text
+    this.buttonDiv = document.createElement("div"); //div to hold buttons
+    this.buttonDiv.classList.add("buttonDiv");
+    this.remove = document.createElement("i"); //remove icon
+    this.doneButton = document.createElement("i"); //done icon
     this.done = done; // Stores state of task
   }
 
@@ -38,7 +40,8 @@ class TaskItem {
     this.doneButton.onclick = () => this.toggleDoneState();
 
     // Append the task text and button to the list item
-    this.listItem.appendChild(taskNode);
+    this.listItem.appendChild(this.listItemSpan);
+    this.listItemSpan.appendChild(taskNode);
     this.listItem.appendChild(this.buttonDiv);
     this.buttonDiv.appendChild(this.doneButton);
     this.buttonDiv.appendChild(this.remove);
@@ -54,6 +57,7 @@ class TaskItem {
 
   // Method to remove the task from the DOM and local storage
   removeTask() {
+    this.listItem.classList.remove("class-make");
     this.listItem.classList.add("fade-out"); // Apply fade out class
     setTimeout(() => {
       this.listItem.remove(); // Remove task after fade out
@@ -115,7 +119,7 @@ class TaskManager {
 function addTask() {
   if (inputField.value === "") {
     const errorMessage = document.getElementById("errorMessage");
-    errorMessage.innerHTML = "Enter a task above";
+    //errorMessage.innerHTML = "Enter a task above";
     inputField.classList.add("fieldError");
     return;
   }
@@ -126,6 +130,12 @@ function addTask() {
 
   // Insert the new task at the top
   taskList.insertBefore(newTask.createTask(), taskList.firstChild);
+  //add class to match input color and fade to same as other tasks
+  taskList.firstChild.classList.add("task-make");
+  setTimeout(() => {
+    taskList.firstChild.classList.add("task-made"), 10;
+  });
+  //taskList.firstChild.classList.remove("task-make")
 
   // Add the task to the list and local storage
   TaskManager.addTaskToStorage(inputField.value); // Correctly use inputField.value

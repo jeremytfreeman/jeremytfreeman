@@ -2,7 +2,7 @@
   /* define color variables  */
   --bgColor: white;
   --textColor: black;
-  --secondaryColor: #6679a3;
+  --secondaryColor: #edf2fd;
   --actionColor: aqua;
   --errorText: red;
   --fieldError: red;
@@ -13,13 +13,16 @@ body {
   color: var(--textColor);
 }
 
-h1,
+h1 {
+}
+
 li.done {
   color: var(--secondaryColor);
 }
 
 li {
   border-bottom-color: var(--secondaryColor);
+  background-color: var(--secondaryColor);
 }
 
 li i:hover,

@@ -1,15 +1,10 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 20px;
   max-width: 900px;
   margin: 50px auto;
   text-align: left;
-}
-
-input,
-button {
-  padding: 10px;
-  font-size: 16px;
+  font-weight: 400;
 }
 
 #container {
@@ -23,7 +18,8 @@ header {
 }
 
 h1 {
-  font-weight: normal;
+  font-weight: lighter;
+  font-size: 40px;
 }
 
 #themeButton {
@@ -35,17 +31,24 @@ i {
   cursor: pointer;
 }
 
+p {
+  margin: 0;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
+  margin-top: 0;
 }
+
 li {
-  margin: 10px 0;
+  margin: 8px 0;
+  padding: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 54px;
   border-bottom: solid 1px;
+  border-radius: 8px;
 }
 
 li.done {
@@ -71,6 +74,13 @@ li i {
   margin-left: 12px;
 }
 
+.buttonDiv {
+  text-align: right;
+  flex-shrink: 0;
+  margin-left: 12px;
+  font-size: 18px;
+}
+
 #inputContainer {
   display: flex;
   position: relative;
@@ -91,28 +101,30 @@ li i {
 #taskInput {
   width: 100%;
   border: none;
-  font-size: 24px;
-  border-bottom: solid 1px;
+  font-size: 20px;
+  padding: 24px;
+  border-radius: 8px;
+  margin: 0;
+  /* border-bottom: solid 1px;  */
 }
 
 #taskInput::placeholder {
-  font-style: oblique;
+  font-weight: normal;
 }
 
 #taskInput:focus {
   border: none;
   outline: none;
-  border-bottom: solid 1px;
+  /*border-bottom: solid 1px; */
 }
 
 .fieldError {
-  border-bottom: solid 1px;
 }
 
-/* Task item is invisible initially */
+/*Task item is invisible initially  */
 .task {
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  /* transition: opacity 0.5s ease-in-out; */
 }
 
 /* Fade in effect when a task is added */
@@ -122,5 +134,5 @@ li i {
 
 /* Fade out effect when a task is removed */
 .fade-out {
-  opacity: 0;
+  opacity: 0 !important;
 }
