@@ -17,6 +17,7 @@ body {
 }
 
 h1 {
+  color: var(--textColor);
 }
 
 li.done {
@@ -78,5 +79,21 @@ li.done i:hover {
 /* Fade in effect when a task is added */
 .task-made {
   background-color: var(--secondaryColor);
-  transition: background-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: background-color 1.2s ease-in-out, opacity 0.5s ease-in-out,
+    height 0.5s ease-in-out, padding 0.5s ease-in-out, margin 0.5s ease-in-out;
+}
+
+span[contentEditable="true"] {
+  border: none;
+}
+
+span[contentEditable="true"]:hover {
+  color: var(--actionColor);
+}
+
+span[contentEditable="true"]:focus {
+  background-color: rgb(44, 42, 57);
+  border-radius: 8px;
+  outline: none;
+  border: none;
 }

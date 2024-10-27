@@ -16,13 +16,17 @@ class TaskItem {
     this.listItem = document.createElement("li"); //creates <li>
     this.listItem.classList.add("task"); //adds class
     this.listItemSpan = document.createElement("span"); //span to hold task text
-    this.listItemSpan.setAttribute("contentEditable", "false"); //editable false
+    this.listItemSpan.setAttribute("contentEditable", "true"); //editable false
     this.buttonDiv = document.createElement("div"); //div to hold buttons
     this.buttonDiv.classList.add("buttonDiv");
     this.remove = document.createElement("i"); //remove icon
     this.doneButton = document.createElement("i"); //done icon
     this.done = done; // Stores state of task
   }
+
+  //Method to enable edit mode
+
+  //Method to save edit - in the task Manager class?
 
   // Method to create and return the list item
   createTask() {
