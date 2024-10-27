@@ -128,9 +128,6 @@ li i {
   /*border-bottom: solid 1px; */
 }
 
-.fieldError {
-}
-
 /*Task item is invisible initially  */
 .task {
   opacity: 0;
@@ -149,6 +146,6 @@ li i {
   margin-bottom: 0;
   padding-top: 0;
   padding-bottom: 0;
-  height: 0;
   overflow: hidden;
+  height: 0;
 }

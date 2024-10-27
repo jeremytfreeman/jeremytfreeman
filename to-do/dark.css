@@ -79,8 +79,10 @@ li.done i:hover {
 /* Fade in effect when a task is added */
 .task-made {
   background-color: var(--secondaryColor);
-  transition: background-color 1.2s ease-in-out, opacity 0.5s ease-in-out,
-    height 0.5s ease-in-out, padding 0.5s ease-in-out, margin 0.5s ease-in-out;
+  transition: background-color 1.2s ease-in-out, opacity 0.2s ease-in-out,
+    height 1s ease-in-out, padding-top 0.7s ease-in-out,
+    padding-bottom 0.7s ease-in-out, margin-top 0.7s ease-in-out,
+    margin-bottom 0.7s ease-in-out, overflow 0.7s ease-in-out;
 }
 
 span[contentEditable="true"] {
