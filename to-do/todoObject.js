@@ -11,22 +11,43 @@ const themes = {
 
 // TaskItem class to create and manage list items
 class TaskItem {
-  constructor(taskText, done = false) {
+  constructor(taskText, done = false, id) {
     this.taskText = taskText; //task text
+    this.done = done; // Stores state of task
+    this.id = id || Date.now(); //unique ID if not provided
     this.listItem = document.createElement("li"); //creates <li>
     this.listItem.classList.add("task"); //adds class
     this.listItemSpan = document.createElement("span"); //span to hold task text
-    this.listItemSpan.setAttribute("contentEditable", "true"); //editable false
+    this.listItemSpan.setAttribute("contentEditable", "false"); //editable false
     this.buttonDiv = document.createElement("div"); //div to hold buttons
-    this.buttonDiv.classList.add("buttonDiv");
+    this.buttonDiv.classList.add("buttonDiv"); //add class to buttonDiv
     this.remove = document.createElement("i"); //remove icon
     this.doneButton = document.createElement("i"); //done icon
-    this.done = done; // Stores state of task
+
+    // Add event listener to enable editing on click
+    this.listItemSpan.addEventListener("click", () => this.enableEditing());
   }
 
   //Method to enable edit mode
+  enableEditing() {
+    this.listItemSpan.setAttribute("contentEditable", true);
+    this.listItemSpan.focus();
+    this.listItemSpan.addEventListener("blur", () => this.saveEdit());
+    this.listItemSpan.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        this.saveEdit();
+      }
+    });
+  }
 
-  //Method to save edit - in the task Manager class?
+  // Save the edited task text and disable editing
+  saveEdit() {
+    this.taskText = this.listItemSpan.textContent.trim(); // Update task text with new content
+    this.listItemSpan.setAttribute("contenteditable", "false");
+    //this.saveButton.style.display = "none"; // Hide save button
+    TaskManager.updateTaskInStorage(this.id, this.taskText, this.done); //storage
+    this.originalText = this.taskText;
+  }
 
   // Method to create and return the list item
   createTask() {
@@ -58,6 +79,8 @@ class TaskItem {
       this.listItem.classList.add("task-made");
     }, 10); // Slight delay
 
+    // Set up edit on double-click
+    // Set up edit on double-click
     return this.listItem;
   }
 
@@ -67,8 +90,8 @@ class TaskItem {
     this.listItem.classList.add("fade-out"); // Apply fade out class
     setTimeout(() => {
       this.listItem.remove(); // Remove task after fade out
-      TaskManager.removeTaskFromStorage(this.taskText); // Also remove from storage
-    }, 500); // Match duration of fadeout class
+      TaskManager.removeTaskFromStorage(this.id); // Also remove from storage
+    }, 800); // Match duration of fadeout class
   }
 
   // Method to mark task complete
@@ -76,7 +99,7 @@ class TaskItem {
     this.done = !this.done;
     //this.doneButton.textContent = this.done ? "Undo" : "Done";
     this.updateTaskStyle(); // Update style
-    TaskManager.updateTaskInStorage(this.taskText, this.done); // Update local storage
+    TaskManager.updateTaskInStorage(this.id, this.taskText, this.done); // Update local storage
   }
 
   updateTaskStyle() {
@@ -92,31 +115,31 @@ class TaskItem {
 class TaskManager {
   static loadTasks() {
     const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    tasks.forEach(({ taskText, done }) => {
-      const task = new TaskItem(taskText, done);
+    tasks.reverse().forEach(({ id, taskText, done }) => {
+      const task = new TaskItem(taskText, done, id);
       document.getElementById("taskList").appendChild(task.createTask());
     });
   }
 
   static addTaskToStorage(taskText) {
     const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    const done = false; // New tasks are not done by default
-    tasks.unshift({ taskText, done }); // Push to the start of the array
+    const task = { taskText, done: false, id: Date.now() };
+    tasks.push(task); // Add task to array
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }
 
   // Update the task's done state in local storage
-  static updateTaskInStorage(taskText, done) {
+  static updateTaskInStorage(id, taskText, done) {
     const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     const updatedTasks = tasks.map((task) =>
-      task.taskText === taskText ? { taskText, done } : task
+      task.id === id ? { ...task, taskText, done } : task
     );
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   }
 
-  static removeTaskFromStorage(taskText) {
+  static removeTaskFromStorage(id) {
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    tasks = tasks.filter((task) => task.taskText !== taskText); // Compare task text properly
+    tasks = tasks.filter((task) => task.id !== id);
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }
 }
