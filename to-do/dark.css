@@ -8,7 +8,7 @@
   --doneColor: gray;
   --errorText: pink;
   --fieldError: rgb(55, 21, 21);
-  --placeholderText: rgb(166, 224, 224);
+  --placeholderText: rgb(128, 128, 141);
 }
 
 body {
@@ -54,6 +54,7 @@ li.done i:hover {
 
 .fieldError {
   background-color: var(--fieldError) !important;
+  transition: 0.2s ease-in-out;
 }
 
 .fieldError::placeholder {

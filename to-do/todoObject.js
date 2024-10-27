@@ -16,6 +16,7 @@ class TaskItem {
     this.listItem = document.createElement("li"); //creates <li>
     this.listItem.classList.add("task"); //adds class
     this.listItemSpan = document.createElement("span"); //span to hold task text
+    this.listItemSpan.setAttribute("contentEditable", "false"); //editable false
     this.buttonDiv = document.createElement("div"); //div to hold buttons
     this.buttonDiv.classList.add("buttonDiv");
     this.remove = document.createElement("i"); //remove icon
@@ -50,6 +51,7 @@ class TaskItem {
     // Delay to fade in task items
     setTimeout(() => {
       this.listItem.classList.add("fade-in");
+      this.listItem.classList.add("task-made");
     }, 10); // Slight delay
 
     return this.listItem;
