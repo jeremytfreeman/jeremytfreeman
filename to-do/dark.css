@@ -99,3 +99,19 @@ span[contentEditable="true"]:focus {
   outline: none;
   border: none;
 }
+
+/*
+
+.task.drag-over {
+  background-color: #f0f0f0 !important;
+  border: 2px dashed #007bff;
+  transition: none !important;
+  opacity: 1 !important;
+  transition-property: none !important;
+}*/
+
+.dragging {
+  opacity: 0.5; /* Makes the item semi-transparent */
+  border: 2px dotted #00d5ff; /* Adds a dashed border */
+  background-color: #0d1114; /* Optional: changes the background color */
+}

@@ -19,6 +19,7 @@ class TaskItem {
     this.id = id || Date.now(); //unique ID if not provided
     this.listItem = document.createElement("li"); //creates <li>
     this.listItem.classList.add("task"); //adds class
+    this.listItem.setAttribute("draggable", true); //make draggable
     this.listItemSpan = document.createElement("span"); //span to hold task text
     this.listItemSpan.setAttribute("contentEditable", "false"); //editable false
     this.buttonDiv = document.createElement("div"); //div to hold buttons
@@ -26,13 +27,51 @@ class TaskItem {
     this.remove = document.createElement("i"); //remove icon
     this.doneButton = document.createElement("i"); //done icon
 
+    // Add drag event listeners for visual changes on hover
+    this.listItem.addEventListener("dragenter", (e) => {
+      e.preventDefault();
+      this.listItem.classList.add("drag-over");
+    });
+    this.listItem.addEventListener("dragover", (e) => {
+      e.preventDefault(); // Necessary to allow the drop
+    });
+    this.listItem.addEventListener("dragleave", () => {
+      console.log(this.listItem.id + "drag leave");
+      this.listItem.classList.remove("drag-over");
+    });
+    this.listItem.addEventListener("drop", () => {
+      this.listItem.classList.remove("drag-over");
+    });
+
     // Add event listener to enable editing on click
     this.listItemSpan.addEventListener("click", () => this.enableEditing());
+
+    // Add drag event listeners
+    this.listItem.addEventListener("dragstart", (event) => {
+      this.listItem.classList.add("dragging"); // Apply dragging styles
+      event.dataTransfer.setData("text/plain", this.id); // Store the task ID in the drag event
+      event.dataTransfer.effectAllowed = "move";
+    });
+
+    this.listItem.addEventListener("dragover", (event) => {
+      event.preventDefault(); // Enable dropping by preventing the default
+    });
+
+    this.listItem.addEventListener("dragend", () => {
+      this.listItem.classList.remove("dragging"); // Remove dragging styles
+    });
+
+    this.listItem.addEventListener("drop", (event) => {
+      event.preventDefault();
+      const draggedTaskId = event.dataTransfer.getData("text/plain"); // Retrieve dragged task ID
+      TaskManager.reorderTasks(draggedTaskId, this.id); // Reorder tasks in the TaskManager
+    });
   }
 
   // Method to enable edit mode
   enableEditing() {
     this.listItemSpan.setAttribute("contentEditable", true);
+    this.listItem.setAttribute("draggable", false);
     this.listItemSpan.focus();
     this.listItemSpan.addEventListener("blur", () => this.saveEdit());
     this.listItemSpan.addEventListener("keydown", (event) => {
@@ -44,6 +83,7 @@ class TaskItem {
 
   // Save the edited task text and disable editing
   saveEdit() {
+    this.listItem.setAttribute("draggable", true);
     this.taskText = this.listItemSpan.textContent.trim(); // Update task text with new content
     this.listItemSpan.setAttribute("contenteditable", "false");
     //this.saveButton.style.display = "none"; // Hide save button
@@ -112,9 +152,40 @@ class TaskItem {
 
 // TaskManager class to handle local storage and task rendering
 class TaskManager {
+  static reorderTasks(draggedTaskId, targetTaskId) {
+    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    const draggedIndex = tasks.findIndex(
+      (task) => task.id === parseInt(draggedTaskId)
+    );
+    const targetIndex = tasks.findIndex(
+      (task) => task.id === parseInt(targetTaskId)
+    );
+
+    if (
+      draggedIndex === -1 ||
+      targetIndex === -1 ||
+      draggedIndex === targetIndex
+    )
+      return;
+
+    // Remove dragged task and insert at the target position
+    const [draggedTask] = tasks.splice(draggedIndex, 1);
+    tasks.splice(targetIndex, 0, draggedTask);
+
+    // Update the local storage with the new order
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+
+    // Re-render tasks in the new order
+    document.getElementById("taskList").innerHTML = ""; // Clear current tasks
+    tasks.forEach(({ id, taskText, done }) => {
+      const task = new TaskItem(taskText, done, id);
+      document.getElementById("taskList").appendChild(task.createTask());
+    });
+  }
+
   static loadTasks() {
     const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    tasks.reverse().forEach(({ id, taskText, done }) => {
+    tasks.forEach(({ id, taskText, done }) => {
       const task = new TaskItem(taskText, done, id);
       document.getElementById("taskList").appendChild(task.createTask());
     });
@@ -123,7 +194,7 @@ class TaskManager {
   static addTaskToStorage(taskText) {
     const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     const task = { taskText, done: false, id: Date.now() };
-    tasks.push(task); // Add task to array
+    tasks.unshift(task); // Add task to beginning of array
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }
 
@@ -201,6 +272,23 @@ inputField.addEventListener("blur", () => {
 //show add button when input field focus
 inputField.addEventListener("focus", () => {
   addButton.style.visibility = "visible";
+});
+
+//----------Function to disable transitions
+function disableTransitions(element) {
+  element.style.transition = "none";
+}
+
+// Function to enable transitions
+function enableTransitions(element) {
+  element.style.transition = ""; // Revert to CSS-defined transitions
+}
+
+// Apply disable/enable when entering and leaving "drag-over"
+document.querySelectorAll(".task").forEach((task) => {
+  task.addEventListener("dragenter", () => disableTransitions(task));
+  task.addEventListener("dragleave", () => enableTransitions(task));
+  task.addEventListener("drop", () => enableTransitions(task)); // Re-enable after drop
 });
 
 //------------Theming----------//
