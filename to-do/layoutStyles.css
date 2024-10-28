@@ -148,4 +148,9 @@ li i {
   padding-bottom: 0;
   overflow: hidden;
   height: 0;
+  background-color: var(--addColor);
+  opacity: 1;
+  transition: height 1s ease-in-out, padding-top 0.7s ease-in-out,
+    padding-bottom 0.7s ease-in-out, margin-top 0.7s ease-in-out,
+    margin-bottom 0.7s ease-in-out, overflow 0.7s ease-in-out;
 }

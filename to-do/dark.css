@@ -74,15 +74,15 @@ li.done i:hover {
 .task-make {
   background-color: var(--addColor);
   opacity: 1;
+  transition: background-color 1.2s ease-in-out, opacity 0.2s ease-in-out,
+    height 1s ease-in-out, padding-top 0.7s ease-in-out,
+    padding-bottom 0.7s ease-in-out, margin-top 0.7s ease-in-out,
+    margin-bottom 0.7s ease-in-out, overflow 0.7s ease-in-out;
 }
 
 /* Fade in effect when a task is added */
 .task-made {
   background-color: var(--secondaryColor);
-  transition: background-color 1.2s ease-in-out, opacity 0.2s ease-in-out,
-    height 1s ease-in-out, padding-top 0.7s ease-in-out,
-    padding-bottom 0.7s ease-in-out, margin-top 0.7s ease-in-out,
-    margin-bottom 0.7s ease-in-out, overflow 0.7s ease-in-out;
 }
 
 span[contentEditable="true"] {
@@ -100,15 +100,13 @@ span[contentEditable="true"]:focus {
   border: none;
 }
 
-/*
-
 .task.drag-over {
   background-color: #f0f0f0 !important;
   border: 2px dashed #007bff;
   transition: none !important;
   opacity: 1 !important;
   transition-property: none !important;
-}*/
+}
 
 .dragging {
   opacity: 0.5; /* Makes the item semi-transparent */
