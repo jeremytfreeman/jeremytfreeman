@@ -59,16 +59,6 @@ inputField.addEventListener("focus", () => {
   addButton.style.visibility = "visible";
 });
 
-// Function to disable transitions
-function disableTransitions(element) {
-  element.style.transition = "none";
-}
-
-// Function to enable transitions
-function enableTransitions(element) {
-  element.style.transition = ""; // Revert to CSS-defined transitions
-}
-
 window.loadTheme = loadTheme;
 
 // Load tasks and theme from local storage when the page loads
