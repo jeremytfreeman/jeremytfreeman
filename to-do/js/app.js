@@ -27,7 +27,7 @@ inputField.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     // Error if field is empty
     if (inputField.value === "") {
-      showError(inputField);
+      showError(inputField, "Enter a task!");
       return;
     } else {
       // Prevent default form submission behavior (if applicable)
@@ -41,7 +41,7 @@ inputField.addEventListener("keydown", (event) => {
 // Clears error when user inputs text into the input field
 inputField.addEventListener("input", () => {
   if (inputField.value !== "") {
-    clearError(inputField);
+    clearError(inputField, "Add a new task here");
   }
 });
 
@@ -51,7 +51,7 @@ inputField.addEventListener("blur", () => {
   if (inputField.value === "") {
     addButton.style.visibility = "hidden";
   }
-  clearError(inputField);
+  clearError(inputField, "Add a new task here");
 });
 
 // Show add button when input field focus

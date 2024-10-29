@@ -26,6 +26,6 @@ export function loadTheme() {
   } else {
     document
       .getElementById("themeStylesheet")
-      .setAttribute("href", "./css/light.css"); // Default theme
+      .setAttribute("href", "./css/dark.css"); // Apply default theme
   }
 }
