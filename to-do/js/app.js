@@ -69,13 +69,6 @@ function enableTransitions(element) {
   element.style.transition = ""; // Revert to CSS-defined transitions
 }
 
-// Apply disable/enable when entering and leaving "drag-over"
-document.querySelectorAll(".task").forEach((task) => {
-  task.addEventListener("dragenter", () => disableTransitions(task));
-  task.addEventListener("dragleave", () => enableTransitions(task));
-  task.addEventListener("drop", () => enableTransitions(task)); // Re-enable after drop
-});
-
 window.loadTheme = loadTheme;
 
 // Load tasks and theme from local storage when the page loads

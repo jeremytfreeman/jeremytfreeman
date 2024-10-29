@@ -100,6 +100,11 @@ export class TaskItem {
     this.listItem.appendChild(this.buttonDiv);
     this.buttonDiv.appendChild(this.doneButton);
     this.buttonDiv.appendChild(this.remove);
+
+    //drag event listeners
+    this.listItem.addEventListener("dragenter", () => this.disableTransitions);
+    this.listItem.addEventListener("dragleave", () => this.enableTransitions);
+    this.listItem.addEventListener("drop", () => this.enableTransitions);
     this.updateTaskStyle();
 
     // Delay to fade in task items
@@ -136,6 +141,16 @@ export class TaskItem {
     } else {
       this.listItem.classList.remove("done");
     }
+  }
+
+  // Function to disable transitions
+  disableTransitions() {
+    this.listItem.style.transition = "none"; //remove transitions
+  }
+
+  // Function to enable transitions
+  enableTransitions() {
+    this.listItem.style.transition = ""; // Reset to default
   }
 }
 
