@@ -1,4 +1,11 @@
-class TaskManager {
+//taskManager.js
+console.log("taskManager is loaded");
+
+import { TaskItem } from "./taskModule.js";
+
+console.log("taskManager has loaded" + TaskItem);
+
+export class TaskManager {
   static reorderTasks(draggedTaskId, targetTaskId) {
     const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     const draggedIndex = tasks.findIndex(

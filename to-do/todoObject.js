@@ -299,9 +299,9 @@ function switchTheme() {
 
   // Set the href attribute based on the theme
   if (currentTheme.includes("dark.css")) {
-    styleSheet.setAttribute("href", "light.css");
+    styleSheet.setAttribute("href", "./css/light.css");
   } else {
-    styleSheet.setAttribute("href", "dark.css");
+    styleSheet.setAttribute("href", "./css/dark.css");
   }
 
   // Store theme in localStorage
@@ -317,7 +317,7 @@ function loadTheme() {
   } else {
     document
       .getElementById("themeStylesheet")
-      .setAttribute("href", "light.css"); // Default theme
+      .setAttribute("href", "./css/light.css"); // Default theme
   }
 }
 
