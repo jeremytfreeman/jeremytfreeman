@@ -66,6 +66,10 @@ li.done i:hover {
   color: var(--errorText);
 }
 
+.task:hover {
+  color: var(--actionColor);
+}
+
 .task-loaded {
   opacity: 1;
 }
