@@ -1,14 +1,16 @@
 :root {
   /* define color variables  */
   --bgColor: #181d28;
-  --textColor: white;
+  --textColor: #ccd2e0;
   --secondaryColor: #222836;
   --addColor: #424a61;
-  --actionColor: aqua;
-  --doneColor: gray;
+  --actionColor: #b2a2d4;
+  --doneColor: #3f5e1d;
   --errorText: pink;
   --fieldError: rgb(55, 21, 21);
-  --placeholderText: rgb(128, 128, 141);
+  --placeholderText: #4e5f83;
+  --shadowColor: #10131a;
+  --editFieldColor: #08090d;
 }
 
 body {
@@ -22,6 +24,12 @@ h1 {
 
 li.done {
   color: var(--doneColor);
+  opacity: 0.5;
+}
+
+li.done:hover {
+  color: var(--doneColor);
+  opacity: 1;
 }
 
 li {
@@ -34,10 +42,15 @@ li.done i:hover {
   color: var(--actionColor);
 }
 
+input {
+  outline: none;
+}
+
 #taskInput {
   color: var(--textColor);
-  background-color: var(--secondaryColor);
-  border-bottom-color: var(--textColor);
+  background-color: var(--bgColor);
+  transition: background-color 0.3s ease-out;
+  border: none;
 }
 
 #taskInput::placeholder {
@@ -46,7 +59,7 @@ li.done i:hover {
 
 #taskInput:focus {
   /* border-bottom-color: var(--actionColor); */
-  background-color: var(--addColor);
+  background-color: var(--editFieldColor);
 }
 
 #taskInput:focus::placeholder {
@@ -66,8 +79,14 @@ li.done i:hover {
   color: var(--errorText);
 }
 
+.task {
+  box-shadow: 2px 4px 16px var(--shadowColor);
+  border: solid 1px #2b3244;
+}
+
 .task:hover {
   color: var(--actionColor);
+  background-color: #242b3c;
 }
 
 .task-loaded {
@@ -86,7 +105,7 @@ li.done i:hover {
 
 /* Fade in effect when a task is added */
 .task-made {
-  background-color: var(--secondaryColor);
+  background-color: #1e2432;
 }
 
 span[contentEditable="true"] {
@@ -94,26 +113,26 @@ span[contentEditable="true"] {
 }
 
 span[contentEditable="true"]:hover {
-  color: var(--actionColor);
+  color: var(--textColor);
 }
 
 span[contentEditable="true"]:focus {
-  background-color: rgb(44, 42, 57);
+  background-color: var(--editFieldColor);
   border-radius: 8px;
   outline: none;
   border: none;
+  transition: background-color, 0.3s ease-in;
 }
 
 .task.drag-over {
-  background-color: #f0f0f0 !important;
-  border: 2px dashed #007bff;
+  background-color: var(--actionColor) !important;
   transition: none !important;
   opacity: 1 !important;
   transition-property: none !important;
 }
 
 .dragging {
-  opacity: 0.5; /* Makes the item semi-transparent */
-  border: 2px dotted #00d5ff; /* Adds a dashed border */
+  opacity: 1; /* Makes the item semi-transparent */
+  border: 2px dotted var(--actionColor); /* Adds a dashed border */
   background-color: #0d1114; /* Optional: changes the background color */
 }

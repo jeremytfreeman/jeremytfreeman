@@ -25,7 +25,6 @@ export class TaskItem {
       e.preventDefault(); // Necessary to allow the drop
     });
     this.listItem.addEventListener("dragleave", () => {
-      console.log(this.listItem.id + "drag leave");
       this.listItem.classList.remove("drag-over");
     });
     this.listItem.addEventListener("drop", () => {

@@ -34,17 +34,14 @@
         document.body.removeAttribute("hidden")
       );
     </script>
-    <div id="container">
-      <header>
-        <h1>It'd be great if you could...</h1>
+    <header><h1>Header</h1></header>
+    <div id="taskapp-container">
+      <div id="task-header">
+        <h2>TPS: Task Priority System</h2>
         <i class="fa-solid fa-circle-half-stroke" onclick="switchTheme()"></i>
-      </header>
+      </div>
       <div id="inputContainer">
-        <input
-          type="text"
-          id="taskInput"
-          placeholder="Yeaaaaah...let's add some tasks"
-        />
+        <input type="text" id="taskInput" placeholder="Let's add some tasks" />
         <i id="addButton" class="fa-solid fa-plus"></i>
       </div>
       <p id="errorMessage"></p>

@@ -64,5 +64,6 @@ window.loadTheme = loadTheme;
 // Load tasks and theme from local storage when the page loads
 window.onload = function () {
   TaskManager.loadTasks();
+  inputField.focus();
   loadTheme();
 };
