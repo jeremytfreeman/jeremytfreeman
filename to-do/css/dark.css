@@ -112,6 +112,7 @@ input {
 span[contentEditable="true"] {
   border: none;
   cursor: text;
+  margin-left: 12px;
 }
 
 span[contentEditable="true"]:hover {
@@ -147,4 +148,7 @@ span[contentEditable="true"]:focus {
 }
 .hidden-dragging {
   visibility: visible;
+}
+
+input {
 }

@@ -8,8 +8,10 @@ export class TaskItem {
     this.id = id || Date.now(); //unique ID if not provided
     this.listItem = document.createElement("li"); //creates <li>
     this.listItem.classList.add("task"); //adds class
-    this.doneCheck = document.createElement("input");
-    this.doneCheck.setAttribute("type", "checkbox");
+    this.checkLabel = document.createElement("label"); //create label for checkbox
+    this.doneCheck = document.createElement("input"); //create checkbox input
+    this.doneCheck.setAttribute("type", "checkbox"); //set type to checkbox
+    this.checkSpan = document.createElement("span"); //span to show replacement check
     this.listItem.setAttribute("draggable", true); //make draggable
     this.listItemSpan = document.createElement("span"); //span to hold task text
     this.listItemSpan.setAttribute("contentEditable", "false"); //editable false
@@ -124,8 +126,16 @@ export class TaskItem {
     this.doneButton.classList.add("fa-check");
     this.doneButton.onclick = () => this.toggleDoneState();
 
-    // Append the task text and button to the list item
-    this.listItem.appendChild(this.doneCheck);
+    this.doneCheck.onchange = () => this.toggleDoneState();
+
+    // Set up for the checkbox
+    this.checkSpan.classList.add("checkmark");
+    this.checkLabel.classList.add("custom-checkbox");
+
+    // Append elements to the list item
+    this.listItem.appendChild(this.checkLabel);
+    this.checkLabel.appendChild(this.doneCheck);
+    this.checkLabel.appendChild(this.checkSpan);
     this.listItem.appendChild(this.listItemSpan);
     this.listItemSpan.appendChild(taskNode);
     this.listItem.appendChild(this.buttonDiv);
@@ -216,6 +226,10 @@ export class TaskManager {
     const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     tasks.forEach(({ id, taskText, done }) => {
       const task = new TaskItem(taskText, done, id);
+      // Apply the "done" style if the task is marked as completed
+      if (done) {
+        task.updateTaskStyle();
+      }
       document.getElementById("taskList").appendChild(task.createTask());
     });
   }

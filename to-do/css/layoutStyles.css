@@ -68,7 +68,6 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: solid 1px;
   border-radius: 8px;
 }
 
@@ -76,6 +75,7 @@ li.done {
   text-decoration: line-through;
 }
 
+/* button not not needed */
 li button {
   height: 32px;
   padding: 0;
@@ -142,6 +142,11 @@ li i {
   cursor: grab;
 }
 
+.task:active {
+  transform: rotate(10deg);
+  opacity: 1;
+}
+
 /* Fade in effect when a task is added */
 .fade-in {
   opacity: 1;
@@ -165,4 +170,49 @@ li i {
 
 .dragging {
   cursor: grabbing;
+}
+
+/* Hide the default checkbox */
+li .custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+/* Create a custom checkbox appearance */
+li .custom-checkbox .checkmark {
+  width: 16px !important;
+  height: 16px !important;
+  background-color: var(--addColor);
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Style for when the checkbox is checked */
+li .custom-checkbox input[type="checkbox"]:checked + .checkmark {
+  background-color: #4caf50;
+}
+
+.checkmark {
+  display: block;
+}
+
+/* Add a checkmark using a pseudo-element */
+li .custom-checkbox .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 12px;
+  top: 6px;
+  width: 8px;
+  height: 16px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Display the checkmark when checked */
+li .custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+  display: block;
 }
