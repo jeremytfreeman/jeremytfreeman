@@ -229,6 +229,8 @@ export class TaskManager {
       // Apply the "done" style if the task is marked as completed
       if (done) {
         task.updateTaskStyle();
+        //Set checkbox to checked
+        task.doneCheck.checked = true;
       }
       document.getElementById("taskList").appendChild(task.createTask());
     });

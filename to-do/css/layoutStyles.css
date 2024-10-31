@@ -143,6 +143,7 @@ li i {
 }
 
 .task:active {
+  transition-delay: 0.05s;
   transform: rotate(10deg);
   opacity: 1;
 }
