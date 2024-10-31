@@ -82,6 +82,7 @@ input {
 .task {
   box-shadow: 2px 4px 16px var(--shadowColor);
   border: solid 1px #2b3244;
+  transition: transform 0.3s ease;
 }
 
 .task:hover {
@@ -134,8 +135,9 @@ span[contentEditable="true"]:focus {
 
 .dragging {
   opacity: 1; /* Makes the item semi-transparent */
-  border: 2px dotted var(--actionColor); /* Adds a dashed border */
+  border: 2px solid var(--addColor); /* Adds a dashed border */
   background-color: #0d1114; /* Optional: changes the background color */
+  color: var(--editFieldColor);
 }
 
 .task-placeholder {

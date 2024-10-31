@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Checkbox</title>
+    <style>
+      /* Hide the default checkbox */
+      .custom-checkbox input[type="checkbox"] {
+        display: none;
+      }
+
+      /* Create a custom checkbox appearance */
+      .custom-checkbox .checkmark {
+        width: 20px;
+        height: 20px;
+        background-color: #ccc;
+        border-radius: 4px;
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      /* Style for when the checkbox is checked */
+      .custom-checkbox input[type="checkbox"]:checked + .checkmark {
+        background-color: #4caf50;
+      }
+
+      /* Add a checkmark using a pseudo-element */
+      .custom-checkbox .checkmark::after {
+        content: "";
+        position: absolute;
+        display: none;
+        left: 6px;
+        top: 2px;
+        width: 6px;
+        height: 12px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+
+      /* Display the checkmark when checked */
+      .custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <label class="custom-checkbox">
+      <input type="checkbox" />
+      <span class="checkmark"></span> Custom Checkbox
+    </label>
+  </body>
+</html>

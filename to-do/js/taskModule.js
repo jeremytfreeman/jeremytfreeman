@@ -8,6 +8,8 @@ export class TaskItem {
     this.id = id || Date.now(); //unique ID if not provided
     this.listItem = document.createElement("li"); //creates <li>
     this.listItem.classList.add("task"); //adds class
+    this.doneCheck = document.createElement("input");
+    this.doneCheck.setAttribute("type", "checkbox");
     this.listItem.setAttribute("draggable", true); //make draggable
     this.listItemSpan = document.createElement("span"); //span to hold task text
     this.listItemSpan.setAttribute("contentEditable", "false"); //editable false
@@ -15,8 +17,8 @@ export class TaskItem {
     this.buttonDiv.classList.add("buttonDiv"); //add class to buttonDiv
     this.remove = document.createElement("i"); //remove icon
     this.doneButton = document.createElement("i"); //done icon
-    //Click listener enables editing
-    this.listItemSpan.addEventListener("click", () => this.enableEditing());
+    //Double click listener enables editing
+    this.listItemSpan.addEventListener("dblclick", () => this.enableEditing());
 
     // Drag event listeners:
     this.listItem.addEventListener("dragstart", (event) =>
@@ -123,6 +125,7 @@ export class TaskItem {
     this.doneButton.onclick = () => this.toggleDoneState();
 
     // Append the task text and button to the list item
+    this.listItem.appendChild(this.doneCheck);
     this.listItem.appendChild(this.listItemSpan);
     this.listItemSpan.appendChild(taskNode);
     this.listItem.appendChild(this.buttonDiv);
