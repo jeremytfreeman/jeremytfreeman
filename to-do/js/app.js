@@ -51,7 +51,7 @@ inputField.addEventListener("blur", () => {
   if (inputField.value === "") {
     addButton.style.visibility = "hidden";
   }
-  clearError(inputField, "Yeaaaaah...let's add some tasks");
+  clearError(inputField, "Let's add some tasks");
 });
 
 // Show add button when input field focus

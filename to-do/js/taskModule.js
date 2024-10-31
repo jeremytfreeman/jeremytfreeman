@@ -15,45 +15,72 @@ export class TaskItem {
     this.buttonDiv.classList.add("buttonDiv"); //add class to buttonDiv
     this.remove = document.createElement("i"); //remove icon
     this.doneButton = document.createElement("i"); //done icon
-
-    // Add drag event listeners for visual changes on hover
-    this.listItem.addEventListener("dragenter", (e) => {
-      e.preventDefault();
-      this.listItem.classList.add("drag-over");
-    });
-    this.listItem.addEventListener("dragover", (e) => {
-      e.preventDefault(); // Necessary to allow the drop
-    });
-    this.listItem.addEventListener("dragleave", () => {
-      this.listItem.classList.remove("drag-over");
-    });
-    this.listItem.addEventListener("drop", () => {
-      this.listItem.classList.remove("drag-over");
-    });
-
-    // Add event listener to enable editing on click
+    //Click listener enables editing
     this.listItemSpan.addEventListener("click", () => this.enableEditing());
 
-    // Add drag event listeners
-    this.listItem.addEventListener("dragstart", (event) => {
-      this.listItem.classList.add("dragging"); // Apply dragging styles
-      event.dataTransfer.setData("text/plain", this.id); // Store the task ID in the drag event
-      event.dataTransfer.effectAllowed = "move";
-    });
+    // Drag event listeners:
+    this.listItem.addEventListener("dragstart", (event) =>
+      this.handleDragStart(event)
+    );
+    this.listItem.addEventListener("dragend", () => this.handleDragEnd());
 
-    this.listItem.addEventListener("dragover", (event) => {
-      event.preventDefault(); // Enable dropping by preventing the default
-    });
+    const taskList = document.getElementById("taskList");
+    taskList.addEventListener("dragover", (event) =>
+      this.handleDragOver(event)
+    );
+  }
 
-    this.listItem.addEventListener("dragend", () => {
-      this.listItem.classList.remove("dragging"); // Remove dragging styles
-    });
+  //Drag methods
+  handleDragStart(event) {
+    event.dataTransfer.effectAllowed = "move";
+    this.listItem.classList.add("dragging");
+    event.dataTransfer.setData("text/plain", this.taskText);
+  }
 
-    this.listItem.addEventListener("drop", (event) => {
-      event.preventDefault();
-      const draggedTaskId = event.dataTransfer.getData("text/plain"); // Retrieve dragged task ID
-      TaskManager.reorderTasks(draggedTaskId, this.id); // Reorder tasks in the TaskManager
-    });
+  handleDragEnd() {
+    this.listItem.classList.remove("dragging");
+
+    // Collect the IDs of tasks in the new order
+    const taskList = document.getElementById("taskList");
+    const reorderedTaskIds = Array.from(taskList.children).map((item) =>
+      parseInt(item.dataset.id)
+    );
+
+    // Call TaskManager to save the new order
+    TaskManager.reorderTasks(reorderedTaskIds);
+  }
+
+  handleDragOver(event) {
+    event.preventDefault(); // Allow drop
+    const draggingItem = document.querySelector(".dragging");
+    const afterElement = this.getDragAfterElement(event.clientY);
+    const taskList = document.getElementById("taskList");
+
+    if (afterElement == null) {
+      taskList.appendChild(draggingItem);
+    } else {
+      taskList.insertBefore(draggingItem, afterElement);
+    }
+  }
+
+  getDragAfterElement(y) {
+    const taskList = document.getElementById("taskList");
+    const draggableElements = [
+      ...taskList.querySelectorAll("li:not(.dragging)"),
+    ];
+
+    return draggableElements.reduce(
+      (closest, child) => {
+        const box = child.getBoundingClientRect();
+        const offset = y - box.top - box.height / 2;
+        if (offset < 0 && offset > closest.offset) {
+          return { offset: offset, element: child };
+        } else {
+          return closest;
+        }
+      },
+      { offset: Number.NEGATIVE_INFINITY }
+    ).element;
   }
 
   // Method to enable edit mode
@@ -81,6 +108,8 @@ export class TaskItem {
 
   // Method to create and return the list item
   createTask() {
+    this.listItem.innerHTML = "";
+    this.listItem.setAttribute("data-id", this.id); // Add unique ID
     const taskNode = document.createTextNode(this.taskText);
 
     // Set up the remove button
@@ -99,12 +128,6 @@ export class TaskItem {
     this.listItem.appendChild(this.buttonDiv);
     this.buttonDiv.appendChild(this.doneButton);
     this.buttonDiv.appendChild(this.remove);
-
-    //drag event listeners
-    this.listItem.addEventListener("dragenter", () => this.disableTransitions);
-    this.listItem.addEventListener("dragleave", () => this.enableTransitions);
-    this.listItem.addEventListener("drop", () => this.enableTransitions);
-    this.updateTaskStyle();
 
     // Delay to fade in task items
     setTimeout(() => {
@@ -199,6 +222,19 @@ export class TaskManager {
     const task = { taskText, done: false, id: Date.now() };
     tasks.unshift(task); // Add task to beginning of array
     localStorage.setItem("tasks", JSON.stringify(tasks));
+  }
+
+  // Accept the new order of task IDs and update local storage
+  static reorderTasks(reorderedTaskIds) {
+    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    // Sort tasks array based on the new order of task IDs
+    const reorderedTasks = reorderedTaskIds
+      .map((id) => tasks.find((task) => task.id === id))
+      .filter((task) => task); // Filter out any null or undefined values
+
+    // Save the reordered tasks to local storage
+    localStorage.setItem("tasks", JSON.stringify(reorderedTasks));
   }
 
   // Update the task's done state in local storage

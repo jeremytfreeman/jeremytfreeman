@@ -110,6 +110,7 @@ input {
 
 span[contentEditable="true"] {
   border: none;
+  cursor: text;
 }
 
 span[contentEditable="true"]:hover {
@@ -135,4 +136,13 @@ span[contentEditable="true"]:focus {
   opacity: 1; /* Makes the item semi-transparent */
   border: 2px dotted var(--actionColor); /* Adds a dashed border */
   background-color: #0d1114; /* Optional: changes the background color */
+}
+
+.task-placeholder {
+  height: 40px; /* or match the height of your task items */
+  background-color: transparent; /* or a light color for visual feedback */
+  border: 1px dashed #ccc; /* optional, to show placeholder */
+}
+.hidden-dragging {
+  visibility: visible;
 }

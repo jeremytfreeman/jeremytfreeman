@@ -139,7 +139,7 @@ li i {
 /*Task item is invisible initially  */
 .task {
   opacity: 0;
-  /* transition: opacity 0.5s ease-in-out; */
+  cursor: grab;
 }
 
 /* Fade in effect when a task is added */
@@ -161,4 +161,8 @@ li i {
   transition: height 1s ease-in-out, padding-top 0.7s ease-in-out,
     padding-bottom 0.7s ease-in-out, margin-top 0.7s ease-in-out,
     margin-bottom 0.7s ease-in-out, overflow 0.7s ease-in-out;
+}
+
+.dragging {
+  cursor: grabbing;
 }
