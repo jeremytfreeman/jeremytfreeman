@@ -393,7 +393,7 @@ header {
 
 #send-icon {
   margin-top: 24px;
-  margin-right: 24px;
+  margin-right: 0px;
 }
 
 .send-icon path {
