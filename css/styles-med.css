@@ -157,21 +157,3 @@
     margin-right: 48px;
   }
 }
-
-@media screen and (min-width: 650px) and (max-width: 859px) {
-  .project-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 24px;
-  }
-
-  .project-item {
-    margin-bottom: 16px;
-    margin-top: 24px;
-  }
-
-  .project-item img {
-    width: 100%;
-    margin-bottom: 24px;
-  }
-}

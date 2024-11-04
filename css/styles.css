@@ -81,7 +81,7 @@ p {
 
 h1 {
   /*font-size: 5.4vw; */
-  font-size: clamp(1rem, 5.4vw + 1rem, 7rem);
+  font-size: clamp(3.2rem, 5.4vw + 1rem, 7rem);
   /*font-size: 5.4rem; */
   line-height: 120%;
   font-weight: 300;
@@ -631,7 +631,7 @@ html {
 
 /* PROJECTS ------------------------*/
 .project-item {
-  margin: 64px 0px;
+  margin: 0px 0px 0px 0px;
   box-sizing: border-box;
 }
 
