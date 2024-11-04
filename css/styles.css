@@ -215,6 +215,10 @@ ul {
   padding-left: 24px;
 }
 
+li {
+  margin-bottom: 20px;
+}
+
 nav li {
   line-height: 160%;
   margin-bottom: 8px;
