@@ -54,7 +54,7 @@
   }
 
   .checkbtn {
-    display: inline;
+    display: block;
     order: 1;
     margin-right: 4px;
     /* border: #EC9C28 dashed 1px; */
