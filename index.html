@@ -33,6 +33,15 @@
     <title>
       Jeremy T Freeman: Seasoned Full-stack User Experience Professional
     </title>
+    <!-- Load fonts -->
+    <link href="css/fontface.css" rel="stylesheet" />
+    <!-- Normalize CSS-->
+    <link href="css/normalize.css" rel="stylesheet" />
+
+    <!-- Core CSS-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/styles-med.css" rel="stylesheet" />
+    <link href="css/styles-sm.css" rel="stylesheet" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/fav-icon.png" />
@@ -45,12 +54,6 @@
       rel="stylesheet"
     />
 
-    <!-- Normalize CSS-->
-    <link href="css/normalize.css" rel="stylesheet" />
-
-    <!-- Core CSS-->
-    <link href="css/styles.css" rel="stylesheet" />
-
     <!-- Load Material icon library  -->
     <link
       rel="stylesheet"
@@ -62,9 +65,6 @@
     <div class="grid-container">
       <!--//  HEADER  // -->
       <header>
-        <a href="index.html" title="Jeremy T Freeman"
-          ><img src="images/jtf-logomark.svg" type="" class="jtf-logo"
-        /></a>
         <div class="send-tooltip">
           <a
             href="javascript:location='mailto:\u006a\u0066\u0072\u0065\u0065\u0037\u0040\u0067\u006d\u0061\u0069\u006c\u002e\u0063\u006f\u006d';void 0"
@@ -89,6 +89,23 @@
         </div>
       </header>
 
+      <a href="index.html" title="Jeremy T Freeman" id="logo-link"
+        ><svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          id="jtf-logo"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M17.6061 7.52834H15.5806V7.52858H12.8993V14.1288C12.8993 14.7475 13.0024 15.16 13.2087 15.3663C13.4149 15.5726 13.8274 15.6757 14.4462 15.6757C14.6524 15.6757 14.8501 15.6671 15.0392 15.6499C15.2282 15.6327 15.4087 15.6069 15.5806 15.5726V18.4086C15.2712 18.4601 14.9275 18.4945 14.5493 18.5117C14.1712 18.5289 13.8016 18.5375 13.4407 18.5375C12.8735 18.5375 12.3321 18.4945 11.8164 18.4086C11.318 18.3398 10.8711 18.1937 10.4758 17.9703C10.0976 17.7468 9.79684 17.4289 9.5734 17.0163C9.34995 16.6038 9.23823 16.0624 9.23823 15.3921V7.52858H5.85251V19.053C5.85251 19.7405 5.77516 20.3335 5.62047 20.8319C5.48297 21.3304 5.23374 21.7429 4.87279 22.0695C4.52903 22.4132 4.05636 22.6625 3.45478 22.8171C2.8532 22.989 2.08834 23.075 1.16019 23.075C0.730489 23.075 0.34376 23.0406 0 22.9718V19.9553C0.189068 20.0241 0.446887 20.0585 0.773459 20.0585C1.15159 20.0585 1.47817 19.9811 1.75317 19.8264C2.04537 19.6889 2.19147 19.371 2.19147 18.8725V5.07915H5.85251V5.0793H9.23823V1.08309H12.8993V5.0793H15.4146V5.07905H17.6061V4.04777C17.6061 2.8618 17.9756 1.89068 18.7147 1.13441C19.4538 0.378136 20.571 0 22.0663 0C22.3929 0 22.7195 0.017188 23.0461 0.0515646C23.3726 0.0687523 23.6906 0.0859405 24 0.103128V2.83602C23.5703 2.78445 23.1234 2.75867 22.6593 2.75867C22.1609 2.75867 21.7999 2.87899 21.5765 3.11962C21.3702 3.34306 21.2671 3.72979 21.2671 4.27981V5.07905H23.7937V7.52834H21.2671V18.4083H17.6061V7.52834Z"
+            fill="#181D28"
+          />
+        </svg>
+      </a>
       <!--//   MAIN NAVIGATION  // -->
       <nav>
         <input type="checkbox" id="check" />
@@ -102,56 +119,60 @@
           <li><a class="active" href="expertise.html">Expertise</a></li>
           <li><a href="about.html">About Me</a></li>
         </ul>
-        <!-- logo shown on scroll -->
-        <div id="jtf-logo-scroll" class="logo-scroll-hide">
-          <a href="index.html" title="Jeremy T Freeman"
-            ><img src="images/jtf-scroll-logo.svg" type=""
-          /></a>
-        </div>
       </nav>
 
       <main class="content-wrapper">
         <!--//  HERO AREA  // -->
         <div id="hero-box">
-          <h1>
-            Hi, I'm Jeremy. I am a full-stack UX professional, seasoned in
-            leading projects and teams hands-on through the front-end journey,
-            from insights to interface.
-          </h1>
+          <h1 class="light-text">Hi, I'm Jeremy.</h1>
+          <h2>
+            <span class="medium-text">Full-stack UX alchemy.</span><br />
+            <a href="about.html">
+              <span id="seasoned-span"
+                >Tempered in leading projects and teams hands-on through the
+                front-end journey.</span
+              >
+            </a>
+            <br /><span class="tertiary">From (insights) => {interface}</span>
+          </h2>
 
-          <h4>
-            Throughout my career as a UX alchemist, I’ve blended my skills
-            across various disciplines, transforming raw ideas into user-focused
-            experiences. With a creative core, I love taking the seed of an
-            idea, uncovering the hidden needs of users, and exploring the
-            potential of what it could become. From there, I forge those
-            elements into a final product that feels intuitive and alive. If
-            this resonates with you, I’d love to connect—feel free to
-            <a
-              href="javascript:location='mailto:\u006a\u0066\u0072\u0065\u0065\u0037\u0040\u0067\u006d\u0061\u0069\u006c\u002e\u0063\u006f\u006d';void 0"
-            >
-              <script type="text/javascript">
-                document.write("drop me an email");
-              </script>
-            </a>
-            or check out my
-            <a href="https://www.linkedin.com/in/jeremytfreeman/"
-              >Linkedin profile.
-            </a>
-          </h4>
+          <h3>
+            Blending skills across various disciplines to transmute raw ideas
+            into user-focused experiences. Unearthing the cryptic secrets of
+            users, seeking the hidden potential of what could be through
+            discovery and alchemical experimentation.
+          </h3>
+          <h3>
+            <span class="tertiary"
+              >Let's connect—
+              <a
+                href="javascript:location='mailto:\u006a\u0066\u0072\u0065\u0065\u0037\u0040\u0067\u006d\u0061\u0069\u006c\u002e\u0063\u006f\u006d';void 0"
+              >
+                <script type="text/javascript">
+                  document.write("drop me an email");
+                </script>
+              </a>
+              or check out my
+              <a href="https://www.linkedin.com/in/jeremytfreeman/"
+                >Linkedin profile.
+              </a>
+            </span>
+          </h3>
           <!-- Resume Button -->
-          <a href="JeremyTFreeman_webresume_2024.pdf" target="_blank"
-            ><button class="primary-btn resumeButton">
-              Download my resume
-            </button></a
-          >
+          <p>
+            <a href="JeremyTFreeman_webresume_2024.pdf" target="_blank"
+              ><button class="primary-btn resumeButton shadow">
+                Download my resume
+              </button></a
+            >
+          </p>
         </div>
 
         <!--//  START PROJECTS AREA // -->
         <section id="projects-section">
           <div>
             <!-- Start content edits below this line. -->
-            <h1 class="page-header">/ Selected Works</h1>
+            <h2 class="page-header">/ Selected Works</h2>
             <!-- <p>A sampling of some of my UX project work </p>  optional intro line, add in later -->
 
             <div class="project-wrapper">
