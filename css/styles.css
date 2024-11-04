@@ -305,8 +305,8 @@ figcaption {
 /* GRID STYLES ------------------------*/
 
 .grid-container {
-  margin-left: 60px;
-  margin-right: 60px;
+  margin-left: 32px;
+  margin-right: 32px;
   display: grid;
   grid-template-columns: 1fr 8fr;
   /*grid-template-columns: 232px 1fr;  */
