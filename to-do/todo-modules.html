@@ -3,16 +3,16 @@
   <head>
     <link
       rel="preload"
-      href="./css/layoutStyles.css"
+      href="./css/styles.css"
       as="style"
       onload="this.rel='stylesheet'"
     />
-    <link
+    <!-- <link
       rel="preload"
       href="./css/dark.css"
       as="style"
       onload="this.rel='stylesheet'"
-    />
+    /> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -38,7 +38,7 @@
     <div id="taskapp-container">
       <div id="task-header">
         <h2>My Tasks</h2>
-        <i class="fa-solid fa-circle-half-stroke" onclick="switchTheme()"></i>
+        <i id="themeBtn" class="fa-solid fa-circle-half-stroke"></i>
       </div>
       <div id="inputContainer">
         <input type="text" id="taskInput" placeholder="Let's add some tasks" />

@@ -1,3 +1,18 @@
+:root {
+  /* define color variables  */
+  --bgColor: #181d28;
+  --textColor: #ccd2e0;
+  --secondaryColor: #222836;
+  --addColor: #424a61;
+  --actionColor: #b2a2d4;
+  --doneColor: #3f5e1d;
+  --errorText: #ffc0cb;
+  --fieldError: #371515;
+  --placeholderText: #4e5f83;
+  --shadowColor: #10131a;
+  --editFieldColor: #08090d;
+}
+
 *,
 *::before,
 *::after {
@@ -9,10 +24,21 @@ body {
   font-size: 16px;
   margin: 24px;
   font-weight: 400;
+  background-color: var(--bgColor);
+  color: var(--textColor);
+}
+
+h1 {
+  font-weight: lighter;
+  font-size: 40px;
 }
 
 h2 {
   font-weight: 500;
+}
+
+p {
+  margin: 0;
 }
 
 header {
@@ -31,77 +57,30 @@ header {
   width: 100%;
 }
 
-h1 {
-  font-weight: lighter;
-  font-size: 40px;
+#themeButton {
+  height: 32px;
+  padding: 0px;
 }
 
-span {
+#taskList {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+.task span {
   display: block;
   width: 100%;
   padding: 16px;
   line-height: 22px;
 }
 
-#themeButton {
-  height: 32px;
-  padding: 0px;
-}
-
-i {
+.task i {
   cursor: pointer;
+  margin-left: 8px;
 }
 
-p {
-  margin: 0;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin-top: 0;
-}
-
-li {
-  margin: 8px 0;
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 8px;
-}
-
-li.done {
-  text-decoration: line-through;
-}
-
-/* button not not needed */
-li button {
-  height: 32px;
-  padding: 0;
-  margin-left: 20px;
-  border: none;
-  padding-left: 8px;
-  padding-right: 8px;
-  font-size: 12px;
-}
-
-li.done button {
-  text-decoration: none;
-}
-
-li i {
-  cursor: pointer;
-  margin-left: 12px;
-}
-
-.buttonDiv {
-  text-align: right;
-  flex-shrink: 0;
-  margin-left: 12px;
-  font-size: 18px;
-}
-
+/* -------Input field styles --------*/
 #inputContainer {
   display: flex;
   position: relative;
@@ -136,15 +115,47 @@ li i {
   border: none;
 }
 
+/* ----------Task List Styles ----------*/
+
+li {
+  margin: 8px 0;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+}
+
+li.done {
+  text-decoration: line-through;
+}
+
+.task li.done button {
+  text-decoration: none;
+}
+
+.task li i {
+  cursor: pointer;
+  margin-left: 12px;
+}
+
+.buttonDiv {
+  text-align: right;
+  flex-shrink: 0;
+  margin-left: 12px;
+  font-size: 18px;
+}
+
 /*Task item is invisible initially  */
 .task {
   opacity: 0;
   cursor: grab;
 }
 
+/* rotates on drag */
 .task:active {
-  transition-delay: 0.05s;
-  transform: rotate(10deg);
+  /*transition-delay: 0.1s; */
+  transform: rotate(8deg);
   opacity: 1;
 }
 

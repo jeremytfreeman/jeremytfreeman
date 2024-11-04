@@ -6,8 +6,8 @@
   --addColor: #424a61;
   --actionColor: #b2a2d4;
   --doneColor: #3f5e1d;
-  --errorText: pink;
-  --fieldError: rgb(55, 21, 21);
+  --errorText: #ffc0cb;
+  --fieldError: #371515;
   --placeholderText: #4e5f83;
   --shadowColor: #10131a;
   --editFieldColor: #08090d;
@@ -148,7 +148,4 @@ span[contentEditable="true"]:focus {
 }
 .hidden-dragging {
   visibility: visible;
-}
-
-input {
 }

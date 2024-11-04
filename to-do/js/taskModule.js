@@ -9,8 +9,10 @@ export class TaskItem {
     this.listItem = document.createElement("li"); //creates <li>
     this.listItem.classList.add("task"); //adds class
     this.checkLabel = document.createElement("label"); //create label for checkbox
+    this.checkLabel.setAttribute("draggable", false);
     this.doneCheck = document.createElement("input"); //create checkbox input
     this.doneCheck.setAttribute("type", "checkbox"); //set type to checkbox
+    this.doneCheck.setAttribute("draggable", false);
     this.checkSpan = document.createElement("span"); //span to show replacement check
     this.listItem.setAttribute("draggable", true); //make draggable
     this.listItemSpan = document.createElement("span"); //span to hold task text
@@ -26,6 +28,11 @@ export class TaskItem {
     this.listItem.addEventListener("dragstart", (event) =>
       this.handleDragStart(event)
     );
+    // Prevent the checkbox from starting a drag event
+    this.checkLabel.addEventListener("dragstart", (event) =>
+      event.stopPropagation()
+    );
+
     this.listItem.addEventListener("dragend", () => this.handleDragEnd());
 
     const taskList = document.getElementById("taskList");

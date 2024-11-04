@@ -1,6 +1,12 @@
 //app.js
 
-import { switchTheme, loadTheme } from "./theming.js";
+import {
+  fetchThemes,
+  applyTheme,
+  changeTheme,
+  loadSavedTheme,
+  cycleThemes,
+} from "./theming.js";
 import { TaskManager, addTask } from "./taskModule.js";
 import { clearError, showError } from "./notifications.js";
 
@@ -59,11 +65,25 @@ inputField.addEventListener("focus", () => {
   addButton.style.visibility = "visible";
 });
 
-window.loadTheme = loadTheme;
+// Event listener to a theme button
+document.getElementById("themeBtn").addEventListener("click", cycleThemes);
+
+//window.loadTheme = loadTheme;
+
+// Load the saved theme on page load
+document.addEventListener("DOMContentLoaded", async () => {
+  const savedTheme = localStorage.getItem("selectedTheme") || "Mitternacht"; // Default to "Mitternacht"
+  const themes = await fetchThemes(); // Fetch all themes
+  if (themes && themes[savedTheme]) {
+    applyTheme(themes[savedTheme]); // Apply the saved theme
+  } else {
+    console.error(`Theme "${savedTheme}" not found`);
+  }
+});
 
 // Load tasks and theme from local storage when the page loads
 window.onload = function () {
   TaskManager.loadTasks();
   inputField.focus();
-  loadTheme();
+  //loadTheme();
 };
