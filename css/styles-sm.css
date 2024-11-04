@@ -11,6 +11,11 @@
     font-size: 2rem;
   }
 
+  .grid-container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .work-intro-summary {
     width: 100%;
     margin-bottom: 0px;
