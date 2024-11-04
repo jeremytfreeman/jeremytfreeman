@@ -80,7 +80,9 @@ p {
 }
 
 h1 {
-  font-size: 5.4rem;
+  /*font-size: 5.4vw; */
+  font-size: clamp(1rem, 5.4vw + 1rem, 7rem);
+  /*font-size: 5.4rem; */
   line-height: 120%;
   font-weight: 300;
   font-style: normal;
@@ -216,10 +218,6 @@ ul {
 }
 
 li {
-  margin-bottom: 20px;
-}
-
-nav li {
   line-height: 160%;
   margin-bottom: 8px;
   padding-left: 8px;
@@ -742,9 +740,12 @@ html {
   width: 100%;
   box-sizing: border-box;
   border: #e6e9f0 solid 40px;
+  outline: solid 1px white;
+  padding: 40px;
   background-color: var(--lightBackground);
   padding: 0px;
   margin-top: 20px;
+  box-shadow: 1px 2px 8px #c5cad5;
 }
 
 .img-box-black {
