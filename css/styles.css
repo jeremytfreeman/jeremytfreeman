@@ -856,6 +856,19 @@ html {
 
 /* EXPERTISE PAGE ------------------------*/
 
+.expertise-header {
+  border-bottom: solid 4px var(--primaryColor);
+  padding-bottom: 8px;
+}
+
+.expertise-list {
+  list-style: none;
+}
+
+.expertise-list li {
+  border-bottom: solid 1px var(--primary400);
+}
+
 .exp-cols {
   display: flex;
   flex-direction: row;
