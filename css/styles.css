@@ -204,6 +204,11 @@ p {
   border-bottom: solid 4px var(--primaryColor);
 }
 
+.hdline-alt-span {
+  display: inline-block;
+  max-width: 640px;
+}
+
 a {
   color: var(--actionColor);
   text-decoration: none;
