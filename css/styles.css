@@ -82,6 +82,7 @@ p {
 h1 {
   font-size: max(5.4vw, 3.6rem); /* no smaller than 3.6rem*/
   /*font-size: clamp(3.2rem, 5.4vw + 1rem, 7rem); */
+  color: #b3bcd1;
   line-height: 120%;
   font-weight: 300;
   font-style: normal;
@@ -198,6 +199,9 @@ p {
 
 .hdline-alt {
   color: #4d5d80;
+  padding-bottom: 8px;
+  margin-bottom: 60px;
+  border-bottom: solid 4px var(--primaryColor);
 }
 
 a {
@@ -299,8 +303,8 @@ figcaption {
 }
 
 .page-header {
-  padding-bottom: 12px;
-  border-bottom: solid 4px var(--primaryColor);
+  padding-bottom: 0px;
+  /*border-bottom: solid 4px var(--primaryColor); */
 }
 
 /* GRID STYLES ------------------------*/
