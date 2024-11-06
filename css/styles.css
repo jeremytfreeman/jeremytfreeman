@@ -80,9 +80,8 @@ p {
 }
 
 h1 {
-  /*font-size: 5.4vw; */
-  font-size: clamp(3.2rem, 5.4vw + 1rem, 7rem);
-  /*font-size: 5.4rem; */
+  font-size: max(5.4vw, 3.6rem); /* no smaller than 3.6rem*/
+  /*font-size: clamp(3.2rem, 5.4vw + 1rem, 7rem); */
   line-height: 120%;
   font-weight: 300;
   font-style: normal;
@@ -96,7 +95,7 @@ h1 {
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: max(3vw, 3rem); /* no smaller than 3.6rem*/
   line-height: 130%;
   font-weight: 300;
   margin-bottom: 0px;
@@ -268,7 +267,7 @@ figcaption {
   font-weight: 600;
   display: inline-block;
   transition: 0.5s;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.07em;
 }
 
 .primary-btn {
@@ -311,7 +310,6 @@ figcaption {
   margin-right: 32px;
   display: grid;
   grid-template-columns: 1fr 8fr;
-  /*grid-template-columns: 232px 1fr;  */
   grid-template-areas:
     "hd hd"
     "lft rgt";
@@ -512,13 +510,6 @@ nav ul li {
   width: 140px;
 }
 
-nav ul li:hover,
-.current {
-  background-color: #f2ecde;
-  outline: 1px solid #e4d2a5;
-  box-shadow: 1px 2px 8px #c5cad5;
-}
-
 nav ul li a {
   color: var(--primaryColor);
   text-decoration: none;
@@ -529,11 +520,21 @@ nav ul li a {
   display: block;
 }
 
+nav ul li:hover {
+  background-color: #f2ecde;
+  outline: 1px solid #e4d2a5;
+  box-shadow: 1px 2px 8px #c5cad5;
+}
+
+.current {
+  color: var(--secondaryColor);
+}
+
 nav ul li a:hover,
 .current a {
-  color: var(--secondaryColor);
   text-decoration: none;
   transform-origin: right;
+  color: var(--secondaryColor);
 }
 
 .checkbtn {
@@ -578,7 +579,7 @@ html {
   grid-area: rgt;
   justify-self: center;
   align-self: start;
-  max-width: 1000px;
+  max-width: 1200px;
   padding-top: 0px;
   text-align: left;
   margin-left: 24px;
