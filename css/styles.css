@@ -602,8 +602,9 @@ html {
 #hero-box {
   /*border: lightblue 1px dashed; */
   margin-top: 0px;
+  padding-bottom: 48px;
   margin-bottom: 64px;
-  border-radius: 12px;
+  border-bottom: solid 8px var(--primaryColor);
 
   /* CSS animation to change hero box color below
   animation-name: backgroundColorPalette;
