@@ -72,7 +72,7 @@ body::before {
   background: linear-gradient(to bottom, #d9d9d9, #ffffff);
   background-repeat: no-repeat;
   background-position: top;
-  height: 500px; /* Height of the gradient */
+  height: 400px; /* Height of the gradient */
   position: fixed;
   width: 100%;
   z-index: -1;
