@@ -545,9 +545,9 @@ nav ul li a {
 }
 
 nav ul li:hover {
-  background-color: #f2ecde;
-  outline: 1px solid #e4d2a5;
-  box-shadow: 1px 2px 8px #c5cad5;
+  background-color: #ffffff;
+  outline: 1px solid #d9d9d9;
+  box-shadow: 1px 2px 6px #c5cad5;
 }
 
 .current {
