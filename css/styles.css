@@ -309,6 +309,7 @@ figcaption {
 
 .resumeButton {
   transition: all 0.3s;
+  margin: 40px 0 20px 0;
   /* border-radius: 8px; */
 }
 
@@ -994,6 +995,7 @@ footer a:hover {
 
 #footer-text {
   align-content: top;
+  margin-bottom: 60px;
   /* border: #B983AE 1px solid; */
   /* margin-right: auto; */
 }
