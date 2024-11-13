@@ -14,7 +14,7 @@
   --tertiaryColor: #8fbcbb;
   --actionColor: #6679a3;
   --lightBackground: #f2f4f7;
-  --backgroundColor: #ffffff;
+  --backgroundColor: #f7feff;
   --figCaption: #6b654b;
 }
 
@@ -69,7 +69,7 @@ body {
 
 body::before {
   content: "";
-  background: linear-gradient(to bottom, #d9d9d9, #ffffff);
+  background: linear-gradient(to bottom, #d9d9d9, #f7feff);
   background-repeat: no-repeat;
   background-position: top;
   height: 400px; /* Height of the gradient */
@@ -221,7 +221,7 @@ p {
 .hdline-alt-span {
   display: inline-block;
   width: 60%;
-  max-width: 700px;
+  max-width: 740px;
 }
 
 a {
@@ -547,7 +547,7 @@ nav ul li a {
 nav ul li:hover {
   background-color: #ffffff;
   outline: 1px solid #d9d9d9;
-  box-shadow: 1px 2px 20px rgb(197, 202, 213, 0.2);
+  box-shadow: 1px 2px 10px rgb(197, 202, 213, 0.5);
 }
 
 .current {
@@ -681,7 +681,7 @@ html {
 #topBtn {
   display: none;
   position: fixed;
-  bottom: 100px;
+  bottom: 20px;
   right: 30px;
   z-index: 98;
   font-size: 18px;
@@ -910,42 +910,62 @@ html {
 
 /* FOOTER ------------------------*/
 footer {
+  color: var(--primary600);
+  font-size: 12px;
   margin-top: auto;
+  padding-top: 48px;
+  border-top: solid 1px var(--primary400);
+  background-color: var(--primaryColor);
   display: flex;
-  background: #08090d;
-  align-items: center;
+  justify-content: space-between;
+  padding: 24px 20px;
 }
 
 footer p {
-  color: #6679a3;
   font-size: 1.2rem;
 }
 
 footer a {
-  color: #8c9bba;
+  color: var(--primary500);
+  text-decoration: underline;
 }
 
 footer a:hover {
-  color: rgb(141, 165, 247);
+  color: var(--secondaryColor);
 }
 
 #footer-text {
-  line-height: 0.4rem !important;
   display: flex;
 }
 
-#footer-text p {
-  line-height: 2rem;
+#footer-tree-rune {
+  width: 32px;
+  height: 32px;
+  padding-right: 0;
+  display: inline-block;
+  margin-bottom: 16px;
 }
 
-#footer-tree-rune {
-  width: 48px;
-  padding-right: 16px;
+#jtf-footer-logo {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  margin-right: 12px;
+  margin-bottom: 16px;
+}
+
+#jtf-footer-logo path {
+  fill: var(--primary600);
 }
 
 .footer-logo {
-  font-weight: 600;
-  line-height: 0.6rem;
+  font-size: 2.8rem;
+  font-weight: 500;
+  line-height: 4.5rem;
+}
+
+.footer-tagline {
+  font-size: 2rem;
 }
 
 #footer-pipe {
@@ -963,7 +983,7 @@ footer a:hover {
 }
 
 .socials img {
-  width: 32px;
+  width: 24px;
   opacity: 0.7;
   transition: cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
 }
