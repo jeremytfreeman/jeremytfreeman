@@ -69,7 +69,7 @@ body {
 
 body::before {
   content: "";
-  background: linear-gradient(to bottom, #d9d9d9, #f7feff);
+  background: linear-gradient(to bottom, #d0cbcb, #f7feff);
   background-repeat: no-repeat;
   background-position: top;
   height: 400px; /* Height of the gradient */
@@ -288,10 +288,11 @@ figcaption {
   border-radius: 4px;
   padding: 12px 24px;
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 500;
   display: inline-block;
   transition: 0.5s;
   letter-spacing: 0.07em;
+  box-shadow: 1px 2px 8px rgb(24, 29, 40, 0.3);
 }
 
 .primary-btn {
@@ -314,13 +315,15 @@ figcaption {
 }
 
 .secondary-btn {
-  background-color: #262e40;
+  background-color: var(--secondaryColor);
   color: var(--backgroundColor);
+  text-wrap: nowrap;
 }
 
 .secondary-btn:hover {
-  background-color: #496c6e;
+  background-color: #f4c47c;
   transition: 500ms;
+  cursor: pointer;
 }
 
 .page-header {
@@ -657,24 +660,75 @@ html {
 }
 
 /* PROJECTS ------------------------*/
+
 .project-item {
-  margin: 0px 0px 0px 0px;
+  margin: 0px 0px 48px 0px;
   box-sizing: border-box;
 }
 
 .project-item img {
-  width: 300px;
-  float: left;
-  margin-right: 20px;
   box-sizing: border-box;
+  width: 100%;
 }
 
-.project-item img:hover {
-  cursor: pointer;
-  opacity: 70%;
-  /*  border: #4D5D80 solid 1px; */
-  /* in order: x offset, y offset, blur size, spread size, color */
-  /* blur size and spread size are optional (they default to 0) */
+.proj-h3 {
+  color: white;
+  margin-top: 0;
+}
+
+#project-bg-wf {
+  padding: 32px;
+  background: linear-gradient(to bottom, #496c6e, #8dd0d4);
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#project-bg-wf img {
+  opacity: 0.8;
+}
+
+#project-bg-wf img:hover {
+  opacity: 1;
+}
+
+#project-bg-wf:hover {
+  background: linear-gradient(to bottom, #496c6e, #8dd0d4);
+  border-radius: 12px;
+  color: var(--primaryColor);
+}
+
+#project-bg-terra {
+  padding: 32px;
+  background: linear-gradient(to bottom, #67738f, #d3dcf0);
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#project-bg-bts {
+  padding: 32px;
+  background: linear-gradient(to bottom, #7b1169, #f46eb8);
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.proj-desc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.proj-btn {
+  margin-left: 120px;
 }
 
 /* BACK TO TOP BUTTON ------------------------*/

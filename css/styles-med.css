@@ -151,9 +151,4 @@
   .project-item {
     display: flow-root;
   }
-
-  .project-item img {
-    float: left;
-    margin-right: 48px;
-  }
 }

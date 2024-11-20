@@ -37,20 +37,6 @@
   }
 }
 
-@media screen and (max-width: 500px) {
-  .project-item img {
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 600px) {
-  footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 24px 20px;
-  }
-}
-
 @media screen and (max-width: 599px) {
   footer {
     display: flex;
