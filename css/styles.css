@@ -687,7 +687,7 @@ html {
 }
 
 #project-bg-wf img {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 #project-bg-wf img:hover {
@@ -708,6 +708,9 @@ html {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+#project-bg-terra img {
 }
 
 #project-bg-bts {
