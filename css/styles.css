@@ -113,7 +113,7 @@ h2 {
   font-size: max(3vw, 3rem); /* no smaller than 3.6rem*/
   line-height: 130%;
   font-weight: 300;
-  margin-bottom: 0px;
+  margin-bottom: 24px;
   animation: headingAnimation;
   animation-delay: 0s;
   animation-duration: 0.75s;
@@ -622,7 +622,7 @@ html {
   /*border: lightblue 1px dashed; */
   margin-top: 0px;
   padding-bottom: 48px;
-  margin-bottom: 64px;
+  margin-bottom: 24px;
   border-bottom: solid 8px var(--primaryColor);
 
   /* CSS animation to change hero box color below
