@@ -676,14 +676,17 @@ html {
   margin-top: 0;
 }
 
-#project-bg-wf {
+.project-bg {
   padding: 32px;
-  background: linear-gradient(to bottom, #496c6e, #8dd0d4);
   border-radius: 12px;
-  color: white;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+#project-bg-wf {
+  background: linear-gradient(to bottom, #496c6e, #8dd0d4);
+  color: white;
 }
 
 #project-bg-wf img {
@@ -701,26 +704,18 @@ html {
 }
 
 #project-bg-terra {
-  padding: 32px;
   background: linear-gradient(to bottom, #67738f, #d3dcf0);
   border-radius: 12px;
   color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 #project-bg-terra img {
 }
 
 #project-bg-bts {
-  padding: 32px;
   background: linear-gradient(to bottom, #7b1169, #f46eb8);
   border-radius: 12px;
   color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 .proj-desc {
