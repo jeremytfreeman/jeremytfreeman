@@ -284,15 +284,17 @@ figcaption {
 .primary-btn,
 .secondary-btn,
 .resumeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   border-radius: 4px;
-  padding: 12px 24px;
+  padding: 24px 24px;
   font-size: 1.4rem;
   font-weight: 500;
-  display: inline-block;
   transition: 0.5s;
   letter-spacing: 0.07em;
-  box-shadow: 1px 2px 8px rgb(24, 29, 40, 0.3);
+  box-sizing: border-box;
 }
 
 .primary-btn {
@@ -302,26 +304,27 @@ figcaption {
   outline: 1px solid var(--backgroundColor);
 }
 
-.primary-btn:hover {
+.primary-btn:hover,
+.secondary-btn:hover {
   background-color: var(--secondaryColor);
   transition: 500ms;
   cursor: pointer;
+  color: white;
 }
 
 .resumeButton {
   transition: all 0.3s;
   margin: 40px 0 20px 0;
-  /* border-radius: 8px; */
 }
 
 .secondary-btn {
-  background-color: var(--secondaryColor);
+  background-color: var(--primary600);
   color: var(--backgroundColor);
   text-wrap: nowrap;
 }
 
 .secondary-btn:hover {
-  background-color: #f4c47c;
+  background-color: var(--secondaryColor);
   transition: 500ms;
   cursor: pointer;
 }
@@ -722,8 +725,11 @@ html {
   margin-top: 24px;
 }
 
+.proj-desc p {
+  margin-right: 120px;
+}
+
 .proj-btn {
-  margin-left: 120px;
 }
 
 /* BACK TO TOP BUTTON ------------------------*/
