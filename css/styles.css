@@ -295,6 +295,7 @@ figcaption {
   transition: 0.5s;
   letter-spacing: 0.07em;
   box-sizing: border-box;
+  box-shadow: 1px 2px 8px rgb(24, 29, 40, 0.3);
 }
 
 .primary-btn {
@@ -321,6 +322,7 @@ figcaption {
   background-color: var(--primary600);
   color: var(--backgroundColor);
   text-wrap: nowrap;
+  outline: 1px solid var(--backgroundColor);
 }
 
 .secondary-btn:hover {
