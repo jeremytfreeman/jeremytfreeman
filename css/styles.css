@@ -699,13 +699,11 @@ html {
 
 #project-bg-wf:hover {
   background: linear-gradient(to bottom, #496c6e, #8dd0d4);
-  border-radius: 12px;
   color: var(--primaryColor);
 }
 
 #project-bg-terra {
   background: linear-gradient(to bottom, #67738f, #d3dcf0);
-  border-radius: 12px;
   color: white;
 }
 
@@ -714,7 +712,6 @@ html {
 
 #project-bg-bts {
   background: linear-gradient(to bottom, #7b1169, #f46eb8);
-  border-radius: 12px;
   color: white;
 }
 
