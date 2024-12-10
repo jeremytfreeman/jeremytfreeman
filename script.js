@@ -1,6 +1,7 @@
+//script.js
 //----------Back to top button mechanisms----------/
 
-//Get the back to top button
+//Get the back to top button in the DOM
 const mybutton = document.getElementById("topBtn");
 
 //Display button when scrolled
