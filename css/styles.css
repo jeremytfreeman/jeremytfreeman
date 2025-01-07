@@ -966,6 +966,7 @@ html {
 .expertise-list li {
   padding-top: 4px;
   padding-bottom: 4px;
+  line-height: 160%;
 }
 
 .exp-cols-item {
