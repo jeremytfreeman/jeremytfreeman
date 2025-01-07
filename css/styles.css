@@ -939,9 +939,22 @@ html {
 
 /* EXPERTISE PAGE ------------------------*/
 
+.exp-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--primary300);
+  margin-top: 60px;
+  padding-bottom: 40px;
+}
+
 .expertise-header {
-  border-bottom: solid 4px var(--primaryColor);
-  padding-bottom: 8px;
+  display: block;
+  margin-right: 60px;
+  width: 35%;
+  margin-top: 0;
 }
 
 .expertise-list {
@@ -949,21 +962,12 @@ html {
 }
 
 .expertise-list li {
-  border-bottom: solid 1px var(--primary400);
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-
-.exp-cols {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .exp-cols-item {
-  flex-grow: 1;
+  flex: 1;
 }
 
 /* FOOTER ------------------------*/

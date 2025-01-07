@@ -59,6 +59,33 @@
     flex-direction: column;
   }
 
+  /* EXPERTISE PAGE ------------------------*/
+
+  .exp-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--primary300);
+    margin-top: 32px;
+    padding-bottom: 0px;
+  }
+
+  .expertise-header {
+    display: block;
+    margin-right: 60px;
+    width: 100%;
+    margin-top: 0;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+  }
+
+  .exp-cols-item ul {
+    margin-bottom: 16px;
+    padding-bottom: 0px;
+  }
+
   footer {
     display: flex;
     flex-direction: column;
