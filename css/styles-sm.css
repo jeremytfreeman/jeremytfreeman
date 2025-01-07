@@ -69,7 +69,7 @@
     flex-wrap: wrap;
     border-bottom: 1px solid var(--primary300);
     margin-top: 32px;
-    padding-bottom: 0px;
+    padding-bottom: 20px;
   }
 
   .expertise-header {
