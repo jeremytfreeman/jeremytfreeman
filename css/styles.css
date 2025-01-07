@@ -214,7 +214,8 @@ p {
 .hdline-alt {
   color: #4d5d80;
   padding-bottom: 8px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+  padding-bottom: 32px;
   border-bottom: solid 4px var(--primaryColor);
 }
 
@@ -969,6 +970,10 @@ html {
 
 .exp-cols-item {
   flex: 1;
+}
+
+.exp-remove-border {
+  border-bottom: 0;
 }
 
 /* FOOTER ------------------------*/
