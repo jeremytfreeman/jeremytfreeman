@@ -946,8 +946,8 @@ html {
   gap: 20px;
   flex-wrap: wrap;
   border-bottom: 1px solid var(--primary300);
-  margin-top: 60px;
-  padding-bottom: 40px;
+  margin-top: 40px;
+  padding-bottom: 0px;
 }
 
 .expertise-header {
@@ -959,6 +959,7 @@ html {
 
 .expertise-list {
   list-style: none;
+  margin-top: 0;
 }
 
 .expertise-list li {
