@@ -161,6 +161,7 @@ h5 {
   font-size: 1.8rem;
   font-weight: 500;
   margin-bottom: 0px;
+  text-align: center;
 }
 
 h6 {
@@ -616,9 +617,11 @@ html {
   max-width: 1200px;
   padding-top: 0px;
   text-align: left;
-  margin-left: 24px;
-  margin-right: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
   margin-bottom: 48px;
+  width: 100%;
+
   /*border: 1px dashed pink; */
 }
 
@@ -658,6 +661,8 @@ html {
 .content-box {
   margin: auto;
   padding: 0px;
+  width: 100%;
+  max-width: none;
 }
 
 #section-2 {
@@ -976,6 +981,28 @@ html {
 
 .exp-remove-border {
   border-bottom: 0;
+}
+
+/* Philosophy Page ------------------------*/
+
+.philos-container {
+  width: 100%;
+  padding-bottom: 64px;
+  padding-top: 28px;
+  border-bottom: 1px solid var(--primary300);
+}
+
+.philos-hd {
+  text-align: center;
+}
+
+.philos-p {
+  max-width: 800px;
+  margin: auto;
+}
+
+.remove-border {
+  border: 0;
 }
 
 /* FOOTER ------------------------*/
