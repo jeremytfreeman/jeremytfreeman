@@ -994,6 +994,17 @@ html {
 
 .philos-hd {
   text-align: center;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.philos-h6 {
+  text-align: center;
+  font-style: italic;
+  font-weight: 500;
+  margin-bottom: 24px;
+  margin-top: 16px;
+  color: var(--primary600);
 }
 
 .philos-p {
