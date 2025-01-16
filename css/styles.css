@@ -69,7 +69,7 @@ body {
 
 body::before {
   content: "";
-  background: radial-gradient(circle, transparent 60%, var(--primary200));
+  background: radial-gradient(circle, transparent 60%, var(--primary100));
   background-repeat: no-repeat;
   background-position: bottom;
   height: 100vh; /* Height of the gradient */
@@ -94,7 +94,7 @@ p {
 }
 
 h1 {
-  font-size: max(4.6vw, 3.6rem); /* no smaller than 3.6rem, 5.4vw*/
+  font-size: max(5.4rem, 3.6rem); /* no smaller than 3.6rem, 5.4vw*/
   /*font-size: clamp(3.2rem, 5.4vw + 1rem, 7rem); */
   color: var(--primaryColor);
   line-height: 120%;
@@ -110,7 +110,7 @@ h1 {
 }
 
 h2 {
-  font-size: max(3vw, 3rem); /* no smaller than 3.6rem*/
+  font-size: max(4rem, 3rem); /* no smaller than 3.6rem*/
   line-height: 130%;
   font-weight: 300;
   margin-bottom: 24px;
@@ -347,7 +347,7 @@ figcaption {
   grid-template-areas:
     "hd hd"
     "lft rgt";
-  column-gap: 20px;
+  column-gap: 5vw;
 }
 
 /* Header Styles ------------------------*/
@@ -624,7 +624,21 @@ html {
   /*border: 1px dashed pink; */
 }
 
-/* HOMEPAGE HERO AREA ------------------------*/
+/* HOMEPAGE ------------------------*/
+.home-content-wrapper {
+  grid-area: rgt;
+  justify-self: center;
+  align-self: start;
+  max-width: 1200px;
+  padding-top: 0px;
+  text-align: left;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-bottom: 48px;
+  width: 100%;
+
+  /*border: 1px dashed pink; */
+}
 
 #hero-box {
   /*border: lightblue 1px dashed; */
@@ -649,7 +663,7 @@ html {
 }
 
 #seasoned-span {
-  max-width: 690px;
+  max-width: 800px;
   display: inline-block;
 }
 
@@ -669,11 +683,22 @@ html {
   padding-bottom: 20px;
 }
 
-/* PROJECTS ------------------------*/
+/* HOMEPAGE PROJECTS ------------------------*/
+
+.project-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
 
 .project-item {
-  margin: 0px 0px 48px 0px;
+  margin-bottom: 48px;
   box-sizing: border-box;
+  flex: 1 1 calc(50% - 20px); /* Take 50% of the width, minus the gap */
+  max-width: calc(50% - 20px); /* Ensure consistent sizing */
+  min-width: 400px;
 }
 
 .project-item img {
@@ -682,8 +707,9 @@ html {
 }
 
 .proj-h3 {
-  color: white;
+  color: var(--primaryColor);
   margin-top: 0;
+  margin-bottom: 0px;
 }
 
 .project-bg {
@@ -691,52 +717,16 @@ html {
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-}
-
-#project-bg-wf {
-  background: linear-gradient(to bottom, #496c6e, #8dd0d4);
-  color: white;
-}
-
-#project-bg-wf img {
-  opacity: 1;
-}
-
-#project-bg-wf img:hover {
-  opacity: 1;
-}
-
-#project-bg-wf:hover {
-  background: linear-gradient(to bottom, #496c6e, #8dd0d4);
-  color: var(--primaryColor);
-}
-
-#project-bg-terra {
-  background: linear-gradient(to bottom, #67738f, #d3dcf0);
-  color: white;
-}
-
-#project-bg-terra img {
-}
-
-#project-bg-bts {
-  background: linear-gradient(to bottom, #7b1169, #f46eb8);
-  color: white;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary100);
 }
 
 .proj-desc {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 24px;
-}
-
-.proj-desc p {
-  margin-right: 120px;
-}
-
-.proj-btn {
+  margin-top: 0px;
 }
 
 /* BACK TO TOP BUTTON ------------------------*/
