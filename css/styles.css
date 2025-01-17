@@ -698,7 +698,7 @@ html {
   box-sizing: border-box;
   flex: 1 1 calc(50% - 20px); /* Take 50% of the width, minus the gap */
   max-width: calc(50% - 20px); /* Ensure consistent sizing */
-  min-width: 300px;
+  min-width: 250px;
 }
 
 .project-item img {
@@ -720,6 +720,7 @@ html {
   justify-content: center;
   align-items: center;
   background-color: var(--primary100);
+  margin-bottom: 24px;
 }
 
 .proj-desc {
