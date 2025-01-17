@@ -24,6 +24,13 @@
     padding: 16px !important;
   }
 
+  .project-item {
+    margin-bottom: 48px;
+    box-sizing: border-box;
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
   .proj-desc {
     display: flex;
     flex-direction: column;

@@ -149,6 +149,10 @@
   }
 
   .project-item {
-    display: flow-root;
+    margin-bottom: 48px;
+    box-sizing: border-box;
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: 200px;
   }
 }

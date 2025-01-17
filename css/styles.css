@@ -690,7 +690,7 @@ html {
   justify-content: space-between;
   margin-top: 80px;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 20px;
 }
 
 .project-item {
@@ -698,7 +698,7 @@ html {
   box-sizing: border-box;
   flex: 1 1 calc(50% - 20px); /* Take 50% of the width, minus the gap */
   max-width: calc(50% - 20px); /* Ensure consistent sizing */
-  min-width: 400px;
+  min-width: 300px;
 }
 
 .project-item img {
