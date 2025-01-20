@@ -812,6 +812,11 @@ html {
 }
 
 /* WORK PAGES STYLES ------------------------*/
+
+.tldr {
+  font-style: italic;
+}
+
 .work-box {
   padding: 0px;
 }
