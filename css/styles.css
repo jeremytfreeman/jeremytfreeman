@@ -814,10 +814,7 @@ html {
 /* WORK PAGES STYLES ------------------------*/
 
 .tldr-section {
-  background-color: var(--primary50);
   padding: 24px;
-  border-radius: 12px;
-  outline: solid 1px var(--primary300);
 }
 
 .tldr {
