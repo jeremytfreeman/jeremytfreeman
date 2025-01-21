@@ -819,7 +819,9 @@ html {
 
 .tldr {
   font-style: italic;
-  color: var(--primary600);
+  color: var(--figCaption);
+  border-bottom: solid 1px var(--primary300);
+  padding-bottom: 32px;
 }
 
 .work-box {
