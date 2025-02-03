@@ -675,6 +675,10 @@ html {
   font-weight: 600;
 }
 
+.hero-gold-txt {
+  color: var(--secondaryColor);
+}
+
 #hero-box h4 a:hover {
   background-color: white;
   text-decoration: underline dotted 2px;
