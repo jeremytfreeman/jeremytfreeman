@@ -666,13 +666,19 @@ html {
   overflow: visible;
 }
 
-.hero-h1 {
+#hero-txt-box {
   position: absolute;
   top: 80%;
-  left: 20%;
+  right: 0%;
   display: block;
+  width: 100%;
+  text-align: right;
+}
+
+.hero-h1 {
   font-size: clamp(18px, 2vw, 48px);
   font-weight: 600;
+  text-align: right;
 }
 
 .hero-gold-txt {
