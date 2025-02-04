@@ -1055,9 +1055,10 @@ footer {
   color: var(--primary600);
   font-size: 12px;
   margin-top: auto;
+  margin-left: 20px;
+  margin-right: 20px;
   padding-top: 48px;
-  border-top: solid 1px var(--primaryColor);
-  border-bottom: solid 12px var(--primaryColor);
+  border-top: solid 8px var(--primaryColor);
   background-color: white;
   display: flex;
   justify-content: space-between;
