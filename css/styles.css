@@ -676,7 +676,7 @@ html {
 }
 
 .hero-h1 {
-  font-size: clamp(18px, 2vw, 48px);
+  font-size: clamp(18px, 3vw, 48px);
   font-weight: 600;
   text-align: right;
 }
