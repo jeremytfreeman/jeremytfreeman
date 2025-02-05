@@ -747,10 +747,28 @@ html {
   width: 100%;
 }
 
+#profile-pic {
+  width: 64px;
+  outline: 1px solid white;
+  border-radius: 50%;
+}
+
 .proj-h3 {
   color: var(--primaryColor);
   margin-top: 0;
   margin-bottom: 0px;
+}
+
+.profile-bg {
+  padding: 32px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary100);
+  height: 350px;
+  margin-bottom: 24px;
 }
 
 .project-bg {
