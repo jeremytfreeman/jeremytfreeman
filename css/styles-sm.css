@@ -32,9 +32,10 @@
     margin-top: 16px;
   }
 
-  .hero-h6 {
+  .hero-h5 {
     width: 100%;
     margin-left: 0;
+    text-align: left;
   }
 
   .project-bg {

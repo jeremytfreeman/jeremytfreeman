@@ -682,9 +682,11 @@ html {
   text-align: right;
 }
 
-.hero-h6 {
-  width: 40%;
-  margin-left: 60%;
+.hero-h5 {
+  text-align: right;
+  width: 50%;
+  margin-left: 50%;
+  font-size: 2.1rem;
 }
 
 .hero-gold-txt {
