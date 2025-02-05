@@ -20,6 +20,23 @@
     margin-right: 0;
   }
 
+  #hero-txt-box {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .hero-h1 {
+    text-align: left;
+    margin-top: 16px;
+  }
+
+  .hero-h6 {
+    width: 100%;
+    margin-left: 0;
+  }
+
   .project-bg {
     padding: 16px !important;
   }

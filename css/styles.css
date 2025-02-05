@@ -646,6 +646,7 @@ html {
   padding-bottom: 48px;
   margin-bottom: 24px;
   border-bottom: solid 8px var(--primaryColor);
+  overflow: visible;
   /* transform: skew(
     -15deg,
     -14deg
@@ -668,7 +669,7 @@ html {
 
 #hero-txt-box {
   position: absolute;
-  top: 80%;
+  top: 67%;
   right: 0%;
   display: block;
   width: 100%;
@@ -679,6 +680,11 @@ html {
   font-size: clamp(18px, 3vw, 48px);
   font-weight: 600;
   text-align: right;
+}
+
+.hero-h6 {
+  width: 40%;
+  margin-left: 60%;
 }
 
 .hero-gold-txt {
