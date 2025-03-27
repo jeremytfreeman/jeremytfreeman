@@ -40,7 +40,7 @@
 html {
   scroll-behavior: smooth;
   box-sizing: border-box;
-  font-size: 62.5%; /*setting default to 10px */
+  font-size: 62.5%; /*setting default to 10px - THIS is causing chat icon to compress */
 }
 
 html,
@@ -800,7 +800,7 @@ html {
   display: none;
   position: fixed;
   bottom: 20px;
-  right: 30px;
+  left: 30px;
   z-index: 98;
   font-size: 18px;
   border: none;
