@@ -229,7 +229,7 @@ p {
 a {
   color: var(--actionColor);
   text-decoration: none;
-  transition: color 500ms ease-out;
+  transition: color 150ms ease-out;
 }
 
 a:hover {
