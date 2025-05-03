@@ -115,11 +115,16 @@
     padding-top: 0;
   }
 
-  footer {
+  .footer-container {
     display: flex;
     flex-direction: column;
     text-align: left;
     padding: 10px;
     justify-content: center;
+  }
+
+  .footer-socials {
+    flex-grow: 1;
+    width: 100%;
   }
 }
