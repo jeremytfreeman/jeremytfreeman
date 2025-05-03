@@ -291,7 +291,7 @@ figcaption {
   justify-content: center;
   border: none;
   border-radius: 4px;
-  padding: 24px 24px;
+  padding: 12px 12px;
   font-size: 1.4rem;
   font-weight: 500;
   transition: 0.5s;
@@ -301,15 +301,14 @@ figcaption {
 }
 
 .primary-btn {
-  background-color: var(--primaryColor);
+  background-color: var(--secondaryColor);
   color: var(--backgroundColor);
-  height: 64px;
   /* outline: 1px solid var(--backgroundColor); */
 }
 
 .primary-btn:hover,
 .secondary-btn:hover {
-  background-color: var(--secondaryColor);
+  background-color: #a0843f;
   transition: 500ms;
   cursor: pointer;
   color: white;
@@ -1080,19 +1079,12 @@ html {
 /* FOOTER ------------------------*/
 footer {
   color: var(--primary600);
-  font-size: 12px;
   margin-top: auto;
-  margin-left: 20px;
-  margin-right: 20px;
   padding-top: 48px;
-  border-top: solid 8px var(--primaryColor);
-  display: flex;
-  justify-content: space-between;
-  padding: 24px 20px;
 }
 
 footer p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 footer a {
@@ -1104,8 +1096,40 @@ footer a:hover {
   color: var(--secondaryColor);
 }
 
-#footer-text {
+.footer-h5 {
+  color: var(--backgroundColor);
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: left;
+  font-size: 2.1rem;
+}
+
+.footer-container {
   display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+}
+
+.footer-text-box {
+  padding: 32px;
+  flex-grow: 1;
+  background-color: var(--primaryColor);
+  border-radius: 12px;
+}
+
+.footer-text {
+  color: var(--backgroundColor);
+}
+
+.footer-btn {
+  margin-top: 16px;
+  margin-bottom: 48px;
+}
+
+.footer-socials {
+  width: 240px;
+  flex-grow: 0;
 }
 
 #footer-tree-rune {
@@ -1145,17 +1169,27 @@ footer a:hover {
 .socials {
   list-style-type: none;
   padding: 0;
+  margin-left: 0;
+  margin-top: 32px;
+}
+
+ul.socials li:first-child {
+  padding-left: 0;
+  margin-left: 0;
 }
 
 .socials li {
   display: inline-block;
-  margin-left: 8px;
+  margin-left: 0;
+  padding-left: 12px;
 }
 
 .socials img {
   width: 24px;
   opacity: 0.7;
   transition: cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
+  margin: 0;
+  padding: 0;
 }
 
 .socials img:hover {
