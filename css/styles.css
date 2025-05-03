@@ -1122,9 +1122,13 @@ footer a:hover {
   color: var(--backgroundColor);
 }
 
+.footer-text a {
+  color: var(--primary400);
+}
+
 .footer-btn {
   margin-top: 16px;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .footer-socials {
