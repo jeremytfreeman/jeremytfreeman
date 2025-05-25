@@ -877,7 +877,7 @@ html {
 /* WORK PAGES STYLES ------------------------*/
 
 .tldr-section {
-  padding: 24px;
+  padding: 40px;
   background-color: var(--primary100);
   border-radius: 12px;
 }
