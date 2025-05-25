@@ -878,13 +878,13 @@ html {
 
 .tldr-section {
   padding: 24px;
+  background-color: #fae8cd;
+  border-radius: 12px;
 }
 
 .tldr {
   font-style: italic;
   color: var(--figCaption);
-  border-bottom: solid 1px var(--primary300);
-  padding-bottom: 32px;
 }
 
 .work-box {
