@@ -900,6 +900,7 @@ html {
   width: 100%;
   box-sizing: border-box;
   border: #e6e9f0 solid 40px;
+  border-radius: 12px;
   outline: solid 1px white;
   padding: 40px;
   background-color: var(--lightBackground);
