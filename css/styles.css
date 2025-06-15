@@ -793,6 +793,15 @@ html {
   margin-top: 0px;
 }
 
+.home-cs-img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.home-cs-img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
 /* BACK TO TOP BUTTON ------------------------*/
 
 #topBtn {
