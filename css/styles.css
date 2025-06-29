@@ -93,13 +93,21 @@ p {
   line-height: 180%;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.02em;
+}
+
 h1 {
-  font-size: max(5.4rem, 3.6rem); /* no smaller than 3.6rem, 5.4vw*/
+  font-size: max(4.8rem, 3.6rem); /* no smaller than 3.6rem, 5.4vw*/
   /*font-size: clamp(3.2rem, 5.4vw + 1rem, 7rem); */
   color: var(--primaryColor);
   line-height: 120%;
   font-weight: 600;
   font-style: normal;
+  letter-spacing: -0.02em;
   margin-top: 0px;
   margin-bottom: 0px;
   animation: headingAnimation;
