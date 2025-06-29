@@ -98,7 +98,7 @@ h1 {
   /*font-size: clamp(3.2rem, 5.4vw + 1rem, 7rem); */
   color: var(--primaryColor);
   line-height: 120%;
-  font-weight: 300;
+  font-weight: 600;
   font-style: normal;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -111,8 +111,8 @@ h1 {
 
 h2 {
   font-size: max(4rem, 3rem); /* no smaller than 3.6rem*/
-  line-height: 130%;
-  font-weight: 300;
+  line-height: 110%;
+  font-weight: 500;
   margin-bottom: 24px;
   animation: headingAnimation;
   animation-delay: 0s;
@@ -123,9 +123,9 @@ h2 {
 }
 
 .h2-light {
-  color: var(--primary400);
-  line-height: 125%;
-  font-size: 2.1rem;
+  color: var(--primary300);
+  line-height: 110%;
+  /*font-size: 2.1rem; */
 }
 
 @keyframes headingAnimation {
@@ -140,8 +140,8 @@ h2 {
 
 h3 {
   font-size: 3.2rem;
-  line-height: 130%;
-  font-weight: 300;
+  line-height: 110%;
+  font-weight: 600;
   margin-bottom: 20px;
   animation: headingAnimation;
   animation-delay: 0.1s;
@@ -678,8 +678,8 @@ html {
 }
 
 .hero-h1 {
-  font-size: clamp(3.2rem, 3vw, 4.8rem);
-  font-weight: 300;
+  /*font-size: clamp(3.2rem, 3vw, 4.8rem); */
+  font-weight: 600;
 }
 
 .hero-h5 {
@@ -798,7 +798,7 @@ html {
 }
 
 .home-cs-img:hover {
-  transform: scale(1.1);
+  transform: scale(1.07);
   transition: transform 0.3s ease-in-out;
 }
 
