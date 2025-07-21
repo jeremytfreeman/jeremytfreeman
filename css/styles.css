@@ -558,7 +558,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: var(--primaryColor);
+  color: var(--primary500);
   text-decoration: none;
   font-weight: 500;
   padding-right: 16px;
@@ -698,7 +698,8 @@ html {
 }
 
 .hero-gold-txt {
-  color: var(--secondaryColor);
+  color: var(--primary300);
+  font-weight: 500;
 }
 
 #hero-box h4 a:hover {
