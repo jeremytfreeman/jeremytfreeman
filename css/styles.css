@@ -117,6 +117,10 @@ h1 {
   transform-origin: left;
 }
 
+.h1byline {
+  font-size: max(3.2rem, 2.4rem); /* no smaller than 3.6rem, 5.4vw*/
+}
+
 h2 {
   font-size: max(4rem, 3rem); /* no smaller than 3.6rem*/
   line-height: 120%;
@@ -194,6 +198,14 @@ h6 {
 
 .primary400 {
   color: var(--primary400);
+}
+
+.primary {
+  color: var(--primaryColor);
+}
+
+.bold {
+  font-weight: 600;
 }
 
 .tertiary {
