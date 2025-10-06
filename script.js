@@ -624,7 +624,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const ctaButton = document.querySelector(".cta-button");
 
-  if (ctaButton) {
+  if (ctaButton && ctaButton.tagName === "BUTTON") {
     ctaButton.addEventListener("click", function () {
       // You can add actual functionality here, like opening a contact form
       alert("Get in touch functionality would be implemented here!");
