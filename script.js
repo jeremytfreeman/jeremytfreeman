@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const defaultStatusMessage = statusMessageEl ? statusMessageEl.textContent.trim() : "";
   const defaultStatusLinks = {};
   const STATUS_SEVERITY_CLASSES = new Set(["success", "info", "warning", "danger"]);
-  const DEFAULT_COPYRIGHT_YEAR = 2024;
+  const DEFAULT_COPYRIGHT_YEAR = 2025;
   const DEFAULT_PROFILE_DROPDOWNS = {
     profile: {
       sections: [
