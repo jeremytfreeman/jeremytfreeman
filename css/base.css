@@ -926,7 +926,7 @@ h2 {
   padding: var(--space-8);
   border-radius: var(--radius-xl);
   margin-top: var(--space-10);
-  max-width: 500px;
+  max-width: 600px;
 }
 
 .cta-section h3 {
@@ -943,6 +943,7 @@ h2 {
 }
 
 .cta-button {
+  display: inline-block;
   background-color: var(--action-color);
   color: var(--color-white);
   border: none;
