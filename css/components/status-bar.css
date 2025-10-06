@@ -1,0 +1,114 @@
+/* Status Bar */
+.status-bar {
+  background-color: var(--surface-sunrise);
+  padding: var(--space-3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  position: relative;
+  z-index: var(--z-status);
+  /* Add collapse animation so content slides up */
+  transition: opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out),
+    max-height var(--duration-slow) var(--ease-out),
+    padding var(--duration-slow) var(--ease-out),
+    margin var(--duration-slow) var(--ease-out),
+    border-width var(--duration-slow) var(--ease-out),
+    background-color var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
+  opacity: 1;
+  transform: translateY(0);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-8);
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.status-bar.fade-out {
+  opacity: 0;
+  transform: translateY(-6px);
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+  border-width: 0;
+  pointer-events: none;
+}
+
+.status-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.status-content .material-symbols-outlined {
+  color: var(--status-success);
+  font-size: var(--icon-16);
+}
+
+.status-bar.severity-success {
+  background-color: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.status-bar.severity-success .material-symbols-outlined {
+  color: #0f9d77;
+}
+
+.status-bar.severity-info {
+  background-color: rgba(14, 165, 233, 0.12);
+  border-color: rgba(14, 165, 233, 0.35);
+}
+
+.status-bar.severity-info .material-symbols-outlined {
+  color: #0ea5e9;
+}
+
+.status-bar.severity-warning {
+  background-color: rgba(251, 191, 36, 0.15);
+  border-color: rgba(251, 191, 36, 0.5);
+}
+
+.status-bar.severity-warning .material-symbols-outlined {
+  color: #d97706;
+}
+
+.status-bar.severity-danger {
+  background-color: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+.status-bar.severity-danger .material-symbols-outlined {
+  color: #ef4444;
+}
+
+.status-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-1);
+  color: var(--neutral-500);
+  font-size: var(--icon-16);
+}
+
+.status-close:hover {
+  color: var(--neutral-600);
+}
+
+.status-bar.is-persistent .status-close {
+  display: none;
+}
+
+.status-link {
+  color: var(--hyperlink-color);
+  text-decoration: none;
+}
+
+.status-link:hover,
+.status-link:focus {
+  color: var(--hyperlink-color-hover);
+  text-decoration: underline;
+}

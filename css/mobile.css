@@ -1,0 +1,183 @@
+/* Mobile Styles - 480px and below */
+
+@media (max-width: 480px) {
+  .main-layout {
+    padding: 0 var(--space-4);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* Keep utility icons at the top-right */
+  .header-right {
+    order: -1;
+    align-self: flex-end;
+    margin-bottom: var(--space-2);
+    position: relative;
+    z-index: 100; /* let overlay sit above */
+  }
+
+  .header-divider {
+    margin: var(--space-5) 0;
+  }
+
+  /* Present utility icons in a clean row on mobile */
+  #utility-icons {
+    display: flex;
+    gap: var(--space-2);
+  }
+
+  .utility-icon {
+    margin-right: 0; /* prevent overlap on small screens */
+  }
+
+  .social-links-column {
+    padding: var(--space-1-5) 0;
+    margin-bottom: 0;
+    margin-top: var(--space-3);
+    order: 99; /* push to bottom on mobile */
+    border-bottom: 0; /* override tablet rule */
+    border-top: 1px solid var(--neutral-200);
+  }
+
+  .content-area {
+    gap: var(--space-3);
+    margin-top: var(--space-2-5);
+  }
+
+  /* Sidebar is an off-canvas panel by default */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: start; /* center nav vertically */
+    align-items: start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--color-white);
+    z-index: 1500;
+    padding: var(--space-5) var(--space-4);
+    overflow-y: auto;
+    border: none;
+    transform: translateX(-100%);
+  }
+
+  /* Slide in when open */
+  .sidebar.open {
+    transform: translateX(0);
+    transition: transform 0.3s ease; /* animate only on open */
+  }
+
+  .main-header {
+    padding: var(--space-4) 0 var(--space-2) 0;
+  }
+
+  .header-content {
+    margin: 0;
+  }
+  .header-title {
+    font-size: 1.5rem;
+  }
+
+  .profile-icons {
+    gap: var(--space-2);
+    z-index: 0; /* ensure under the overlay */
+  }
+
+  /* Keep the menu button visible above the overlay */
+  .mobile-menu-btn {
+    position: absolute; /* not fixed on mobile */
+    left: var(--space-4);
+    top: var(--space-4);
+    z-index: 2001;
+  }
+
+  /* Mobile menu: vertical list with larger targets */
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    width: 100%;
+    max-width: 480px;
+    margin: 54px auto 0;
+    text-align: left;
+  }
+
+  .nav-item {
+    font-size: 20px; /* larger text */
+    padding: var(--space-4);
+    width: 100%;
+    border-radius: 10px;
+    justify-content: start; /* center icon + label */
+  }
+
+  .nav-item .material-symbols-outlined {
+    width: 24px;
+    font-size: 22px;
+  }
+
+  .profile-icon {
+    width: 32px;
+    height: 32px;
+    font-size: var(--font-size-xs);
+    margin-right: calc(-1 * var(--space-4));
+  }
+
+  /* Show profile icon tooltips below the icon on mobile */
+  .profile-icon::before {
+    bottom: auto;
+    top: 100%;
+    margin-top: var(--space-2);
+    margin-bottom: 0;
+    transform: translateX(-50%);
+  }
+
+  /* Show utility icon tooltips below the icon on mobile */
+  .utility-icon::before {
+    bottom: auto;
+    top: 100%;
+    margin-top: var(--space-2);
+    margin-bottom: 0;
+    transform: translateX(-50%);
+    left: 50%;
+    right: auto;
+  }
+
+  .content-filters {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: var(--space-1);
+    margin: 0 calc(-1 * var(--space-1));
+    scrollbar-width: none;
+    gap: var(--space-3);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .content-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: unset;
+  }
+
+  .content-block h2 {
+    font-size: 1.25rem;
+  }
+
+  .cta-section {
+    padding: var(--space-5);
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "profile": {
+    "sections": [
+      {
+        "title": "I do",
+        "items": [
+          "User research & usability testing",
+          "Information architecture & flows",
+          "Wireframes, prototypes, and design systems",
+          "Data-informed decisions and KPIs",
+          "Collaborative delivery with eng/product"
+        ]
+      },
+      {
+        "title": "I don't",
+        "items": [
+          "Produce Dribbble-ready fluff",
+          "Dark patterns or deceptive UX",
+          "Over-polish at the expense of clarity",
+          "Bloated process without outcomes"
+        ]
+      }
+    ]
+  },
+  "ux": {
+    "sections": [
+      {
+        "items": [
+          "Because confusion extracts its price in gold, time, and blood"
+        ]
+      }
+    ]
+  },
+  "fd": {
+    "sections": [
+      {
+        "items": [
+          "Where the weight of design debt becomes visible"
+        ]
+      }
+    ]
+  },
+  "ag": {
+    "sections": [
+      {
+        "items": [
+          "Iteration is just alchemy by another name"
+        ]
+      }
+    ]
+  },
+  "ai": {
+    "sections": [
+      {
+        "items": [
+          "Definitely not here to steal my job (at least not yet)"
+        ]
+      }
+    ]
+  },
+  "leadership": {
+    "sections": [
+      {
+        "items": [
+          "Every problem is, in truth, a leadership problem"
+        ]
+      }
+    ]
+  }
+}

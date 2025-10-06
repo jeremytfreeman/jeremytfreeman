@@ -1,141 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-VVES2RF281"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-VVES2RF281");
-    </script>
-
-    <!-- Set the character encoding for this document, so that
-    all characters within the UTF-8 space are rendered correctly.-->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <!-- Any other head element should come *after* these tags.-->
-    <meta name="robots" content="noindex" />
-    <meta name="description" content="Jeremy T Freeman" />
-    <meta name="author" content="Jeremy T Freeman" />
-    <meta name="theme-color" content="#ffffff" />
-
-    <!-- Set the document's title -->
-    <title>Philosophy: Jeremy T Freeman</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/fav-icon.png" />
-
-    <!-- Load Google fonts-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeremy Freeman - Enterprise Product Design</title>
+    <link rel="icon" href="images/fav-icon.png" type="image/png" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/philos.css" />
+    <link rel="stylesheet" href="css/components/status-bar.css" />
+    <link rel="stylesheet" href="css/desktop.css" />
+    <link rel="stylesheet" href="css/tablet.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Normalize CSS-->
-    <link href="css/normalize.css" rel="stylesheet" />
-
-    <!-- Core CSS-->
-    <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/styles-med.css" rel="stylesheet" />
-    <link href="css/styles-sm.css" rel="stylesheet" />
-
-    <!-- Load Material icon library  -->
     <link
-      rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
     />
   </head>
-
   <body>
-    <div class="grid-container">
-      <!--//  HEADER  // -->
-      <header>
-        <div class="send-tooltip">
+    <div class="main-layout">
+      <!-- Social Links Column -->
+      <div class="social-links-column">
+        <div class="hanko-div">
+          <img src="images/hanko-icon.svg" alt="" />
+        </div>
+        <div class="social-links">
           <a
-            href="javascript:location='mailto:\u006a\u0066\u0072\u0065\u0065\u0037\u0040\u0067\u006d\u0061\u0069\u006c\u002e\u0063\u006f\u006d';void 0"
+            href="JeremyTFreeman_webresume.pdf"
+            target="_blank"
+            class="social-link"
+            data-tooltip="Resume"
+            aria-label="Resume"
           >
-            <svg
-              id="send-icon"
-              class="send-icon hvr-buzz"
-              width="25"
-              height="24"
-              viewBox="0 0 25 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M21.6763 1C21.756 1 21.835 1.03539 21.8961 1.10303C21.9943 1.21144 22.0265 1.38157 21.9771 1.53037L15.7308 20.4394C15.6725 20.6157 15.5557 20.7554 15.4088 20.8251C15.3414 20.8569 15.2707 20.8725 15.1993 20.8725C15.1155 20.8725 15.0309 20.8503 14.9534 20.8057L8.64459 17.1985L17.5159 6.49379L7.38984 16.4811L2.32554 13.5854C2.12773 13.4722 2.00134 13.2331 2.00001 12.9702C1.99868 12.7069 2.12296 12.4663 2.31936 12.3504L21.5349 1.03956C21.5802 1.0128 21.6282 1 21.6763 1ZM8.82715 22.0151C8.72133 21.9479 8.65479 21.816 8.65479 21.6722H8.65483V18.6064L11.3861 20.1686L9.16028 21.9924C9.06145 22.0736 8.93289 22.0823 8.82715 22.0151Z"
-                fill="#181D28"
-              />
-            </svg>
+            <span class="material-symbols-outlined">description</span>
           </a>
-        </div>
-      </header>
-      <a href="index.html" title="Jeremy T Freeman" id="logo-link"
-        ><svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          id="jtf-logo"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M17.6061 7.52834H15.5806V7.52858H12.8993V14.1288C12.8993 14.7475 13.0024 15.16 13.2087 15.3663C13.4149 15.5726 13.8274 15.6757 14.4462 15.6757C14.6524 15.6757 14.8501 15.6671 15.0392 15.6499C15.2282 15.6327 15.4087 15.6069 15.5806 15.5726V18.4086C15.2712 18.4601 14.9275 18.4945 14.5493 18.5117C14.1712 18.5289 13.8016 18.5375 13.4407 18.5375C12.8735 18.5375 12.3321 18.4945 11.8164 18.4086C11.318 18.3398 10.8711 18.1937 10.4758 17.9703C10.0976 17.7468 9.79684 17.4289 9.5734 17.0163C9.34995 16.6038 9.23823 16.0624 9.23823 15.3921V7.52858H5.85251V19.053C5.85251 19.7405 5.77516 20.3335 5.62047 20.8319C5.48297 21.3304 5.23374 21.7429 4.87279 22.0695C4.52903 22.4132 4.05636 22.6625 3.45478 22.8171C2.8532 22.989 2.08834 23.075 1.16019 23.075C0.730489 23.075 0.34376 23.0406 0 22.9718V19.9553C0.189068 20.0241 0.446887 20.0585 0.773459 20.0585C1.15159 20.0585 1.47817 19.9811 1.75317 19.8264C2.04537 19.6889 2.19147 19.371 2.19147 18.8725V5.07915H5.85251V5.0793H9.23823V1.08309H12.8993V5.0793H15.4146V5.07905H17.6061V4.04777C17.6061 2.8618 17.9756 1.89068 18.7147 1.13441C19.4538 0.378136 20.571 0 22.0663 0C22.3929 0 22.7195 0.017188 23.0461 0.0515646C23.3726 0.0687523 23.6906 0.0859405 24 0.103128V2.83602C23.5703 2.78445 23.1234 2.75867 22.6593 2.75867C22.1609 2.75867 21.7999 2.87899 21.5765 3.11962C21.3702 3.34306 21.2671 3.72979 21.2671 4.27981V5.07905H23.7937V7.52834H21.2671V18.4083H17.6061V7.52834Z"
-            fill="#181D28"
-          />
-        </svg>
-      </a>
-      <!--//   MAIN NAVIGATION  // -->
-      <nav>
-        <input type="checkbox" id="check" />
-        <label for="check" class="checkbtn">
-          <!--menu icon -->
-          <span id="menu-icon" class="material-symbols-outlined">menu</span>
-        </label>
-        <ul>
-          <li><a href="index.html" id="work-nav">Work</a></li>
-          <li class="current"><a href="philosophy.html">Philosophy</a></li>
-          <li><a class="active" href="expertise.html">Expertise</a></li>
-          <li><a href="about.html">About Me</a></li>
-        </ul>
-        <!-- logo shown on scroll -->
-        <div id="jtf-logo-scroll" class="logo-scroll-hide">
-          <a href="index.html" title="Jeremy T Freeman"
-            ><img src="images/jtf-scroll-logo.svg" type=""
-          /></a>
-        </div>
-      </nav>
-      <main class="content-wrapper">
-        <!--//  PAGE HEADING // -->
-        <div>
-          <h1 class="page-header">/ Philosophy of Practice</h1>
-          <h2 class="hdline-alt">
-            <span class="hdline-alt-span"
-              >My foundational principles for design, leadership, and life</span
-            >
-          </h2>
-        </div>
+          <a
+            href="https://www.linkedin.com/in/jeremytfreeman/"
+            class="social-link"
+            data-tooltip="LinkedIn"
+            aria-label="LinkedIn"
+            target="_blank"
+          >
+            <img
+              src="images/icon-logo-linkedin.svg"
+              alt="Linkedin"
+              width="20px"
+            />
+          </a>
+          <a
+            href="https://github.com/jeremytfreeman"
+            class="social-link"
+            data-tooltip="GitHub"
+            aria-label="GitHub"
+            target="_blank"
+          >
+            <img src="images/icon-logo-github.png" alt="Github" width="20px" />
+          </a>
 
-        <!--//  START MAIN CONTENT GRID AREA // -->
-        <div id="text-box" class="content-box">
-          <div class="philos-container">
+          <!-- Behance icon 
+          <a
+            href="#"
+            class="social-link"
+            data-tooltip="Behance"
+            aria-label="Behance"
+          >
+            <span>Be</span>
+          </a> -->
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="right-column">
+        <!-- Main Header -->
+        <header class="main-header">
+          <div class="header-content">
+            <div class="header-left">
+              <div class="logo">
+                <a href="index.html" aria-label="Go to homepage">
+                  <img src="images/jtf-logomark.svg" alt="Jeremy T Freeman logo" />
+                </a>
+              </div>
+              <div class="header-title" role="heading" aria-level="2">
+                <span class="h1-small">Jeremy T Freeman</span><br />
+                Product design alchemy. <br />Real tools. Real work.
+              </div>
+            </div>
+            <div class="header-right">
+              <div class="profile-icons">
+                <div
+                  class="profile-icon photo-icon"
+                  id="profileIcon"
+                  data-tooltip="Jeremy T Freeman"
+                >
+                  <div
+                    class="dropdown profile-dropdown"
+                    id="profileDropdown"
+                    role="menu"
+                    aria-hidden="true"
+                  >
+                    <div class="profile-card">
+                      <div class="profile-card-header">
+                        <div class="profile-card-avatar"></div>
+                        <div class="profile-card-meta">
+                          <div class="profile-card-title">Jeremy T Freeman</div>
+                          <div class="profile-card-name">
+                            Director, Experience Design
+                          </div>
+                          <div class="profile-card-submeta">
+                            <span class="material-symbols-outlined"
+                              >schedule</span
+                            >
+                            <span>15+ years</span>
+                            <span class="dot">•</span>
+                            <span class="material-symbols-outlined"
+                              >location_on</span
+                            >
+                            <span>Greater Philadelphia Area</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="dropdown-sections" data-profile-key="profile"></div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="profile-icon"
+                  id="uxIcon"
+                  data-tooltip="User Experience"
+                >
+                  <span>UX</span>
+                  <div
+                    class="dropdown"
+                    id="uxDropdown"
+                    role="menu"
+                    aria-hidden="true"
+                  >
+                    <div class="profile-card">
+                      <div class="profile-card-header">
+                        <div class="profile-card-avatar badge-avatar avatar-ux">
+                          UX
+                        </div>
+                        <div class="profile-card-meta">
+                          <div class="profile-card-title">User Experience</div>
+                        </div>
+                      </div>
+                      <div class="dropdown-sections" data-profile-key="ux"></div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="profile-icon"
+                  id="fdIcon"
+                  data-tooltip="Front-end Development"
+                >
+                  <span>FD</span>
+                  <div
+                    class="dropdown"
+                    id="fdDropdown"
+                    role="menu"
+                    aria-hidden="true"
+                  >
+                    <div class="profile-card">
+                      <div class="profile-card-header">
+                        <div class="profile-card-avatar badge-avatar avatar-fd">
+                          FD
+                        </div>
+                        <div class="profile-card-meta">
+                          <div class="profile-card-title">
+                            Front-end Development
+                          </div>
+                        </div>
+                      </div>
+                      <div class="dropdown-sections" data-profile-key="fd"></div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="profile-icon"
+                  id="agIcon"
+                  data-tooltip="Agile/Scrum"
+                >
+                  <span>Ag</span>
+                  <div
+                    class="dropdown"
+                    id="agDropdown"
+                    role="menu"
+                    aria-hidden="true"
+                  >
+                    <div class="profile-card">
+                      <div class="profile-card-header">
+                        <div class="profile-card-avatar badge-avatar avatar-ag">
+                          Ag
+                        </div>
+                        <div class="profile-card-meta">
+                          <div class="profile-card-title">Agile/Scrum</div>
+                        </div>
+                      </div>
+                      <div class="dropdown-sections" data-profile-key="ag"></div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="profile-icon"
+                  id="aiIcon"
+                  data-tooltip="Artificial Intelligence"
+                >
+                  <span>AI</span>
+                  <div
+                    class="dropdown"
+                    id="aiDropdown"
+                    role="menu"
+                    aria-hidden="true"
+                  >
+                    <div class="profile-card">
+                      <div class="profile-card-header">
+                        <div class="profile-card-avatar badge-avatar avatar-ai">
+                          AI
+                        </div>
+                        <div class="profile-card-meta">
+                          <div class="profile-card-title">
+                            Artificial Intelligence
+                          </div>
+                        </div>
+                      </div>
+                      <div class="dropdown-sections" data-profile-key="ai"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile-icon" id="leIcon" data-tooltip="Leadership">
+                  <span>Le</span>
+                  <div
+                    class="dropdown"
+                    id="leDropdown"
+                    role="menu"
+                    aria-hidden="true"
+                  >
+                    <div class="profile-card">
+                      <div class="profile-card-header">
+                        <div class="profile-card-avatar badge-avatar avatar-le">
+                          Le
+                        </div>
+                        <div class="profile-card-meta">
+                          <div class="profile-card-title">Leadership</div>
+                        </div>
+                      </div>
+                      <div class="dropdown-sections" data-profile-key="leadership"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile-icon add-icon" data-tooltip="And more...">
+                  <span class="material-symbols-outlined">add</span>
+                </div>
+                <div id="utility-icons">
+                  <div
+                    class="utility-icon"
+                    id="notifIcon"
+                    data-tooltip="Notifications"
+                  >
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span
+                      class="notification-badge"
+                      id="notifBadge"
+                      aria-label="Unread notifications"
+                    ></span>
+                    <div
+                      class="dropdown notifications-dropdown"
+                      id="notificationsDropdown"
+                      role="menu"
+                      aria-hidden="true"
+                    >
+                      <div class="dropdown-header">Notifications</div>
+                      <ul class="dropdown-list" id="notificationsList"></ul>
+                      <div class="dropdown-empty">
+                        There are no notifications
+                      </div>
+                    </div>
+                  </div>
+                  <div class="utility-icon" data-tooltip="Send Message">
+                    <a
+                      href="javascript:location='mailto:\u006a\u0066\u0072\u0065\u0065\u0037\u0040\u0067\u006d\u0061\u0069\u006c\u002e\u0063\u006f\u006d';void 0"
+                    >
+                      <span class="material-symbols-outlined">send</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header-divider"></div>
+          <!-- Content Filters -->
+          <div class="content-filters">
+            <button class="filter-btn active">Enterprise UX</button>
+            <button class="filter-btn">B2B SaaS</button>
+            <button class="filter-btn">Systems thinking</button>
+            <button class="filter-btn">Chaos into clarity</button>
+            <button class="filter-btn">Uncovering disorder and friction</button>
+          </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="content-area">
+          <!-- Navigation Sidebar -->
+          <aside class="sidebar">
+            <nav class="sidebar-nav">
+              <a href="index.html" class="nav-item">
+                <span class="material-symbols-outlined nav-icon">folder</span>
+                <span>Work</span>
+              </a>
+              <a href="philosophy.html" class="nav-item active">
+                <span class="material-symbols-outlined nav-icon">book</span>
+                <span>Philosophy</span>
+              </a>
+              <a href="expertise.html" class="nav-item">
+                <span class="material-symbols-outlined nav-icon"
+                  >psychology</span
+                >
+                <span>Expertise</span>
+              </a>
+              <a href="about.html" class="nav-item">
+                <span class="material-symbols-outlined nav-icon">person</span>
+                <span>About</span>
+              </a>
+            </nav>
+          </aside>
+
+          <!-- Main Content -->
+          <main class="main-content">
+              <!--//  PAGE HEADING   // -->
+        <h1 class="page-header">Philosophy of Practice</h1>
+        <h2 class="hdline-alt">
+          My foundational principles for design, leadership, and life
+        </h2>
+<div class="philos-container">
             <h5>/ 1 /</h5>
             <h3 class="philos-hd">Know thy user</h3>
             <h6 class="philos-h6">(Hint: it isn't you.)</h6>
@@ -325,84 +528,19 @@
               excellence and continuous improvement.
             </p>
           </div>
+          <p class="copyright-text">
+            © 2024 Designed and developed by Jeremy T Freeman
+          </p>
         </div>
-        <!--//  FOOTER  // -->
-        <footer>
-          <div class="footer-container">
-            <div class="footer-text-box">
-              <div>
-                <h5 class="footer-h5">Let's combine forces</h5>
-                <p class="footer-text">
-                  Together, we’ll turn vision into form, and forge something
-                  rare and real.
-                </p>
-                <a
-                  href="javascript:location='mailto:\u006a\u0066\u0072\u0065\u0065\u0037\u0040\u0067\u006d\u0061\u0069\u006c\u002e\u0063\u006f\u006d';void 0"
-                >
-                  <button class="primary-btn footer-btn">
-                    Get in touch
-                  </button></a
-                >
-                <p class="footer-text">
-                  Or, visit me on
-                  <a
-                    href="https://www.linkedin.com/in/jeremytfreeman/"
-                    target="_blank"
-                    >Linkedin</a
-                  >
-                  <!--
-                        <svg
-                          id="jtf-footer-logo"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M17.6061 7.52834H15.5806V7.52858H12.8993V14.1288C12.8993 14.7475 13.0024 15.16 13.2087 15.3663C13.4149 15.5726 13.8274 15.6757 14.4462 15.6757C14.6524 15.6757 14.8501 15.6671 15.0392 15.6499C15.2282 15.6327 15.4087 15.6069 15.5806 15.5726V18.4086C15.2712 18.4601 14.9275 18.4945 14.5493 18.5117C14.1712 18.5289 13.8016 18.5375 13.4407 18.5375C12.8735 18.5375 12.3321 18.4945 11.8164 18.4086C11.318 18.3398 10.8711 18.1937 10.4758 17.9703C10.0976 17.7468 9.79684 17.4289 9.5734 17.0163C9.34995 16.6038 9.23823 16.0624 9.23823 15.3921V7.52858H5.85251V19.053C5.85251 19.7405 5.77516 20.3335 5.62047 20.8319C5.48297 21.3304 5.23374 21.7429 4.87279 22.0695C4.52903 22.4132 4.05636 22.6625 3.45478 22.8171C2.8532 22.989 2.08834 23.075 1.16019 23.075C0.730489 23.075 0.34376 23.0406 0 22.9718V19.9553C0.189068 20.0241 0.446887 20.0585 0.773459 20.0585C1.15159 20.0585 1.47817 19.9811 1.75317 19.8264C2.04537 19.6889 2.19147 19.371 2.19147 18.8725V5.07915H5.85251V5.0793H9.23823V1.08309H12.8993V5.0793H15.4146V5.07905H17.6061V4.04777C17.6061 2.8618 17.9756 1.89068 18.7147 1.13441C19.4538 0.378136 20.571 0 22.0663 0C22.3929 0 22.7195 0.017188 23.0461 0.0515646C23.3726 0.0687523 23.6906 0.0859405 24 0.103128V2.83602C23.5703 2.78445 23.1234 2.75867 22.6593 2.75867C22.1609 2.75867 21.7999 2.87899 21.5765 3.11962C21.3702 3.34306 21.2671 3.72979 21.2671 4.27981V5.07905H23.7937V7.52834H21.2671V18.4083H17.6061V7.52834Z"
-                            fill="#181D28"
-                          />
-                        </svg>
-                        -->
-                </p>
-              </div>
-            </div>
-            <!-- socials -->
-            <div class="footer-text-box footer-socials">
-              <h5 class="footer-h5">Socials</h5>
-              <ul class="socials">
-                <li>
-                  <a
-                    href="https://www.linkedin.com/in/jeremytfreeman/"
-                    target="_blank"
-                    ><img src="images/icon-logo-linkedin.svg" alt="LinkedIn"
-                  /></a>
-                </li>
-                <li>
-                  <a href="https://github.com/jeremytfreeman/" target="_blank"
-                    ><img src="images/icon-logo-github.png" alt="Github"
-                  /></a>
-                </li>
-                <li>
-                  <a
-                    href="https://stackoverflow.com/users/26862110/the-frmn"
-                    target="_blank"
-                    ><img src="images/icon-logo-stack.png" alt="Stack Overflow"
-                  /></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <p>© 2024 Designed and developed by Jeremy T Freeman</p>
-        </footer>
-      </main>
-    </div>
-    <!-- Back to top button-->
-    <button id="topBtn" title="Go to top" class="hvr-sweep-to-top">
-      <span class="material-symbols-outlined"> arrow_upward </span>
+          </main>
+        </div>
+      
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <span class="material-symbols-outlined">menu</span>
     </button>
-    <!--Load External Javascript file-->
+
     <script src="script.js"></script>
   </body>
 </html>

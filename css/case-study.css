@@ -1,0 +1,204 @@
+/* Case Study Page Styles */
+
+/* TL;DR summary styles */
+.tldr-section {
+  margin: var(--space-2) 0;
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+}
+
+.tldr-heading {
+  font-size: var(--font-size-heading-lg);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary-color-800);
+  margin: 0 0 var(--space-3);
+}
+
+.tldr-divider {
+  border: none;
+  border-top: 1px solid var(--neutral-200);
+  margin: var(--space-8) 0 var(--space-4);
+}
+
+.tldr-section.tldr-quote {
+  background: linear-gradient(
+    135deg,
+    var(--surface-warm-50) 0%,
+    var(--surface-warm-100) 100%
+  );
+  border: 1px solid rgba(203, 213, 225, 0.6);
+  box-shadow: var(--shadow-panel);
+  color: var(--primary-color-800);
+}
+
+.tldr-quote__pull {
+  font-family: var(--font-family-base);
+  font-size: clamp(1.375rem, 2.2vw, 2rem);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.45;
+  color: var(--primary-color-700);
+  margin: 0 0 var(--space-6);
+  padding: var(--space-4) var(--space-5);
+  border-left: 4px solid var(--action-color);
+}
+
+.tldr-quote__list {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin: 0;
+  color: var(--primary-color-700);
+}
+
+.tldr-quote__list li {
+  margin-bottom: var(--space-4);
+  line-height: 1.6;
+}
+
+.tldr-quote__list li:last-child {
+  margin-bottom: 0;
+}
+
+.tldr-quote__list li strong {
+  display: inline;
+  margin-right: var(--space-1);
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.05em;
+  color: var(--primary-color-700);
+  text-transform: uppercase;
+}
+
+.tldr-quote__list li::marker {
+  color: var(--action-color);
+}
+
+@media (max-width: 768px) {
+  .tldr-section {
+    padding: var(--space-6);
+  }
+
+  .tldr-quote__pull {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .tldr-divider {
+    margin: var(--space-6) 0 var(--space-3);
+  }
+}
+
+/* Case study content scaffolding */
+.work-section {
+  display: grid;
+  gap: var(--space-4);
+  margin: var(--space-10) 0;
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid rgba(24, 29, 40, 0.08);
+}
+
+.work-section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.work-section > h2,
+.work-section > h3,
+.work-section > h4 {
+  font-weight: 600;
+  color: var(--primary-color-800);
+}
+
+.work-section > h2 {
+  font-size: var(--font-size-heading-lg);
+  line-height: 1.25;
+}
+
+.work-section > h3 {
+  font-size: var(--font-size-lg);
+  line-height: 1.3;
+}
+
+.work-section > h4 {
+  font-size: var(--font-size-heading-sm);
+  line-height: 1.4;
+}
+
+.work-section p {
+  max-width: 720px;
+  color: var(--primary-color-700);
+}
+
+.work-section ul,
+.work-section ol {
+  margin-left: var(--space-5);
+  display: grid;
+  gap: var(--space-2);
+  color: var(--primary-color-700);
+}
+
+.work-section li {
+  line-height: 1.6;
+}
+
+.work-section figure {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.work-section figcaption {
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.02em;
+  color: var(--primary-color-500);
+}
+
+.work-section img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+}
+
+.work-section .img-box-gray {
+  border-radius: var(--radius-xl);
+}
+
+/* Media-responsive adjustments */
+@media (max-width: 768px) {
+  .work-section {
+    margin: var(--space-8) 0;
+    padding-bottom: var(--space-6);
+  }
+
+  .work-section > h2 {
+    font-size: var(--font-size-lg);
+  }
+
+  .work-section > h3 {
+    font-size: var(--font-size-heading-xs);
+  }
+}
+
+/* Image framing */
+.img-box-gray {
+  width: 100%;
+  box-sizing: border-box;
+  border: var(--primary-color-100) solid 40px;
+  border-radius: var(--radius-xl);
+  /* outline: solid 1px white;  */
+  padding: var(--space-10);
+  background-color: var(--lightBackground);
+  padding: 0px;
+  margin-top: 20px;
+}
+
+/* Image framing */
+.img-box-dark {
+  width: 100%;
+  box-sizing: border-box;
+  border: var(--neutral-900) solid 40px;
+  border-radius: var(--radius-xl);
+  /* outline: solid 1px white;  */
+  padding: 0;
+  background-color: var(--neutral-900);
+  margin-top: 20px;
+}

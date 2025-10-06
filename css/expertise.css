@@ -1,0 +1,39 @@
+/* EXPERTISE PAGE ------------------------*/
+
+.exp-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--primary-color-200);
+  margin-top: var(--space-10);
+  padding-bottom: var(--space-10);
+}
+
+.expertise-header {
+  display: block;
+  margin-right: 60px;
+  width: 35%;
+  margin-top: 0;
+  text-align: right;
+}
+
+.expertise-list {
+  list-style: none;
+  margin-top: 0;
+}
+
+.expertise-list li {
+  padding-top: var(--space-1);
+  padding-bottom: var(--space-1);
+  line-height: 160%;
+}
+
+.exp-cols-item {
+  flex: 1;
+}
+
+.exp-remove-border {
+  border-bottom: 0;
+}
