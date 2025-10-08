@@ -18,7 +18,7 @@
     align-self: flex-end;
     margin-bottom: var(--space-2);
     position: relative;
-    z-index: 100; /* let overlay sit above */
+    z-index: var(--z-profile-icons);
   }
 
   .header-divider {
@@ -100,7 +100,7 @@
 
   .profile-icons {
     gap: var(--space-2);
-    z-index: 0; /* ensure under the overlay */
+    z-index: var(--z-profile-icons);
   }
 
   /* Keep the menu button visible above the overlay */
