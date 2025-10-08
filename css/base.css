@@ -958,6 +958,8 @@ h2 {
 
 .cta-button:hover {
   background-color: var(--action-color);
+  color: var(--color-white);
+  background-color: var(--accent-lilac);
 }
 
 .copyright-text {
